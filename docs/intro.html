@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introduction to Python Programming | Statistical Analysis Using Python</title>
+  <meta name="description" content="Chapter 1 Introduction to Python Programming | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introduction to Python Programming | Statistical Analysis Using Python" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Chapter 1 Introduction to Python Programming | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introduction to Python Programming | Statistical Analysis Using Python" />
+  
+  <meta name="twitter:description" content="Chapter 1 Introduction to Python Programming | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="pandas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistical Analysis Using Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-textbook-for-fyugp-programme-vth-sem-bsc-statistics-vimala-college-autonomous-thrissur"><i class="fa fa-check"></i><em>A Textbook for FYUGP Programme   Vth Sem BSc Statistics,   Vimala College (Autonomous), Thrissur</em></a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-information"><i class="fa fa-check"></i>Course Information</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#credit-structure"><i class="fa fa-check"></i>Credit Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#detailed-syllabus"><i class="fa fa-check"></i>Detailed Syllabus</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-dataset-used-in-this-book"><i class="fa fa-check"></i>The Dataset Used in This Book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python Programming</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-interactive-python-environment"><i class="fa fa-check"></i><b>1.1</b> The Interactive Python Environment</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#the-interactive-shell"><i class="fa fa-check"></i><b>1.1.1</b> The Interactive Shell</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#jupyter-notebooks-and-google-colab"><i class="fa fa-check"></i><b>1.1.2</b> Jupyter Notebooks and Google Colab</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-syntax-and-program-readability"><i class="fa fa-check"></i><b>1.2</b> Basic Syntax and Program Readability</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#keywords"><i class="fa fa-check"></i><b>1.2.1</b> Keywords</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#comments"><i class="fa fa-check"></i><b>1.2.2</b> Comments</a></li>
+<li class="chapter" data-level="1.2.3" data-path="intro.html"><a href="intro.html#statement-termination"><i class="fa fa-check"></i><b>1.2.3</b> Statement Termination</a></li>
+<li class="chapter" data-level="1.2.4" data-path="intro.html"><a href="intro.html#indentation"><i class="fa fa-check"></i><b>1.2.4</b> Indentation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#variables-and-dynamic-typing"><i class="fa fa-check"></i><b>1.3</b> Variables and Dynamic Typing</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#dynamic-typing"><i class="fa fa-check"></i><b>1.3.1</b> Dynamic Typing</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#rules-for-naming-variables"><i class="fa fa-check"></i><b>1.3.2</b> Rules for Naming Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#arithmetic-operators-and-expressions"><i class="fa fa-check"></i><b>1.4</b> Arithmetic Operators and Expressions</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#reading-user-input-and-type-conversion"><i class="fa fa-check"></i><b>1.5</b> Reading User Input and Type Conversion</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="intro.html"><a href="intro.html#the-input-function"><i class="fa fa-check"></i><b>1.5.1</b> The <code>input()</code> Function</a></li>
+<li class="chapter" data-level="1.5.2" data-path="intro.html"><a href="intro.html#type-conversion-casting"><i class="fa fa-check"></i><b>1.5.2</b> Type Conversion (Casting)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#working-with-strings-and-formatting"><i class="fa fa-check"></i><b>1.6</b> Working with Strings and Formatting</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#string-operations"><i class="fa fa-check"></i><b>1.6.1</b> String Operations</a></li>
+<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#escape-sequences"><i class="fa fa-check"></i><b>1.6.2</b> Escape Sequences</a></li>
+<li class="chapter" data-level="1.6.3" data-path="intro.html"><a href="intro.html#formatting-output"><i class="fa fa-check"></i><b>1.6.3</b> Formatting Output</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#control-flow-decision-making"><i class="fa fa-check"></i><b>1.7</b> Control Flow: Decision Making</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#the-if-statement"><i class="fa fa-check"></i><b>1.7.1</b> The <code>if</code> Statement</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#the-if...else-statement"><i class="fa fa-check"></i><b>1.7.2</b> The <code>if...else</code> Statement</a></li>
+<li class="chapter" data-level="1.7.3" data-path="intro.html"><a href="intro.html#the-if...elif...else-statement"><i class="fa fa-check"></i><b>1.7.3</b> The <code>if...elif...else</code> Statement</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#control-flow-loops"><i class="fa fa-check"></i><b>1.8</b> Control Flow: Loops</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#the-while-loop"><i class="fa fa-check"></i><b>1.8.1</b> The <code>while</code> Loop</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#the-for-loop-and-the-range-function"><i class="fa fa-check"></i><b>1.8.2</b> The <code>for</code> Loop and the <code>range()</code> Function</a></li>
+<li class="chapter" data-level="1.8.3" data-path="intro.html"><a href="intro.html#loop-control-break-continue-and-pass"><i class="fa fa-check"></i><b>1.8.3</b> Loop Control: <code>break</code>, <code>continue</code>, and <code>pass</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#interpreting-error-messages"><i class="fa fa-check"></i><b>1.9</b> Interpreting Error Messages</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="intro.html"><a href="intro.html#syntax-errors"><i class="fa fa-check"></i><b>1.9.1</b> Syntax Errors</a></li>
+<li class="chapter" data-level="1.9.2" data-path="intro.html"><a href="intro.html#exceptions-runtime-errors"><i class="fa fa-check"></i><b>1.9.2</b> Exceptions (Runtime Errors)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="intro.html"><a href="intro.html#handling-exceptions-with-try...except"><i class="fa fa-check"></i><b>1.9.3</b> Handling Exceptions with <code>try...except</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#importing-modules"><i class="fa fa-check"></i><b>1.10</b> Importing Modules</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#the-import-statement"><i class="fa fa-check"></i><b>1.10.1</b> The <code>import</code> Statement</a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#the-from-...-import-statement"><i class="fa fa-check"></i><b>1.10.2</b> The <code>from ... import</code> Statement</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#function-fundamentals"><i class="fa fa-check"></i><b>1.11</b> Function Fundamentals</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="intro.html"><a href="intro.html#built-in-functions"><i class="fa fa-check"></i><b>1.11.1</b> Built-in Functions</a></li>
+<li class="chapter" data-level="1.11.2" data-path="intro.html"><a href="intro.html#defining-user-defined-functions"><i class="fa fa-check"></i><b>1.11.2</b> Defining User-Defined Functions</a></li>
+<li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#parameters-and-arguments"><i class="fa fa-check"></i><b>1.11.3</b> Parameters and Arguments</a></li>
+<li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#return-values"><i class="fa fa-check"></i><b>1.11.4</b> Return Values</a></li>
+<li class="chapter" data-level="1.11.5" data-path="intro.html"><a href="intro.html#default-parameters-and-keyword-arguments"><i class="fa fa-check"></i><b>1.11.5</b> Default Parameters and Keyword Arguments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#practice-exercises"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Data Manipulation with Pandas</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#introduction-to-pandas"><i class="fa fa-check"></i><b>2.1</b> Introduction to Pandas</a></li>
+<li class="chapter" data-level="2.2" data-path="pandas.html"><a href="pandas.html#the-pandas-series"><i class="fa fa-check"></i><b>2.2</b> The Pandas Series</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="pandas.html"><a href="pandas.html#creating-a-series-from-a-list"><i class="fa fa-check"></i><b>2.2.1</b> Creating a Series from a List</a></li>
+<li class="chapter" data-level="2.2.2" data-path="pandas.html"><a href="pandas.html#creating-a-series-with-a-custom-index"><i class="fa fa-check"></i><b>2.2.2</b> Creating a Series with a Custom Index</a></li>
+<li class="chapter" data-level="2.2.3" data-path="pandas.html"><a href="pandas.html#creating-a-series-from-a-dictionary"><i class="fa fa-check"></i><b>2.2.3</b> Creating a Series from a Dictionary</a></li>
+<li class="chapter" data-level="2.2.4" data-path="pandas.html"><a href="pandas.html#accessing-data-in-a-series"><i class="fa fa-check"></i><b>2.2.4</b> Accessing Data in a Series</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="pandas.html"><a href="pandas.html#the-pandas-dataframe"><i class="fa fa-check"></i><b>2.3</b> The Pandas DataFrame</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="pandas.html"><a href="pandas.html#creating-a-dataframe"><i class="fa fa-check"></i><b>2.3.1</b> Creating a DataFrame</a></li>
+<li class="chapter" data-level="2.3.2" data-path="pandas.html"><a href="pandas.html#selecting-data"><i class="fa fa-check"></i><b>2.3.2</b> Selecting Data</a></li>
+<li class="chapter" data-level="2.3.3" data-path="pandas.html"><a href="pandas.html#adding-and-deleting-columns"><i class="fa fa-check"></i><b>2.3.3</b> Adding and Deleting Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="pandas.html"><a href="pandas.html#data-operations"><i class="fa fa-check"></i><b>2.4</b> Data Operations</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="pandas.html"><a href="pandas.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>2.4.1</b> Importing and Exporting Data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="pandas.html"><a href="pandas.html#importing-data-from-excel"><i class="fa fa-check"></i><b>2.4.2</b> Importing Data from Excel</a></li>
+<li class="chapter" data-level="2.4.3" data-path="pandas.html"><a href="pandas.html#handling-missing-data"><i class="fa fa-check"></i><b>2.4.3</b> Handling Missing Data</a></li>
+<li class="chapter" data-level="2.4.4" data-path="pandas.html"><a href="pandas.html#merging-dataframes"><i class="fa fa-check"></i><b>2.4.4</b> Merging DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="pandas.html"><a href="pandas.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.5</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="pandas.html"><a href="pandas.html#basic-statistics-on-a-column"><i class="fa fa-check"></i><b>2.5.1</b> Basic Statistics on a Column</a></li>
+<li class="chapter" data-level="2.5.2" data-path="pandas.html"><a href="pandas.html#the-.describe-method"><i class="fa fa-check"></i><b>2.5.2</b> The <code>.describe()</code> Method</a></li>
+<li class="chapter" data-level="2.5.3" data-path="pandas.html"><a href="pandas.html#grouping-data-for-analysis"><i class="fa fa-check"></i><b>2.5.3</b> Grouping Data for Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#practice-exercises-1"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>3</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="visualization.html"><a href="visualization.html#basic-charts-with-matplotlib"><i class="fa fa-check"></i><b>3.1</b> Basic Charts with Matplotlib</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="visualization.html"><a href="visualization.html#line-plot"><i class="fa fa-check"></i><b>3.1.1</b> Line Plot</a></li>
+<li class="chapter" data-level="3.1.2" data-path="visualization.html"><a href="visualization.html#bar-plot"><i class="fa fa-check"></i><b>3.1.2</b> Bar Plot</a></li>
+<li class="chapter" data-level="3.1.3" data-path="visualization.html"><a href="visualization.html#pie-chart"><i class="fa fa-check"></i><b>3.1.3</b> Pie Chart</a></li>
+<li class="chapter" data-level="3.1.4" data-path="visualization.html"><a href="visualization.html#histogram"><i class="fa fa-check"></i><b>3.1.4</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="visualization.html"><a href="visualization.html#preparing-the-college-data-for-plotting"><i class="fa fa-check"></i><b>3.2</b> Preparing the College Data for Plotting</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="visualization.html"><a href="visualization.html#pie-chart-gender-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Pie Chart — Gender Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="visualization.html"><a href="visualization.html#bar-plot-students-per-college"><i class="fa fa-check"></i><b>3.2.2</b> Bar Plot — Students per College</a></li>
+<li class="chapter" data-level="3.2.3" data-path="visualization.html"><a href="visualization.html#histogram-distribution-of-degree-marks"><i class="fa fa-check"></i><b>3.2.3</b> Histogram — Distribution of Degree Marks</a></li>
+<li class="chapter" data-level="3.2.4" data-path="visualization.html"><a href="visualization.html#line-plot-average-marks-progression"><i class="fa fa-check"></i><b>3.2.4</b> Line Plot — Average Marks Progression</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="visualization.html"><a href="visualization.html#statistical-charts-with-seaborn"><i class="fa fa-check"></i><b>3.3</b> Statistical Charts with Seaborn</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="visualization.html"><a href="visualization.html#box-plot"><i class="fa fa-check"></i><b>3.3.1</b> Box Plot</a></li>
+<li class="chapter" data-level="3.3.2" data-path="visualization.html"><a href="visualization.html#strip-plot"><i class="fa fa-check"></i><b>3.3.2</b> Strip Plot</a></li>
+<li class="chapter" data-level="3.3.3" data-path="visualization.html"><a href="visualization.html#swarm-plot"><i class="fa fa-check"></i><b>3.3.3</b> Swarm Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="visualization.html"><a href="visualization.html#advanced-plots"><i class="fa fa-check"></i><b>3.4</b> Advanced Plots</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="visualization.html"><a href="visualization.html#scatter-plot"><i class="fa fa-check"></i><b>3.4.1</b> Scatter Plot</a></li>
+<li class="chapter" data-level="3.4.2" data-path="visualization.html"><a href="visualization.html#heatmap"><i class="fa fa-check"></i><b>3.4.2</b> Heatmap</a></li>
+<li class="chapter" data-level="3.4.3" data-path="visualization.html"><a href="visualization.html#density-plot-and-cumulative-frequency"><i class="fa fa-check"></i><b>3.4.3</b> Density Plot and Cumulative Frequency</a></li>
+<li class="chapter" data-level="3.4.4" data-path="visualization.html"><a href="visualization.html#error-bars"><i class="fa fa-check"></i><b>3.4.4</b> Error Bars</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html#practice-exercises-2"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Analysis Using Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction to Python Programming<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="objectives">
+<p><strong>Learning Objectives</strong></p>
+<p>After studying this chapter, a student will be able to:</p>
+<ul>
+<li>describe the interactive Python environment and the structure of a Jupyter/Colab notebook;</li>
+<li>write and execute basic Python statements, comments, and correctly indented code;</li>
+<li>declare variables and explain dynamic typing, along with the rules for naming variables;</li>
+<li>use arithmetic operators and evaluate expressions;</li>
+<li>read input from the user and convert it between data types;</li>
+<li>work with strings and format output;</li>
+<li>interpret common error messages and handle exceptions;</li>
+<li>import and use modules; and</li>
+<li>write control-flow statements, loops, and user-defined functions.</li>
+</ul>
+</div>
+<div id="the-interactive-python-environment" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> The Interactive Python Environment<a href="intro.html#the-interactive-python-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Python</strong> is a high-level, general-purpose programming language. It is widely used because it is free, open-source, and runs on multiple platforms such as Windows, Mac, and Linux.</p>
+<p>Python is an <strong>interpreted language</strong>, which means that an interpreter reads the source code and executes it directly, one instruction at a time. Because of this, Python can be used interactively: a student can type an instruction, press a key, and immediately see the result.</p>
+<div id="the-interactive-shell" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> The Interactive Shell<a href="intro.html#the-interactive-shell" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The simplest way to interact with Python is through the <strong>interactive shell</strong>. When the shell is opened, it displays the prompt <code>&gt;&gt;&gt;</code>, which is the interpreter’s way of asking, “What do you want me to do next?” A student can type an expression such as <code>3 + 4</code>, and Python will immediately evaluate it and display the result <code>7</code> on the next line before showing a new prompt.</p>
+</div>
+<div id="jupyter-notebooks-and-google-colab" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Jupyter Notebooks and Google Colab<a href="intro.html#jupyter-notebooks-and-google-colab" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>While the basic shell is useful, data analysis is usually carried out in a <strong>Jupyter Notebook</strong>. A Jupyter Notebook is an interactive, browser-based environment that allows a user to combine executable Python code, formatted text, mathematical equations, and visualizations, all within a single document.</p>
+<p>A notebook is made up of <strong>cells</strong>. A programmer types code into a cell and executes it by pressing <code>Shift + Enter</code>. The output of that particular block of code appears directly beneath the cell. This encourages an interactive <em>“execute–explore”</em> style of working, in which a small piece of code is written, run, and its result examined before moving on.</p>
+<p><strong>Google Colab</strong> is a free, cloud-hosted version of a Jupyter Notebook. Because it runs in the cloud, it requires no installation of Python or any package on the student’s computer; only a web browser and a Google account are needed. Throughout this book, every code example is intended to be typed into a Colab cell and run with <code>Shift + Enter</code>. Colab behaves exactly like a Jupyter Notebook, so the terms may be used interchangeably.</p>
+<p>The very first program a student usually writes simply displays a line of text on the screen:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="intro.html#cb1-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Hello World&#39;</span>)</span></code></pre></div>
+<pre><code>Hello World</code></pre>
+<p>The built-in <code>print()</code> function displays whatever is placed inside its parentheses.</p>
+</div>
+</div>
+<div id="basic-syntax-and-program-readability" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Basic Syntax and Program Readability<a href="intro.html#basic-syntax-and-program-readability" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A Python program is a sequence of <strong>statements</strong>. A statement is a unit of code that the interpreter can execute, such as assigning a value to a variable or printing a result. When a statement is typed in a cell and executed, the interpreter reads it, checks its syntax, translates it, and produces a result.</p>
+<div id="keywords" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Keywords<a href="intro.html#keywords" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Python has a small built-in vocabulary of <strong>reserved words</strong>, also called <strong>keywords</strong>. Words such as <code>if</code>, <code>def</code>, <code>for</code>, <code>print</code>, and <code>while</code> have specific meanings to Python and cannot be used as variable names.</p>
+</div>
+<div id="comments" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Comments<a href="intro.html#comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Comments</strong> are notes written for human readers to explain the code. They are completely ignored by the Python interpreter.</p>
+<ul>
+<li>A <strong>single-line comment</strong> begins with the hash symbol (<code>#</code>).</li>
+<li>A <strong>multi-line comment</strong>, often called a <strong>docstring</strong>, is enclosed within triple quotation marks (<code>"""..."""</code>).</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="intro.html#cb3-1" tabindex="-1"></a><span class="co"># This is a single-line comment</span></span>
+<span id="cb3-2"><a href="intro.html#cb3-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Welcome to Statistical Analysis&quot;</span>)   <span class="co"># this comment explains the line</span></span>
+<span id="cb3-3"><a href="intro.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="intro.html#cb3-4" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb3-5"><a href="intro.html#cb3-5" tabindex="-1"></a><span class="co">This is a multi-line comment.</span></span>
+<span id="cb3-6"><a href="intro.html#cb3-6" tabindex="-1"></a><span class="co">It can span several lines.</span></span>
+<span id="cb3-7"><a href="intro.html#cb3-7" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span></code></pre></div>
+</div>
+<div id="statement-termination" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Statement Termination<a href="intro.html#statement-termination" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In most cases, the end of a physical line marks the end of a statement, so lines do not need to be ended with a semicolon. If a statement is too long to fit on one line, the <strong>line-continuation character</strong>, a backslash (<code>\</code>), may be placed at the end of the line. Alternatively, any expression enclosed within parentheses <code>()</code>, brackets <code>[]</code>, or braces <code>{}</code> may naturally span several lines without a backslash.</p>
+</div>
+<div id="indentation" class="section level3 hasAnchor" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Indentation<a href="intro.html#indentation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Indentation</strong> is one of the most important features of Python. Unlike many languages that use braces <code>{}</code> to group blocks of code, Python rigidly uses line indentation — the blank space to the left of a line — to determine where a block of code begins and ends. Every statement within a single block must be indented by the same amount. Indentation is a strict requirement, not merely a matter of style; incorrect indentation produces an error.</p>
+</div>
+</div>
+<div id="variables-and-dynamic-typing" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Variables and Dynamic Typing<a href="intro.html#variables-and-dynamic-typing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>variable</strong> is a name that refers to a stored value in the computer’s memory. It is helpful to think of a variable as a <em>label</em> or a <em>pointer</em> attached to an object, rather than a box that holds data.</p>
+<div id="dynamic-typing" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Dynamic Typing<a href="intro.html#dynamic-typing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Python uses <strong>dynamic typing</strong>, which means a programmer does not need to declare in advance what type of data a variable will hold. The interpreter determines the type automatically when the program runs. Because of this, the same variable can hold an integer at one moment and a string at another:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="intro.html#cb4-1" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">100</span>      <span class="co"># x now refers to an integer</span></span>
+<span id="cb4-2"><a href="intro.html#cb4-2" tabindex="-1"></a>x <span class="op">=</span> <span class="st">&quot;Hello&quot;</span>  <span class="co"># the same x now refers to a string</span></span></code></pre></div>
+<p>No error occurs; the variable simply points to the new object.</p>
+</div>
+<div id="rules-for-naming-variables" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Rules for Naming Variables<a href="intro.html#rules-for-naming-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Python is strict about how variables are named:</p>
+<ul>
+<li>A name must start with a letter (<code>a</code>–<code>z</code>, <code>A</code>–<code>Z</code>) or an underscore (<code>_</code>).</li>
+<li>A name cannot start with a number. For example, <code>1plus</code> is invalid, but <code>plus1</code> is valid.</li>
+<li>A name cannot contain special characters such as <code>@</code>, <code>$</code>, <code>%</code>, or spaces.</li>
+<li>Names are <strong>case-sensitive</strong>, so <code>Age</code>, <code>age</code>, and <code>AGE</code> are three different variables.</li>
+<li>A <strong>reserved keyword</strong> (such as <code>if</code>, <code>def</code>, <code>for</code>, <code>print</code>, or <code>while</code>) cannot be used as a variable name.</li>
+</ul>
+</div>
+</div>
+<div id="arithmetic-operators-and-expressions" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Arithmetic Operators and Expressions<a href="intro.html#arithmetic-operators-and-expressions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Python can act as a powerful calculator. An <strong>expression</strong> is a combination of values, variables, and operators that the interpreter evaluates to produce a new value. The main arithmetic operators are listed below.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Meaning</th>
+<th>Example</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td>Addition</td>
+<td><code>4 + 3</code></td>
+<td><code>7</code></td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td>Subtraction</td>
+<td><code>4 - 3</code></td>
+<td><code>1</code></td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td>Multiplication</td>
+<td><code>4 * 3</code></td>
+<td><code>12</code></td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td>Floating-point division</td>
+<td><code>13 / 5</code></td>
+<td><code>2.6</code></td>
+</tr>
+<tr class="odd">
+<td><code>//</code></td>
+<td>Floor division</td>
+<td><code>13 // 5</code></td>
+<td><code>2</code></td>
+</tr>
+<tr class="even">
+<td><code>%</code></td>
+<td>Modulus (remainder)</td>
+<td><code>13 % 5</code></td>
+<td><code>3</code></td>
+</tr>
+<tr class="odd">
+<td><code>**</code></td>
+<td>Exponentiation (power)</td>
+<td><code>2 ** 3</code></td>
+<td><code>8</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Floating-point division</strong> (<code>/</code>) performs ordinary division and gives a decimal result.</li>
+<li><strong>Floor division</strong> (<code>//</code>) divides and drops the fractional remainder.</li>
+<li><strong>Modulus</strong> (<code>%</code>) returns only the remainder of a division.</li>
+<li><strong>Exponentiation</strong> (<code>**</code>) raises a number to a power.</li>
+</ul>
+<div class="worked">
+<p><strong>Worked Example 1.1 — The Python Calculator</strong></p>
+<p>A student has 47 apples and wants to divide them evenly among 5 friends. The following program finds how many whole apples each friend gets and how many are left over.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="intro.html#cb5-1" tabindex="-1"></a>apples <span class="op">=</span> <span class="dv">47</span></span>
+<span id="cb5-2"><a href="intro.html#cb5-2" tabindex="-1"></a>friends <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb5-3"><a href="intro.html#cb5-3" tabindex="-1"></a>apples_per_friend <span class="op">=</span> apples <span class="op">//</span> friends</span>
+<span id="cb5-4"><a href="intro.html#cb5-4" tabindex="-1"></a>apples_left_over <span class="op">=</span> apples <span class="op">%</span> friends</span>
+<span id="cb5-5"><a href="intro.html#cb5-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Each friend gets:&quot;</span>, apples_per_friend)</span>
+<span id="cb5-6"><a href="intro.html#cb5-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Apples left over:&quot;</span>, apples_left_over)</span></code></pre></div>
+<pre><code>Each friend gets: 9
+Apples left over: 2</code></pre>
+<p>Floor division (<code>//</code>) gives the number of whole apples per friend, and modulus (<code>%</code>) gives the remainder.</p>
+</div>
+</div>
+<div id="reading-user-input-and-type-conversion" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Reading User Input and Type Conversion<a href="intro.html#reading-user-input-and-type-conversion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="the-input-function" class="section level3 hasAnchor" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> The <code>input()</code> Function<a href="intro.html#the-input-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The built-in <code>input()</code> function pauses the program and prompts the user to type something from the keyboard:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="intro.html#cb7-1" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter your name: &quot;</span>)</span></code></pre></div>
+<p>An important point is that <code>input()</code> <strong>always returns the typed data as a string</strong> (text), even when the user types a number. If a user types <code>10</code>, Python stores it as the text <code>"10"</code>.</p>
+</div>
+<div id="type-conversion-casting" class="section level3 hasAnchor" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Type Conversion (Casting)<a href="intro.html#type-conversion-casting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To perform arithmetic on user input, the string must first be converted into a number. This is called <strong>type conversion</strong> or <strong>casting</strong>, and it uses built-in functions:</p>
+<ul>
+<li><code>int()</code> converts a value to a whole number;</li>
+<li><code>float()</code> converts a value to a number with a decimal point;</li>
+<li><code>str()</code> converts a number back into a string.</li>
+</ul>
+<div class="worked">
+<p><strong>Worked Example 1.2 — The Input Trap</strong></p>
+<p>This example shows why type conversion matters. The same input is used first without conversion and then with conversion.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="intro.html#cb8-1" tabindex="-1"></a><span class="co"># Without conversion: the string is repeated</span></span>
+<span id="cb8-2"><a href="intro.html#cb8-2" tabindex="-1"></a>user_val <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter a number: &quot;</span>)</span>
+<span id="cb8-3"><a href="intro.html#cb8-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Without conversion:&quot;</span>, user_val <span class="op">*</span> <span class="dv">5</span>)</span>
+<span id="cb8-4"><a href="intro.html#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="intro.html#cb8-5" tabindex="-1"></a><span class="co"># With conversion: real multiplication takes place</span></span>
+<span id="cb8-6"><a href="intro.html#cb8-6" tabindex="-1"></a>numeric_val <span class="op">=</span> <span class="bu">float</span>(user_val)</span>
+<span id="cb8-7"><a href="intro.html#cb8-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;With conversion:&quot;</span>, numeric_val <span class="op">*</span> <span class="dv">5</span>)</span></code></pre></div>
+<p>If the user enters <code>4</code>, the output is:</p>
+<pre><code>Without conversion: 44444
+With conversion: 20.0</code></pre>
+<p>Because <code>input()</code> returns text, <code>user_val * 5</code> repeats the text five times. Only after converting to a number does <code>* 5</code> perform multiplication.</p>
+</div>
+</div>
+</div>
+<div id="working-with-strings-and-formatting" class="section level2 hasAnchor" number="1.6">
+<h2><span class="header-section-number">1.6</span> Working with Strings and Formatting<a href="intro.html#working-with-strings-and-formatting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>string</strong> is a sequence of characters. Python allows strings to be written using single quotes (<code>'...'</code>), double quotes (<code>"..."</code>), or triple quotes (<code>'''...'''</code> or <code>"""..."""</code>).</p>
+<p>Different quote styles are useful in different situations. If the text itself contains an apostrophe, the string can be wrapped in double quotes to avoid confusion, for example <code>"I'm learning Python"</code>. Triple quotes are used for strings that span several lines and for docstrings.</p>
+<div id="string-operations" class="section level3 hasAnchor" number="1.6.1">
+<h3><span class="header-section-number">1.6.1</span> String Operations<a href="intro.html#string-operations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>Concatenation</strong> (<code>+</code>) joins two strings end to end: <code>"Hello" + "World"</code> gives <code>"HelloWorld"</code>.</li>
+<li><strong>Repetition</strong> (<code>*</code>) repeats a string a given number of times: <code>"Hi" * 3</code> gives <code>"HiHiHi"</code>.</li>
+</ul>
+</div>
+<div id="escape-sequences" class="section level3 hasAnchor" number="1.6.2">
+<h3><span class="header-section-number">1.6.2</span> Escape Sequences<a href="intro.html#escape-sequences" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An <strong>escape sequence</strong> uses the backslash (<code>\</code>) to insert a special character inside a string:</p>
+<ul>
+<li><code>\n</code> inserts a new line;</li>
+<li><code>\t</code> inserts a horizontal tab.</li>
+</ul>
+</div>
+<div id="formatting-output" class="section level3 hasAnchor" number="1.6.3">
+<h3><span class="header-section-number">1.6.3</span> Formatting Output<a href="intro.html#formatting-output" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>.format()</code> method inserts variables neatly into a string. Placeholders <code>{0}</code>, <code>{1}</code>, and so on are replaced, in order, by the values given to <code>.format()</code>:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="intro.html#cb10-1" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Anu&quot;</span></span>
+<span id="cb10-2"><a href="intro.html#cb10-2" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb10-3"><a href="intro.html#cb10-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Hello </span><span class="sc">{0}</span><span class="st">, you are </span><span class="sc">{1}</span><span class="st"> years old&quot;</span>.<span class="bu">format</span>(name, age))</span></code></pre></div>
+<pre><code>Hello Anu, you are 20 years old</code></pre>
+<p>A second, more modern way to do the same thing is the <strong>f-string</strong> (formatted string literal). An f-string is written by placing the letter <code>f</code> immediately before the opening quote. Any variable placed inside curly braces <code>{}</code> within the string is then replaced by its value. This is often the most convenient way to combine text and variables, and it is the style used in most of the examples that follow.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="intro.html#cb12-1" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Anu&quot;</span></span>
+<span id="cb12-2"><a href="intro.html#cb12-2" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb12-3"><a href="intro.html#cb12-3" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Hello </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">, you are </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> years old&quot;</span>)</span></code></pre></div>
+<pre><code>Hello Anu, you are 20 years old</code></pre>
+<p>An arithmetic expression may also be placed directly inside the braces of an f-string:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="intro.html#cb14-1" tabindex="-1"></a>weight <span class="op">=</span> <span class="dv">72</span></span>
+<span id="cb14-2"><a href="intro.html#cb14-2" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Pay an additional charge for </span><span class="sc">{</span>weight <span class="op">-</span> <span class="dv">25</span><span class="sc">}</span><span class="ss"> kg&quot;</span>)</span></code></pre></div>
+<pre><code>Pay an additional charge for 47 kg</code></pre>
+<div class="worked">
+<p><strong>Worked Example 1.3 — Formatting a Bill</strong></p>
+<p>This program asks for an item, its price, and the quantity, then prints a neat receipt.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="intro.html#cb16-1" tabindex="-1"></a>item <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Enter item name: &quot;</span>)</span>
+<span id="cb16-2"><a href="intro.html#cb16-2" tabindex="-1"></a>price <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Enter price per unit: &quot;</span>))</span>
+<span id="cb16-3"><a href="intro.html#cb16-3" tabindex="-1"></a>qty <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Enter quantity: &quot;</span>))</span>
+<span id="cb16-4"><a href="intro.html#cb16-4" tabindex="-1"></a>total <span class="op">=</span> price <span class="op">*</span> qty</span>
+<span id="cb16-5"><a href="intro.html#cb16-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;You bought </span><span class="sc">{0}</span><span class="st"> units of </span><span class="sc">{1}</span><span class="st"> at $</span><span class="sc">{2}</span><span class="st"> each. Total: $</span><span class="sc">{3}</span><span class="st">&quot;</span>.<span class="bu">format</span>(qty, item, price, total))</span></code></pre></div>
+<p>If the user enters <code>Apple</code>, <code>2.5</code>, and <code>3</code>, the output is:</p>
+<pre><code>You bought 3 units of Apple at $2.5 each. Total: $7.5</code></pre>
+<p>Note the use of <code>float()</code> for the price and <code>int()</code> for the quantity, so that the multiplication is numerical.</p>
+</div>
+</div>
+</div>
+<div id="control-flow-decision-making" class="section level2 hasAnchor" number="1.7">
+<h2><span class="header-section-number">1.7</span> Control Flow: Decision Making<a href="intro.html#control-flow-decision-making" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>By default, a program executes its statements one after another, from top to bottom. <strong>Control-flow statements</strong> allow a program to make decisions and execute particular blocks of code only when a condition is met.</p>
+<p>An important rule applies to all of these statements: the condition line ends with a colon (<code>:</code>), and the block of code that belongs to it must be <strong>indented</strong>.</p>
+<div id="the-if-statement" class="section level3 hasAnchor" number="1.7.1">
+<h3><span class="header-section-number">1.7.1</span> The <code>if</code> Statement<a href="intro.html#the-if-statement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>if</code> statement evaluates a condition. If the condition is <code>True</code>, the indented block below it is executed; if it is <code>False</code>, the block is skipped.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="intro.html#cb18-1" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">85</span></span>
+<span id="cb18-2"><a href="intro.html#cb18-2" tabindex="-1"></a><span class="cf">if</span> score <span class="op">&gt;</span> <span class="dv">50</span>:</span>
+<span id="cb18-3"><a href="intro.html#cb18-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;You have passed the exam!&quot;</span>)</span></code></pre></div>
+<pre><code>You have passed the exam!</code></pre>
+<p>Here Python checks whether 85 is greater than 50. Since this is true, the indented <code>print</code> statement runs.</p>
+</div>
+<div id="the-if...else-statement" class="section level3 hasAnchor" number="1.7.2">
+<h3><span class="header-section-number">1.7.2</span> The <code>if...else</code> Statement<a href="intro.html#the-if...else-statement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>if...else</code> statement provides a two-way decision. If the condition is <code>True</code>, the <code>if</code> block runs; otherwise, the <code>else</code> block runs. The <code>else</code> keyword takes no condition of its own, but it still ends with a colon and is aligned with the <code>if</code>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="intro.html#cb20-1" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">16</span></span>
+<span id="cb20-2"><a href="intro.html#cb20-2" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
+<span id="cb20-3"><a href="intro.html#cb20-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;You are eligible to vote.&quot;</span>)</span>
+<span id="cb20-4"><a href="intro.html#cb20-4" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb20-5"><a href="intro.html#cb20-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;You are too young to vote.&quot;</span>)</span></code></pre></div>
+<pre><code>You are too young to vote.</code></pre>
+</div>
+<div id="the-if...elif...else-statement" class="section level3 hasAnchor" number="1.7.3">
+<h3><span class="header-section-number">1.7.3</span> The <code>if...elif...else</code> Statement<a href="intro.html#the-if...elif...else-statement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When there are several possibilities, the <code>elif</code> keyword (short for “else if”) is used. Python checks the conditions from top to bottom. The <strong>first</strong> condition that is <code>True</code> is executed, and all the rest are skipped. The final <code>else</code> acts as a default when none of the conditions are true.</p>
+<p>Note that a <strong>double equals</strong> (<code>==</code>) is used to test whether two things are equal, whereas a <strong>single equals</strong> (<code>=</code>) only assigns a value to a variable.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="intro.html#cb22-1" tabindex="-1"></a>color <span class="op">=</span> <span class="st">&quot;Yellow&quot;</span></span>
+<span id="cb22-2"><a href="intro.html#cb22-2" tabindex="-1"></a><span class="cf">if</span> color <span class="op">==</span> <span class="st">&quot;Red&quot;</span>:</span>
+<span id="cb22-3"><a href="intro.html#cb22-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Stop&quot;</span>)</span>
+<span id="cb22-4"><a href="intro.html#cb22-4" tabindex="-1"></a><span class="cf">elif</span> color <span class="op">==</span> <span class="st">&quot;Yellow&quot;</span>:</span>
+<span id="cb22-5"><a href="intro.html#cb22-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Get Ready&quot;</span>)</span>
+<span id="cb22-6"><a href="intro.html#cb22-6" tabindex="-1"></a><span class="cf">elif</span> color <span class="op">==</span> <span class="st">&quot;Green&quot;</span>:</span>
+<span id="cb22-7"><a href="intro.html#cb22-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Go&quot;</span>)</span>
+<span id="cb22-8"><a href="intro.html#cb22-8" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb22-9"><a href="intro.html#cb22-9" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Invalid signal color&quot;</span>)</span></code></pre></div>
+<pre><code>Get Ready</code></pre>
+<p>Python skips <code>"Red"</code> because it does not match, finds a match at <code>"Yellow"</code>, prints <code>Get Ready</code>, and ignores the remaining branches.</p>
+<p>A useful feature of Python is that two comparisons can be <strong>chained</strong> together to test whether a value lies within a range. For example, <code>0 &lt; W &lt; 50</code> is read exactly as in mathematics: it is <code>True</code> only when <code>W</code> is greater than 0 <em>and</em> less than 50.</p>
+<div class="worked">
+<p><strong>Worked Example 1.4 — Luggage Weight Charges</strong></p>
+<p>An airline allows luggage up to 50 kg. Between 50 kg and 100 kg an additional charge applies, and above 100 kg a double penalty applies. This program reads the weight and decides the charge using a chained comparison.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="intro.html#cb24-1" tabindex="-1"></a>W <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Input your luggage weight in kg: &quot;</span>))</span>
+<span id="cb24-2"><a href="intro.html#cb24-2" tabindex="-1"></a><span class="cf">if</span> <span class="dv">0</span> <span class="op">&lt;</span> W <span class="op">&lt;</span> <span class="dv">50</span>:</span>
+<span id="cb24-3"><a href="intro.html#cb24-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Weight is within the allowed limit&quot;</span>)</span>
+<span id="cb24-4"><a href="intro.html#cb24-4" tabindex="-1"></a><span class="cf">elif</span> <span class="dv">50</span> <span class="op">&lt;</span> W <span class="op">&lt;</span> <span class="dv">100</span>:</span>
+<span id="cb24-5"><a href="intro.html#cb24-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;There is an additional charge for </span><span class="sc">{</span>W <span class="op">-</span> <span class="dv">50</span><span class="sc">}</span><span class="ss"> kg&quot;</span>)</span>
+<span id="cb24-6"><a href="intro.html#cb24-6" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb24-7"><a href="intro.html#cb24-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;There is a double penalty for </span><span class="sc">{</span>W <span class="op">-</span> <span class="dv">100</span><span class="sc">}</span><span class="ss"> kg and normal additional charge for 50 kg&quot;</span>)</span></code></pre></div>
+<p>If the user enters <code>72</code>, the output is:</p>
+<pre><code>There is an additional charge for 22 kg</code></pre>
+<p>Python checks the conditions in order. The first (<code>0 &lt; 72 &lt; 50</code>) is false, the second (<code>50 &lt; 72 &lt; 100</code>) is true, so its block runs and the rest are skipped.</p>
+</div>
+</div>
+</div>
+<div id="control-flow-loops" class="section level2 hasAnchor" number="1.8">
+<h2><span class="header-section-number">1.8</span> Control Flow: Loops<a href="intro.html#control-flow-loops" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>loop</strong> allows a block of statements to be executed many times until a terminating condition is met. This avoids writing the same code repeatedly.</p>
+<div id="the-while-loop" class="section level3 hasAnchor" number="1.8.1">
+<h3><span class="header-section-number">1.8.1</span> The <code>while</code> Loop<a href="intro.html#the-while-loop" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <code>while</code> loop repeatedly executes its block of code as long as its condition remains <code>True</code>. It tests the condition <em>before</em> executing the body each time.</p>
+<p>It is essential that something inside the loop eventually makes the condition <code>False</code>; otherwise, the loop runs forever, creating an <strong>infinite loop</strong>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="intro.html#cb26-1" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb26-2"><a href="intro.html#cb26-2" tabindex="-1"></a><span class="cf">while</span> count <span class="op">&lt;=</span> <span class="dv">3</span>:</span>
+<span id="cb26-3"><a href="intro.html#cb26-3" tabindex="-1"></a>    <span class="bu">print</span>(count)</span>
+<span id="cb26-4"><a href="intro.html#cb26-4" tabindex="-1"></a>    count <span class="op">=</span> count <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb26-5"><a href="intro.html#cb26-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Loop is finished!&quot;</span>)</span></code></pre></div>
+<pre><code>1
+2
+3
+Loop is finished!</code></pre>
+<p>The variable <code>count</code> starts at 1 and increases by 1 each time. When it reaches 4, the condition <code>4 &lt;= 3</code> becomes false and the loop stops.</p>
+</div>
+<div id="the-for-loop-and-the-range-function" class="section level3 hasAnchor" number="1.8.2">
+<h3><span class="header-section-number">1.8.2</span> The <code>for</code> Loop and the <code>range()</code> Function<a href="intro.html#the-for-loop-and-the-range-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <code>for</code> loop iterates over a sequence, taking each item in turn. It is commonly used together with the built-in <code>range()</code> function, which generates a sequence of numbers.</p>
+<p>The rule for <code>range(start, stop)</code> is that it begins at <code>start</code> and stops <strong>one number before</strong> <code>stop</code>. If only a single value is given, as in <code>range(4)</code>, the sequence starts at 0.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="intro.html#cb28-1" tabindex="-1"></a><span class="co"># Generates the numbers 2, 3, and 4</span></span>
+<span id="cb28-2"><a href="intro.html#cb28-2" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">5</span>):</span>
+<span id="cb28-3"><a href="intro.html#cb28-3" tabindex="-1"></a>    <span class="bu">print</span>(i)</span>
+<span id="cb28-4"><a href="intro.html#cb28-4" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="intro.html#cb28-5" tabindex="-1"></a><span class="co"># Iterating through the characters of a string</span></span>
+<span id="cb28-6"><a href="intro.html#cb28-6" tabindex="-1"></a><span class="cf">for</span> character <span class="kw">in</span> <span class="st">&quot;Blue&quot;</span>:</span>
+<span id="cb28-7"><a href="intro.html#cb28-7" tabindex="-1"></a>    <span class="bu">print</span>(character)</span></code></pre></div>
+<pre><code>2
+3
+4
+B
+l
+u
+e</code></pre>
+<div class="worked">
+<p><strong>Worked Example 1.7 — A Multiplication Table</strong></p>
+<p>A <code>for</code> loop with <code>range()</code> is a natural way to print a multiplication table. This program prints the five-times table from 1 to 10.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="intro.html#cb30-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</span>
+<span id="cb30-2"><a href="intro.html#cb30-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;5 * </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span><span class="dv">5</span> <span class="op">*</span> i<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<pre><code>5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50</code></pre>
+<p>Here <code>range(1, 11)</code> produces the numbers 1 to 10. On each pass the current number is stored in <code>i</code>, multiplied by 5, and displayed using an f-string.</p>
+</div>
+</div>
+<div id="loop-control-break-continue-and-pass" class="section level3 hasAnchor" number="1.8.3">
+<h3><span class="header-section-number">1.8.3</span> Loop Control: <code>break</code>, <code>continue</code>, and <code>pass</code><a href="intro.html#loop-control-break-continue-and-pass" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Three statements give finer control over loops:</p>
+<ul>
+<li><strong><code>break</code></strong> terminates the loop entirely and transfers execution to the statement immediately after the loop.</li>
+<li><strong><code>continue</code></strong> skips the rest of the current iteration and returns to the top of the loop to test the condition again.</li>
+<li><strong><code>pass</code></strong> is a “no-operation” placeholder that does nothing. It is used where a statement is required syntactically but no action is yet needed.</li>
+</ul>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="intro.html#cb32-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">6</span>):</span>
+<span id="cb32-2"><a href="intro.html#cb32-2" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb32-3"><a href="intro.html#cb32-3" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb32-4"><a href="intro.html#cb32-4" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code></pre></div>
+<pre><code>1
+2</code></pre>
+<p>The loop prints 1 and 2; when <code>i</code> becomes 3, the <code>break</code> statement stops the loop immediately, so 3, 4, and 5 are never printed.</p>
+</div>
+</div>
+<div id="interpreting-error-messages" class="section level2 hasAnchor" number="1.9">
+<h2><span class="header-section-number">1.9</span> Interpreting Error Messages<a href="intro.html#interpreting-error-messages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Every programmer makes mistakes, and Python provides clear mechanisms to catch them. Errors fall into two main categories: <strong>syntax errors</strong> and <strong>exceptions</strong> (runtime errors).</p>
+<div id="syntax-errors" class="section level3 hasAnchor" number="1.9.1">
+<h3><span class="header-section-number">1.9.1</span> Syntax Errors<a href="intro.html#syntax-errors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>syntax error</strong>, also called a parsing error, occurs when the grammatical rules of Python are broken. The code will not run at all, and Python points an arrow to where it detected the problem. Common causes are a missing colon at the end of an <code>if</code>, <code>for</code>, or <code>while</code> line, a missing closing parenthesis, or incorrect indentation.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="intro.html#cb34-1" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span></span>
+<span id="cb34-2"><a href="intro.html#cb34-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello World&quot;</span>)</span></code></pre></div>
+<pre><code>SyntaxError: invalid syntax</code></pre>
+<p>The colon after <code>while True</code> is missing.</p>
+</div>
+<div id="exceptions-runtime-errors" class="section level3 hasAnchor" number="1.9.2">
+<h3><span class="header-section-number">1.9.2</span> Exceptions (Runtime Errors)<a href="intro.html#exceptions-runtime-errors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An <strong>exception</strong> occurs when the syntax is correct but an error arises while the program is running. Python produces a <strong>traceback</strong>, a report showing the line that caused the problem. Some common exceptions are:</p>
+<ul>
+<li><strong><code>TypeError</code></strong> — an operation is applied to an inappropriate type, such as adding a number to a string;</li>
+<li><strong><code>ZeroDivisionError</code></strong> — an attempt is made to divide by zero;</li>
+<li><strong><code>NameError</code></strong> — a variable is used before it has been given a value.</li>
+</ul>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="intro.html#cb36-1" tabindex="-1"></a>result <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">/</span> <span class="dv">0</span>)</span></code></pre></div>
+<pre><code>ZeroDivisionError: division by zero</code></pre>
+</div>
+<div id="handling-exceptions-with-try...except" class="section level3 hasAnchor" number="1.9.3">
+<h3><span class="header-section-number">1.9.3</span> Handling Exceptions with <code>try...except</code><a href="intro.html#handling-exceptions-with-try...except" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Rather than allowing a program to crash, an anticipated exception can be handled using a <code>try...except</code> block. Python attempts to run the code in the <code>try</code> block; if the specified error occurs, control passes to the <code>except</code> block instead of stopping the program.</p>
+<div class="worked">
+<p><strong>Worked Example 1.5 — Handling Bad User Input</strong></p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="intro.html#cb38-1" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb38-2"><a href="intro.html#cb38-2" tabindex="-1"></a>    number <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Please enter a number: &quot;</span>))</span>
+<span id="cb38-3"><a href="intro.html#cb38-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;You entered&quot;</span>, number)</span>
+<span id="cb38-4"><a href="intro.html#cb38-4" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb38-5"><a href="intro.html#cb38-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Oops! That was not a valid number. Try again.&quot;</span>)</span></code></pre></div>
+<p>If the user types <code>ten</code> instead of a digit, <code>int()</code> cannot convert it, so a <code>ValueError</code> occurs and the program prints the friendly message instead of crashing.</p>
+</div>
+</div>
+</div>
+<div id="importing-modules" class="section level2 hasAnchor" number="1.10">
+<h2><span class="header-section-number">1.10</span> Importing Modules<a href="intro.html#importing-modules" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Modules</strong> are files of pre-written, reusable Python code, such as mathematical formulas or specialised tools. Python includes a large standard library of modules. To use one, it must be loaded with an <strong><code>import</code></strong> statement.</p>
+<div id="the-import-statement" class="section level3 hasAnchor" number="1.10.1">
+<h3><span class="header-section-number">1.10.1</span> The <code>import</code> Statement<a href="intro.html#the-import-statement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The statement <code>import module_name</code> loads the entire module. To use a tool from it, the module name is written, followed by a dot (<code>.</code>), followed by the tool’s name.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="intro.html#cb39-1" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb39-2"><a href="intro.html#cb39-2" tabindex="-1"></a>root <span class="op">=</span> math.sqrt(<span class="dv">144</span>)   <span class="co"># square-root function</span></span>
+<span id="cb39-3"><a href="intro.html#cb39-3" tabindex="-1"></a>pi_value <span class="op">=</span> math.pi      <span class="co"># the constant pi</span></span>
+<span id="cb39-4"><a href="intro.html#cb39-4" tabindex="-1"></a><span class="bu">print</span>(root, pi_value)</span></code></pre></div>
+<pre><code>12.0 3.141592653589793</code></pre>
+</div>
+<div id="the-from-...-import-statement" class="section level3 hasAnchor" number="1.10.2">
+<h3><span class="header-section-number">1.10.2</span> The <code>from ... import</code> Statement<a href="intro.html#the-from-...-import-statement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If only a few tools from a module are needed, they may be imported directly with <code>from module import tool</code>. The module name then need not be written each time.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="intro.html#cb41-1" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> pi, sqrt</span>
+<span id="cb41-2"><a href="intro.html#cb41-2" tabindex="-1"></a><span class="bu">print</span>(pi)</span>
+<span id="cb41-3"><a href="intro.html#cb41-3" tabindex="-1"></a><span class="bu">print</span>(sqrt(<span class="dv">2</span>))</span></code></pre></div>
+<pre><code>3.141592653589793
+1.4142135623730951</code></pre>
+<p>Writing <code>from math import *</code> copies every function from the module into the program, although importing only what is needed is generally clearer.</p>
+</div>
+</div>
+<div id="function-fundamentals" class="section level2 hasAnchor" number="1.11">
+<h2><span class="header-section-number">1.11</span> Function Fundamentals<a href="intro.html#function-fundamentals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>function</strong> is a named block of code that performs a specific task. Functions allow code to be written once and reused (“called”) as often as needed.</p>
+<div id="built-in-functions" class="section level3 hasAnchor" number="1.11.1">
+<h3><span class="header-section-number">1.11.1</span> Built-in Functions<a href="intro.html#built-in-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Some functions are <strong>built-in</strong> and always available without importing anything. Examples include <code>print()</code>, <code>input()</code>, <code>len()</code>, <code>abs()</code>, <code>max()</code>, and <code>min()</code>.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="intro.html#cb43-1" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">len</span>(<span class="st">&quot;Statistical&quot;</span>))   <span class="co"># number of characters</span></span>
+<span id="cb43-2"><a href="intro.html#cb43-2" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">abs</span>(<span class="op">-</span><span class="dv">45</span>))             <span class="co"># absolute value</span></span>
+<span id="cb43-3"><a href="intro.html#cb43-3" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(<span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">9</span>))      <span class="co"># largest value</span></span>
+<span id="cb43-4"><a href="intro.html#cb43-4" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">min</span>(<span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">9</span>))      <span class="co"># smallest value</span></span></code></pre></div>
+<pre><code>11
+45
+9
+1</code></pre>
+</div>
+<div id="defining-user-defined-functions" class="section level3 hasAnchor" number="1.11.2">
+<h3><span class="header-section-number">1.11.2</span> Defining User-Defined Functions<a href="intro.html#defining-user-defined-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A programmer can also create <strong>user-defined functions</strong> using the <code>def</code> keyword, followed by a name, parentheses, and a mandatory colon. The body of the function must be indented. A function does nothing until it is explicitly called by its name.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="intro.html#cb45-1" tabindex="-1"></a><span class="kw">def</span> print_welcome():</span>
+<span id="cb45-2"><a href="intro.html#cb45-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Welcome to Statistical Analysis!&quot;</span>)</span>
+<span id="cb45-3"><a href="intro.html#cb45-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Let&#39;s learn Python.&quot;</span>)</span>
+<span id="cb45-4"><a href="intro.html#cb45-4" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="intro.html#cb45-5" tabindex="-1"></a>print_welcome()</span></code></pre></div>
+<pre><code>Welcome to Statistical Analysis!
+Let&#39;s learn Python.</code></pre>
+<p>A function such as this one, which performs an action but computes no value to return, is sometimes called a <strong>void function</strong>.</p>
+</div>
+<div id="parameters-and-arguments" class="section level3 hasAnchor" number="1.11.3">
+<h3><span class="header-section-number">1.11.3</span> Parameters and Arguments<a href="intro.html#parameters-and-arguments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Functions usually need data to work with.</p>
+<ul>
+<li><strong>Formal parameters</strong> are the placeholder names listed inside the parentheses in the function definition.</li>
+<li><strong>Actual arguments</strong> are the real values passed to the function when it is called.</li>
+</ul>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="intro.html#cb47-1" tabindex="-1"></a><span class="kw">def</span> calculate_area(length, width):   <span class="co"># length and width are parameters</span></span>
+<span id="cb47-2"><a href="intro.html#cb47-2" tabindex="-1"></a>    area <span class="op">=</span> length <span class="op">*</span> width</span>
+<span id="cb47-3"><a href="intro.html#cb47-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;The area is&quot;</span>, area)</span>
+<span id="cb47-4"><a href="intro.html#cb47-4" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="intro.html#cb47-5" tabindex="-1"></a>calculate_area(<span class="dv">10</span>, <span class="dv">5</span>)                <span class="co"># 10 and 5 are arguments</span></span></code></pre></div>
+<pre><code>The area is 50</code></pre>
+</div>
+<div id="return-values" class="section level3 hasAnchor" number="1.11.4">
+<h3><span class="header-section-number">1.11.4</span> Return Values<a href="intro.html#return-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If a function should compute a value and send it back to the caller, the <strong><code>return</code></strong> statement is used. As soon as <code>return</code> runs, the function stops and hands back the value. If a function has no <code>return</code> statement, it automatically returns a special empty value called <strong><code>None</code></strong>.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="intro.html#cb49-1" tabindex="-1"></a><span class="kw">def</span> square_number(x):</span>
+<span id="cb49-2"><a href="intro.html#cb49-2" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> x</span>
+<span id="cb49-3"><a href="intro.html#cb49-3" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="intro.html#cb49-4" tabindex="-1"></a>result <span class="op">=</span> square_number(<span class="dv">6</span>)   <span class="co"># 36 is returned and stored in result</span></span>
+<span id="cb49-5"><a href="intro.html#cb49-5" tabindex="-1"></a><span class="bu">print</span>(result)</span></code></pre></div>
+<pre><code>36</code></pre>
+<p>Python also allows a function to return <strong>multiple values</strong> at once, separated by commas:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="intro.html#cb51-1" tabindex="-1"></a><span class="kw">def</span> get_user_info():</span>
+<span id="cb51-2"><a href="intro.html#cb51-2" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">&quot;Bob&quot;</span></span>
+<span id="cb51-3"><a href="intro.html#cb51-3" tabindex="-1"></a>    age <span class="op">=</span> <span class="dv">21</span></span>
+<span id="cb51-4"><a href="intro.html#cb51-4" tabindex="-1"></a>    <span class="cf">return</span> name, age</span>
+<span id="cb51-5"><a href="intro.html#cb51-5" tabindex="-1"></a></span>
+<span id="cb51-6"><a href="intro.html#cb51-6" tabindex="-1"></a>student_name, student_age <span class="op">=</span> get_user_info()</span>
+<span id="cb51-7"><a href="intro.html#cb51-7" tabindex="-1"></a><span class="bu">print</span>(student_name, student_age)</span></code></pre></div>
+<pre><code>Bob 21</code></pre>
+<div class="worked">
+<p><strong>Worked Example 1.6 — A Body Mass Index Function</strong></p>
+<p>This example brings together user-defined functions, parameters, <code>return</code>, user input, and an f-string. The function computes the Body Mass Index (BMI) from a weight in kilograms and a height in centimetres, using the formula
+<span class="math display">\[\text{BMI} = \frac{\text{weight}}{(\text{height}/100)^2}.\]</span></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="intro.html#cb53-1" tabindex="-1"></a><span class="kw">def</span> bmi(weight, height):</span>
+<span id="cb53-2"><a href="intro.html#cb53-2" tabindex="-1"></a>    bmiv <span class="op">=</span> weight <span class="op">/</span> ((height <span class="op">/</span> <span class="dv">100</span>) <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb53-3"><a href="intro.html#cb53-3" tabindex="-1"></a>    <span class="cf">return</span> bmiv</span>
+<span id="cb53-4"><a href="intro.html#cb53-4" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="intro.html#cb53-5" tabindex="-1"></a>h <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Please enter your height in cm: &quot;</span>))</span>
+<span id="cb53-6"><a href="intro.html#cb53-6" tabindex="-1"></a>w <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">&quot;Please enter your weight in kg: &quot;</span>))</span>
+<span id="cb53-7"><a href="intro.html#cb53-7" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Your BMI is </span><span class="sc">{</span>bmi(w, h)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<p>The function takes <code>weight</code> and <code>height</code> as parameters, computes the value, and returns it. The returned value is then displayed. Note how the height is converted from centimetres to metres inside the formula by dividing by 100.</p>
+</div>
+</div>
+<div id="default-parameters-and-keyword-arguments" class="section level3 hasAnchor" number="1.11.5">
+<h3><span class="header-section-number">1.11.5</span> Default Parameters and Keyword Arguments<a href="intro.html#default-parameters-and-keyword-arguments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Function arguments can be made flexible in two ways.</p>
+<ul>
+<li>A <strong>default parameter</strong> is given a value in the function header. If the caller does not supply that argument, the default is used.</li>
+<li>A <strong>keyword (named) argument</strong> is passed by writing <code>name=value</code> in the call, so the left-to-right order of the arguments does not matter.</li>
+</ul>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="intro.html#cb54-1" tabindex="-1"></a><span class="kw">def</span> print_employee(name, department<span class="op">=</span><span class="st">&quot;Statistics&quot;</span>):   <span class="co"># default value</span></span>
+<span id="cb54-2"><a href="intro.html#cb54-2" tabindex="-1"></a>    <span class="bu">print</span>(name, <span class="st">&quot;works in&quot;</span>, department)</span>
+<span id="cb54-3"><a href="intro.html#cb54-3" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="intro.html#cb54-4" tabindex="-1"></a>print_employee(<span class="st">&quot;Sarah&quot;</span>, <span class="st">&quot;Biology&quot;</span>)   <span class="co"># overrides the default</span></span>
+<span id="cb54-5"><a href="intro.html#cb54-5" tabindex="-1"></a>print_employee(<span class="st">&quot;John&quot;</span>)               <span class="co"># uses the default</span></span></code></pre></div>
+<pre><code>Sarah works in Biology
+John works in Statistics</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="intro.html#cb56-1" tabindex="-1"></a><span class="kw">def</span> calculate_interest(principal, rate, time):</span>
+<span id="cb56-2"><a href="intro.html#cb56-2" tabindex="-1"></a>    <span class="cf">return</span> (principal <span class="op">*</span> rate <span class="op">*</span> time) <span class="op">/</span> <span class="dv">100</span></span>
+<span id="cb56-3"><a href="intro.html#cb56-3" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="intro.html#cb56-4" tabindex="-1"></a><span class="co"># Because the arguments are named, their order does not matter</span></span>
+<span id="cb56-5"><a href="intro.html#cb56-5" tabindex="-1"></a>interest <span class="op">=</span> calculate_interest(time<span class="op">=</span><span class="dv">2</span>, principal<span class="op">=</span><span class="dv">5000</span>, rate<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb56-6"><a href="intro.html#cb56-6" tabindex="-1"></a><span class="bu">print</span>(interest)</span></code></pre></div>
+<pre><code>500.0</code></pre>
+</div>
+</div>
+<div id="practice-exercises" class="section level2 unnumbered hasAnchor">
+<h2>Practice Exercises<a href="intro.html#practice-exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="practice">
+<p>The following exercises can be typed and run in Google Colab.</p>
+<p><strong>Exercise 1.1 — Odd or Even.</strong> Write a program that asks the user to enter a whole number and prints whether it is odd or even. <em>(Hint: use the modulus operator <code>%</code>; if <code>val % 2 == 0</code>, the number is even.)</em></p>
+<p><strong>Exercise 1.2 — Age Categorisation.</strong> Ask the user to enter an age and print whether the person is a Child (below 13), a Teenager (13–17), an Adult (18–59), or a Senior (60 or above).</p>
+<p><strong>Exercise 1.3 — Multiplication Table.</strong> Ask the user for a number, then use a <code>for</code> loop and <code>range()</code> to print the first five multiples of that number.</p>
+<p><strong>Exercise 1.4 — Building a Calculator.</strong> Define a function <code>multiply_three</code> that takes three parameters and returns their product. Call it with the arguments 2, 4, and 5, and print the result.</p>
+<p><strong>Exercise 1.5 — The Default Value.</strong> Define a function <code>book_flight(destination, seat_class="Economy")</code>. Call it once with only a destination, and a second time using keyword arguments to set the destination to <code>"Paris"</code> and the seat class to <code>"First Class"</code>.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pandas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["statistical-analysis-using-python.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

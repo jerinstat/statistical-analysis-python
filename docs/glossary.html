@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Glossary | Statistical Analysis Using Python</title>
+  <meta name="description" content="Glossary | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Glossary | Statistical Analysis Using Python" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Glossary | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Glossary | Statistical Analysis Using Python" />
+  
+  <meta name="twitter:description" content="Glossary | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="visualization.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistical Analysis Using Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-textbook-for-fyugp-programme-vth-sem-bsc-statistics-vimala-college-autonomous-thrissur"><i class="fa fa-check"></i><em>A Textbook for FYUGP Programme   Vth Sem BSc Statistics,   Vimala College (Autonomous), Thrissur</em></a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-information"><i class="fa fa-check"></i>Course Information</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#credit-structure"><i class="fa fa-check"></i>Credit Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#detailed-syllabus"><i class="fa fa-check"></i>Detailed Syllabus</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-dataset-used-in-this-book"><i class="fa fa-check"></i>The Dataset Used in This Book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python Programming</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-interactive-python-environment"><i class="fa fa-check"></i><b>1.1</b> The Interactive Python Environment</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#the-interactive-shell"><i class="fa fa-check"></i><b>1.1.1</b> The Interactive Shell</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#jupyter-notebooks-and-google-colab"><i class="fa fa-check"></i><b>1.1.2</b> Jupyter Notebooks and Google Colab</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-syntax-and-program-readability"><i class="fa fa-check"></i><b>1.2</b> Basic Syntax and Program Readability</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#keywords"><i class="fa fa-check"></i><b>1.2.1</b> Keywords</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#comments"><i class="fa fa-check"></i><b>1.2.2</b> Comments</a></li>
+<li class="chapter" data-level="1.2.3" data-path="intro.html"><a href="intro.html#statement-termination"><i class="fa fa-check"></i><b>1.2.3</b> Statement Termination</a></li>
+<li class="chapter" data-level="1.2.4" data-path="intro.html"><a href="intro.html#indentation"><i class="fa fa-check"></i><b>1.2.4</b> Indentation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#variables-and-dynamic-typing"><i class="fa fa-check"></i><b>1.3</b> Variables and Dynamic Typing</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#dynamic-typing"><i class="fa fa-check"></i><b>1.3.1</b> Dynamic Typing</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#rules-for-naming-variables"><i class="fa fa-check"></i><b>1.3.2</b> Rules for Naming Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#arithmetic-operators-and-expressions"><i class="fa fa-check"></i><b>1.4</b> Arithmetic Operators and Expressions</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#reading-user-input-and-type-conversion"><i class="fa fa-check"></i><b>1.5</b> Reading User Input and Type Conversion</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="intro.html"><a href="intro.html#the-input-function"><i class="fa fa-check"></i><b>1.5.1</b> The <code>input()</code> Function</a></li>
+<li class="chapter" data-level="1.5.2" data-path="intro.html"><a href="intro.html#type-conversion-casting"><i class="fa fa-check"></i><b>1.5.2</b> Type Conversion (Casting)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#working-with-strings-and-formatting"><i class="fa fa-check"></i><b>1.6</b> Working with Strings and Formatting</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#string-operations"><i class="fa fa-check"></i><b>1.6.1</b> String Operations</a></li>
+<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#escape-sequences"><i class="fa fa-check"></i><b>1.6.2</b> Escape Sequences</a></li>
+<li class="chapter" data-level="1.6.3" data-path="intro.html"><a href="intro.html#formatting-output"><i class="fa fa-check"></i><b>1.6.3</b> Formatting Output</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#control-flow-decision-making"><i class="fa fa-check"></i><b>1.7</b> Control Flow: Decision Making</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#the-if-statement"><i class="fa fa-check"></i><b>1.7.1</b> The <code>if</code> Statement</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#the-if...else-statement"><i class="fa fa-check"></i><b>1.7.2</b> The <code>if...else</code> Statement</a></li>
+<li class="chapter" data-level="1.7.3" data-path="intro.html"><a href="intro.html#the-if...elif...else-statement"><i class="fa fa-check"></i><b>1.7.3</b> The <code>if...elif...else</code> Statement</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#control-flow-loops"><i class="fa fa-check"></i><b>1.8</b> Control Flow: Loops</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#the-while-loop"><i class="fa fa-check"></i><b>1.8.1</b> The <code>while</code> Loop</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#the-for-loop-and-the-range-function"><i class="fa fa-check"></i><b>1.8.2</b> The <code>for</code> Loop and the <code>range()</code> Function</a></li>
+<li class="chapter" data-level="1.8.3" data-path="intro.html"><a href="intro.html#loop-control-break-continue-and-pass"><i class="fa fa-check"></i><b>1.8.3</b> Loop Control: <code>break</code>, <code>continue</code>, and <code>pass</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#interpreting-error-messages"><i class="fa fa-check"></i><b>1.9</b> Interpreting Error Messages</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="intro.html"><a href="intro.html#syntax-errors"><i class="fa fa-check"></i><b>1.9.1</b> Syntax Errors</a></li>
+<li class="chapter" data-level="1.9.2" data-path="intro.html"><a href="intro.html#exceptions-runtime-errors"><i class="fa fa-check"></i><b>1.9.2</b> Exceptions (Runtime Errors)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="intro.html"><a href="intro.html#handling-exceptions-with-try...except"><i class="fa fa-check"></i><b>1.9.3</b> Handling Exceptions with <code>try...except</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#importing-modules"><i class="fa fa-check"></i><b>1.10</b> Importing Modules</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#the-import-statement"><i class="fa fa-check"></i><b>1.10.1</b> The <code>import</code> Statement</a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#the-from-...-import-statement"><i class="fa fa-check"></i><b>1.10.2</b> The <code>from ... import</code> Statement</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#function-fundamentals"><i class="fa fa-check"></i><b>1.11</b> Function Fundamentals</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="intro.html"><a href="intro.html#built-in-functions"><i class="fa fa-check"></i><b>1.11.1</b> Built-in Functions</a></li>
+<li class="chapter" data-level="1.11.2" data-path="intro.html"><a href="intro.html#defining-user-defined-functions"><i class="fa fa-check"></i><b>1.11.2</b> Defining User-Defined Functions</a></li>
+<li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#parameters-and-arguments"><i class="fa fa-check"></i><b>1.11.3</b> Parameters and Arguments</a></li>
+<li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#return-values"><i class="fa fa-check"></i><b>1.11.4</b> Return Values</a></li>
+<li class="chapter" data-level="1.11.5" data-path="intro.html"><a href="intro.html#default-parameters-and-keyword-arguments"><i class="fa fa-check"></i><b>1.11.5</b> Default Parameters and Keyword Arguments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#practice-exercises"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Data Manipulation with Pandas</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#introduction-to-pandas"><i class="fa fa-check"></i><b>2.1</b> Introduction to Pandas</a></li>
+<li class="chapter" data-level="2.2" data-path="pandas.html"><a href="pandas.html#the-pandas-series"><i class="fa fa-check"></i><b>2.2</b> The Pandas Series</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="pandas.html"><a href="pandas.html#creating-a-series-from-a-list"><i class="fa fa-check"></i><b>2.2.1</b> Creating a Series from a List</a></li>
+<li class="chapter" data-level="2.2.2" data-path="pandas.html"><a href="pandas.html#creating-a-series-with-a-custom-index"><i class="fa fa-check"></i><b>2.2.2</b> Creating a Series with a Custom Index</a></li>
+<li class="chapter" data-level="2.2.3" data-path="pandas.html"><a href="pandas.html#creating-a-series-from-a-dictionary"><i class="fa fa-check"></i><b>2.2.3</b> Creating a Series from a Dictionary</a></li>
+<li class="chapter" data-level="2.2.4" data-path="pandas.html"><a href="pandas.html#accessing-data-in-a-series"><i class="fa fa-check"></i><b>2.2.4</b> Accessing Data in a Series</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="pandas.html"><a href="pandas.html#the-pandas-dataframe"><i class="fa fa-check"></i><b>2.3</b> The Pandas DataFrame</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="pandas.html"><a href="pandas.html#creating-a-dataframe"><i class="fa fa-check"></i><b>2.3.1</b> Creating a DataFrame</a></li>
+<li class="chapter" data-level="2.3.2" data-path="pandas.html"><a href="pandas.html#selecting-data"><i class="fa fa-check"></i><b>2.3.2</b> Selecting Data</a></li>
+<li class="chapter" data-level="2.3.3" data-path="pandas.html"><a href="pandas.html#adding-and-deleting-columns"><i class="fa fa-check"></i><b>2.3.3</b> Adding and Deleting Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="pandas.html"><a href="pandas.html#data-operations"><i class="fa fa-check"></i><b>2.4</b> Data Operations</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="pandas.html"><a href="pandas.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>2.4.1</b> Importing and Exporting Data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="pandas.html"><a href="pandas.html#importing-data-from-excel"><i class="fa fa-check"></i><b>2.4.2</b> Importing Data from Excel</a></li>
+<li class="chapter" data-level="2.4.3" data-path="pandas.html"><a href="pandas.html#handling-missing-data"><i class="fa fa-check"></i><b>2.4.3</b> Handling Missing Data</a></li>
+<li class="chapter" data-level="2.4.4" data-path="pandas.html"><a href="pandas.html#merging-dataframes"><i class="fa fa-check"></i><b>2.4.4</b> Merging DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="pandas.html"><a href="pandas.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.5</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="pandas.html"><a href="pandas.html#basic-statistics-on-a-column"><i class="fa fa-check"></i><b>2.5.1</b> Basic Statistics on a Column</a></li>
+<li class="chapter" data-level="2.5.2" data-path="pandas.html"><a href="pandas.html#the-.describe-method"><i class="fa fa-check"></i><b>2.5.2</b> The <code>.describe()</code> Method</a></li>
+<li class="chapter" data-level="2.5.3" data-path="pandas.html"><a href="pandas.html#grouping-data-for-analysis"><i class="fa fa-check"></i><b>2.5.3</b> Grouping Data for Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#practice-exercises-1"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>3</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="visualization.html"><a href="visualization.html#basic-charts-with-matplotlib"><i class="fa fa-check"></i><b>3.1</b> Basic Charts with Matplotlib</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="visualization.html"><a href="visualization.html#line-plot"><i class="fa fa-check"></i><b>3.1.1</b> Line Plot</a></li>
+<li class="chapter" data-level="3.1.2" data-path="visualization.html"><a href="visualization.html#bar-plot"><i class="fa fa-check"></i><b>3.1.2</b> Bar Plot</a></li>
+<li class="chapter" data-level="3.1.3" data-path="visualization.html"><a href="visualization.html#pie-chart"><i class="fa fa-check"></i><b>3.1.3</b> Pie Chart</a></li>
+<li class="chapter" data-level="3.1.4" data-path="visualization.html"><a href="visualization.html#histogram"><i class="fa fa-check"></i><b>3.1.4</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="visualization.html"><a href="visualization.html#preparing-the-college-data-for-plotting"><i class="fa fa-check"></i><b>3.2</b> Preparing the College Data for Plotting</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="visualization.html"><a href="visualization.html#pie-chart-gender-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Pie Chart — Gender Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="visualization.html"><a href="visualization.html#bar-plot-students-per-college"><i class="fa fa-check"></i><b>3.2.2</b> Bar Plot — Students per College</a></li>
+<li class="chapter" data-level="3.2.3" data-path="visualization.html"><a href="visualization.html#histogram-distribution-of-degree-marks"><i class="fa fa-check"></i><b>3.2.3</b> Histogram — Distribution of Degree Marks</a></li>
+<li class="chapter" data-level="3.2.4" data-path="visualization.html"><a href="visualization.html#line-plot-average-marks-progression"><i class="fa fa-check"></i><b>3.2.4</b> Line Plot — Average Marks Progression</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="visualization.html"><a href="visualization.html#statistical-charts-with-seaborn"><i class="fa fa-check"></i><b>3.3</b> Statistical Charts with Seaborn</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="visualization.html"><a href="visualization.html#box-plot"><i class="fa fa-check"></i><b>3.3.1</b> Box Plot</a></li>
+<li class="chapter" data-level="3.3.2" data-path="visualization.html"><a href="visualization.html#strip-plot"><i class="fa fa-check"></i><b>3.3.2</b> Strip Plot</a></li>
+<li class="chapter" data-level="3.3.3" data-path="visualization.html"><a href="visualization.html#swarm-plot"><i class="fa fa-check"></i><b>3.3.3</b> Swarm Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="visualization.html"><a href="visualization.html#advanced-plots"><i class="fa fa-check"></i><b>3.4</b> Advanced Plots</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="visualization.html"><a href="visualization.html#scatter-plot"><i class="fa fa-check"></i><b>3.4.1</b> Scatter Plot</a></li>
+<li class="chapter" data-level="3.4.2" data-path="visualization.html"><a href="visualization.html#heatmap"><i class="fa fa-check"></i><b>3.4.2</b> Heatmap</a></li>
+<li class="chapter" data-level="3.4.3" data-path="visualization.html"><a href="visualization.html#density-plot-and-cumulative-frequency"><i class="fa fa-check"></i><b>3.4.3</b> Density Plot and Cumulative Frequency</a></li>
+<li class="chapter" data-level="3.4.4" data-path="visualization.html"><a href="visualization.html#error-bars"><i class="fa fa-check"></i><b>3.4.4</b> Error Bars</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html#practice-exercises-2"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Analysis Using Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="glossary" class="section level1 unnumbered hasAnchor">
+<h1>Glossary<a href="glossary.html#glossary" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Argument (actual argument)</strong> — the real value passed to a function when it is called.</p>
+<p><strong>Bin</strong> — one of the equal ranges into which a histogram groups numerical data.</p>
+<p><strong>Casting (type conversion)</strong> — converting a value from one data type to another, for example <code>int()</code>, <code>float()</code>, or <code>str()</code>.</p>
+<p><strong>Comment</strong> — text in a program that is ignored by Python; a single-line comment begins with <code>#</code>.</p>
+<p><strong>CSV</strong> — Comma-Separated Values, a plain-text file format for tabular data.</p>
+<p><strong>DataFrame</strong> — a two-dimensional, labelled, tabular data structure in Pandas.</p>
+<p><strong>Docstring</strong> — a multi-line string, enclosed in triple quotes, used for documentation.</p>
+<p><strong>Dynamic typing</strong> — the feature by which Python determines a variable’s type automatically at runtime.</p>
+<p><strong>Escape sequence</strong> — a backslash combination inside a string, such as <code>\n</code> (new line) or <code>\t</code> (tab).</p>
+<p><strong>Exception</strong> — a runtime error that occurs while a syntactically correct program is running.</p>
+<p><strong>Expression</strong> — a combination of values, variables, and operators that evaluates to a result.</p>
+<p><strong>f-string</strong> — a formatted string literal, written with an <code>f</code> before the quote, in which variables inside <code>{}</code> are replaced by their values.</p>
+<p><strong>Function</strong> — a named block of reusable code that performs a specific task.</p>
+<p><strong>Index</strong> — the label attached to each value in a Pandas Series or each row of a DataFrame.</p>
+<p><strong>Indentation</strong> — the leading space that Python uses to define blocks of code.</p>
+<p><strong>Keyword (reserved word)</strong> — a word with a fixed meaning in Python, such as <code>if</code>, <code>for</code>, or <code>def</code>, that cannot be used as a variable name.</p>
+<p><strong>Loop</strong> — a structure (<code>for</code> or <code>while</code>) that repeats a block of code.</p>
+<p><strong>Module</strong> — a file of reusable Python code loaded with the <code>import</code> statement.</p>
+<p><strong>NaN</strong> — “Not a Number”, the value Pandas uses to mark missing data.</p>
+<p><strong>Parameter (formal parameter)</strong> — a placeholder variable listed in a function definition.</p>
+<p><strong>Series</strong> — a one-dimensional, labelled array in Pandas.</p>
+<p><strong>Split–apply–combine</strong> — the strategy behind <code>.groupby()</code>: splitting data by category, applying a calculation, and combining the results.</p>
+<p><strong>Syntax error</strong> — an error caused by breaking Python’s grammatical rules, which prevents the program from running.</p>
+<p><strong>Variable</strong> — a name that refers to a stored value in memory.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["statistical-analysis-using-python.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
