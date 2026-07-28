@@ -1,0 +1,23 @@
+# References {-}
+
+1. Embarak, O. (2018). *Data Analysis and Visualization Using Python*. Apress.
+
+2. Gowrishankar, S., & Veena, A. (2018). *Introduction to Python Programming*. Chapman and Hall/CRC.
+
+3. Guttag, J. V. (2016). *Introduction to Computation and Programming Using Python: With Application to Understanding Data*. MIT Press.
+
+4. Haslwanter, T. (2016). *An Introduction to Statistics with Python: With Applications in the Life Sciences*. Springer International Publishing.
+
+5. Lambert, K. A., & Osborne, M. (2015). *Fundamentals of Python*. Cengage Learning.
+
+6. Lutz, M. (2013). *Learning Python: Powerful Object-Oriented Programming*. O'Reilly Media.
+
+7. McKinney, W. (2012). *Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython*. O'Reilly Media.
+
+8. Severance, C. (2016). *Python for Everybody: Exploring Data Using Python 3*. Charles Severance.
+
+9. Tattar, P., Ojeda, T., Murphy, S. P., Bengfort, B., & Dasgupta, A. (2017). *Practical Data Science Cookbook*. Packt Publishing.
+
+10. Unpingco, J. (2016). *Python for Probability, Statistics, and Machine Learning*. Springer International Publishing.
+
+11. VanderPlas, J. (2016). *Python Data Science Handbook: Essential Tools for Working with Data*. O'Reilly Media.

@@ -1,0 +1,94 @@
+---
+title: "Statistical Analysis Using Python"
+author: |
+  | *Dr Jerin Paul*
+  | *Assistant Professor*
+  | *Department of Statistics*
+  | *Vimala College (Autonomous), Thrissur*
+date: "July 2026"
+site: bookdown::bookdown_site
+documentclass: book
+description: Statistical Analysis Using Python textbook for Calicut University FYUGP
+---
+
+# Preface {-}
+
+## *A Textbook for FYUGP Programme &nbsp; Vth Sem BSc Statistics, &nbsp; Vimala College (Autonomous), Thrissur* {-}
+
+This textbook has been written to meet the requirements of the **Four Year Undergraduate Programme (FYUGP)** of Calicut University for the Skill Enhancement Course on **Statistical Analysis Using Python**.
+
+The book is organised into three chapters aligned with the first three modules of the syllabus:
+
+| Chapter | Title                              |
+| ------- | ---------------------------------- |
+| 1       | Introduction to Python Programming |
+| 2       | Data Manipulation with Pandas      |
+| 3       | Data Visualization                 |
+
+Each chapter opens with learning objectives. Key terms are **bolded** when first introduced. Every topic is explained in plain language with fully worked code examples, so that a student can prepare for the written examination directly from this book. Selected practice exercises are provided at the end of each chapter for students who wish to try the code themselves.
+
+All code in this book is written for **Python 3** and is intended to be run in **Google Colab**, a free cloud-based notebook environment. No software installation is required: a student needs only a web browser and a Google account.
+
+The code examples are shown as static listings together with their expected output. Students are encouraged to type each example into a Colab cell and run it to confirm the result.
+
+## Acknowledgements {-}
+
+The author acknowledges the reference material of the course, in particular the works of Wes McKinney, Jake VanderPlas, Charles Severance, Thomas Haslwanter, and Ossama Embarak, from which the topics of this course are drawn.
+
+## Course Information {-}
+
+### Course Details {-}
+
+| **Programme**      | B.Sc. Statistics                 |
+| ------------------ | -------------------------------- |
+| **Course Code**    | STA5FS112                        |
+| **Course Title**   | Statistical Analysis Using Python |
+| **Type of Course** | SEC                              |
+| **Semester**       | V                                |
+| **Academic Level** | 100–199                          |
+
+### Credit Structure {-}
+
+| Credit | Lecture/Week | Tutorial/Week | Practical/Week | Total Hours |
+| ------ | ------------ | ------------- | -------------- | ----------- |
+| 3      | 3            | —             | —              | 45          |
+
+**Pre-requisites:** HSE level Mathematics Course
+
+### Detailed Syllabus {-}
+
+**Module I — Introduction to Python Programming (12 Hrs)**
+
+1. Interactive Python Environment: Jupyter notebooks, basic syntax, interactive shell.
+2. Data Fundamentals: Variables, assignments, arithmetic operators, expressions.
+3. Program Readability: Comments in code, interpreting error messages.
+4. Modular Programming: Importing modules, control flow statements.
+5. Function Fundamentals: Built-in and user-defined functions, arguments, return values, formal vs. actual parameters, named arguments.
+
+**Module II — Data Manipulation with Pandas (10 Hrs)**
+
+6. Pandas Introduction: Data Series, Data Frames.
+7. Data Operations: Importing, manipulating, merging, analyzing, and exporting Data Frames.
+8. Descriptive Statistics: Exploratory data analysis techniques.
+
+**Module III — Data Visualization (8 Hrs)**
+
+9. Data Visualization Libraries: Matplotlib, Seaborn, Plotly, ggplot, Geoplotlib, Pandas.
+10. Plot-I: Line plot, bar plot, pie chart, box plot, histogram, strip plot, swarm plot.
+11. Plot-II: Scatter plot, heatmap, density plot, cumulative frequencies, error bars.
+
+### The Dataset Used in This Book {-}
+
+Chapters 2 and 3 use a single dataset, **`College_Data.csv`**, so that all examples are consistent and self-contained. The data were collected from postgraduate students of three different colleges in Kerala. The variables are described below.
+
+| Variable   | Description                                                              |
+| ---------- | ------------------------------------------------------------------------ |
+| `Gender`   | 0 – Male, 1 – Female                                                      |
+| `Locality` | 0 – Urban, 1 – Rural                                                      |
+| `Income`   | 0 – Less than 10000, 1 – 10000 to 20000, 2 – 20000 to 40000, 3 – Above 40000 |
+| `College`  | 1 – College A, 2 – College B, 3 – College C                              |
+| `SSLC`     | Percentage of marks in SSLC                                              |
+| `PlusTwo`  | Percentage of marks in Plus Two                                          |
+| `Degree`   | Percentage of marks in Degree                                            |
+
+To use this dataset in Google Colab, upload the file `College_Data.csv` to the notebook session before running the examples in Chapters 2 and 3.

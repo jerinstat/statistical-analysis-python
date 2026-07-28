@@ -1,0 +1,37 @@
+/* Light custom styling for the textbook */
+p.caption {
+  color: #555;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+/* Code chunk appearance */
+pre {
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+}
+
+/* Learning objectives / note boxes */
+.objectives {
+  background-color: #eef5fb;
+  border-left: 4px solid #2c7fb8;
+  padding: 10px 15px;
+  margin: 15px 0;
+  border-radius: 3px;
+}
+
+.worked {
+  background-color: #f4f9f4;
+  border-left: 4px solid #4a934a;
+  padding: 10px 15px;
+  margin: 15px 0;
+  border-radius: 3px;
+}
+
+.practice {
+  background-color: #fdf6ec;
+  border-left: 4px solid #d9822b;
+  padding: 10px 15px;
+  margin: 15px 0;
+  border-radius: 3px;
+}

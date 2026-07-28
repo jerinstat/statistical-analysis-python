@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Data Manipulation with Pandas | Statistical Analysis Using Python</title>
+  <meta name="description" content="Chapter 2 Data Manipulation with Pandas | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Data Manipulation with Pandas | Statistical Analysis Using Python" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Chapter 2 Data Manipulation with Pandas | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Data Manipulation with Pandas | Statistical Analysis Using Python" />
+  
+  <meta name="twitter:description" content="Chapter 2 Data Manipulation with Pandas | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="visualization.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistical Analysis Using Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-textbook-for-fyugp-programme-vth-sem-bsc-statistics-vimala-college-autonomous-thrissur"><i class="fa fa-check"></i><em>A Textbook for FYUGP Programme   Vth Sem BSc Statistics,   Vimala College (Autonomous), Thrissur</em></a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-information"><i class="fa fa-check"></i>Course Information</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#credit-structure"><i class="fa fa-check"></i>Credit Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#detailed-syllabus"><i class="fa fa-check"></i>Detailed Syllabus</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-dataset-used-in-this-book"><i class="fa fa-check"></i>The Dataset Used in This Book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python Programming</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-interactive-python-environment"><i class="fa fa-check"></i><b>1.1</b> The Interactive Python Environment</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#the-interactive-shell"><i class="fa fa-check"></i><b>1.1.1</b> The Interactive Shell</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#jupyter-notebooks-and-google-colab"><i class="fa fa-check"></i><b>1.1.2</b> Jupyter Notebooks and Google Colab</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-syntax-and-program-readability"><i class="fa fa-check"></i><b>1.2</b> Basic Syntax and Program Readability</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#keywords"><i class="fa fa-check"></i><b>1.2.1</b> Keywords</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#comments"><i class="fa fa-check"></i><b>1.2.2</b> Comments</a></li>
+<li class="chapter" data-level="1.2.3" data-path="intro.html"><a href="intro.html#statement-termination"><i class="fa fa-check"></i><b>1.2.3</b> Statement Termination</a></li>
+<li class="chapter" data-level="1.2.4" data-path="intro.html"><a href="intro.html#indentation"><i class="fa fa-check"></i><b>1.2.4</b> Indentation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#variables-and-dynamic-typing"><i class="fa fa-check"></i><b>1.3</b> Variables and Dynamic Typing</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#dynamic-typing"><i class="fa fa-check"></i><b>1.3.1</b> Dynamic Typing</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#rules-for-naming-variables"><i class="fa fa-check"></i><b>1.3.2</b> Rules for Naming Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#arithmetic-operators-and-expressions"><i class="fa fa-check"></i><b>1.4</b> Arithmetic Operators and Expressions</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#reading-user-input-and-type-conversion"><i class="fa fa-check"></i><b>1.5</b> Reading User Input and Type Conversion</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="intro.html"><a href="intro.html#the-input-function"><i class="fa fa-check"></i><b>1.5.1</b> The <code>input()</code> Function</a></li>
+<li class="chapter" data-level="1.5.2" data-path="intro.html"><a href="intro.html#type-conversion-casting"><i class="fa fa-check"></i><b>1.5.2</b> Type Conversion (Casting)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#working-with-strings-and-formatting"><i class="fa fa-check"></i><b>1.6</b> Working with Strings and Formatting</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#string-operations"><i class="fa fa-check"></i><b>1.6.1</b> String Operations</a></li>
+<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#escape-sequences"><i class="fa fa-check"></i><b>1.6.2</b> Escape Sequences</a></li>
+<li class="chapter" data-level="1.6.3" data-path="intro.html"><a href="intro.html#formatting-output"><i class="fa fa-check"></i><b>1.6.3</b> Formatting Output</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#control-flow-decision-making"><i class="fa fa-check"></i><b>1.7</b> Control Flow: Decision Making</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#the-if-statement"><i class="fa fa-check"></i><b>1.7.1</b> The <code>if</code> Statement</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#the-if...else-statement"><i class="fa fa-check"></i><b>1.7.2</b> The <code>if...else</code> Statement</a></li>
+<li class="chapter" data-level="1.7.3" data-path="intro.html"><a href="intro.html#the-if...elif...else-statement"><i class="fa fa-check"></i><b>1.7.3</b> The <code>if...elif...else</code> Statement</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#control-flow-loops"><i class="fa fa-check"></i><b>1.8</b> Control Flow: Loops</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#the-while-loop"><i class="fa fa-check"></i><b>1.8.1</b> The <code>while</code> Loop</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#the-for-loop-and-the-range-function"><i class="fa fa-check"></i><b>1.8.2</b> The <code>for</code> Loop and the <code>range()</code> Function</a></li>
+<li class="chapter" data-level="1.8.3" data-path="intro.html"><a href="intro.html#loop-control-break-continue-and-pass"><i class="fa fa-check"></i><b>1.8.3</b> Loop Control: <code>break</code>, <code>continue</code>, and <code>pass</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#interpreting-error-messages"><i class="fa fa-check"></i><b>1.9</b> Interpreting Error Messages</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="intro.html"><a href="intro.html#syntax-errors"><i class="fa fa-check"></i><b>1.9.1</b> Syntax Errors</a></li>
+<li class="chapter" data-level="1.9.2" data-path="intro.html"><a href="intro.html#exceptions-runtime-errors"><i class="fa fa-check"></i><b>1.9.2</b> Exceptions (Runtime Errors)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="intro.html"><a href="intro.html#handling-exceptions-with-try...except"><i class="fa fa-check"></i><b>1.9.3</b> Handling Exceptions with <code>try...except</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#importing-modules"><i class="fa fa-check"></i><b>1.10</b> Importing Modules</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#the-import-statement"><i class="fa fa-check"></i><b>1.10.1</b> The <code>import</code> Statement</a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#the-from-...-import-statement"><i class="fa fa-check"></i><b>1.10.2</b> The <code>from ... import</code> Statement</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#function-fundamentals"><i class="fa fa-check"></i><b>1.11</b> Function Fundamentals</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="intro.html"><a href="intro.html#built-in-functions"><i class="fa fa-check"></i><b>1.11.1</b> Built-in Functions</a></li>
+<li class="chapter" data-level="1.11.2" data-path="intro.html"><a href="intro.html#defining-user-defined-functions"><i class="fa fa-check"></i><b>1.11.2</b> Defining User-Defined Functions</a></li>
+<li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#parameters-and-arguments"><i class="fa fa-check"></i><b>1.11.3</b> Parameters and Arguments</a></li>
+<li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#return-values"><i class="fa fa-check"></i><b>1.11.4</b> Return Values</a></li>
+<li class="chapter" data-level="1.11.5" data-path="intro.html"><a href="intro.html#default-parameters-and-keyword-arguments"><i class="fa fa-check"></i><b>1.11.5</b> Default Parameters and Keyword Arguments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#practice-exercises"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Data Manipulation with Pandas</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#introduction-to-pandas"><i class="fa fa-check"></i><b>2.1</b> Introduction to Pandas</a></li>
+<li class="chapter" data-level="2.2" data-path="pandas.html"><a href="pandas.html#the-pandas-series"><i class="fa fa-check"></i><b>2.2</b> The Pandas Series</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="pandas.html"><a href="pandas.html#creating-a-series-from-a-list"><i class="fa fa-check"></i><b>2.2.1</b> Creating a Series from a List</a></li>
+<li class="chapter" data-level="2.2.2" data-path="pandas.html"><a href="pandas.html#creating-a-series-with-a-custom-index"><i class="fa fa-check"></i><b>2.2.2</b> Creating a Series with a Custom Index</a></li>
+<li class="chapter" data-level="2.2.3" data-path="pandas.html"><a href="pandas.html#creating-a-series-from-a-dictionary"><i class="fa fa-check"></i><b>2.2.3</b> Creating a Series from a Dictionary</a></li>
+<li class="chapter" data-level="2.2.4" data-path="pandas.html"><a href="pandas.html#accessing-data-in-a-series"><i class="fa fa-check"></i><b>2.2.4</b> Accessing Data in a Series</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="pandas.html"><a href="pandas.html#the-pandas-dataframe"><i class="fa fa-check"></i><b>2.3</b> The Pandas DataFrame</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="pandas.html"><a href="pandas.html#creating-a-dataframe"><i class="fa fa-check"></i><b>2.3.1</b> Creating a DataFrame</a></li>
+<li class="chapter" data-level="2.3.2" data-path="pandas.html"><a href="pandas.html#selecting-data"><i class="fa fa-check"></i><b>2.3.2</b> Selecting Data</a></li>
+<li class="chapter" data-level="2.3.3" data-path="pandas.html"><a href="pandas.html#adding-and-deleting-columns"><i class="fa fa-check"></i><b>2.3.3</b> Adding and Deleting Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="pandas.html"><a href="pandas.html#data-operations"><i class="fa fa-check"></i><b>2.4</b> Data Operations</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="pandas.html"><a href="pandas.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>2.4.1</b> Importing and Exporting Data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="pandas.html"><a href="pandas.html#importing-data-from-excel"><i class="fa fa-check"></i><b>2.4.2</b> Importing Data from Excel</a></li>
+<li class="chapter" data-level="2.4.3" data-path="pandas.html"><a href="pandas.html#handling-missing-data"><i class="fa fa-check"></i><b>2.4.3</b> Handling Missing Data</a></li>
+<li class="chapter" data-level="2.4.4" data-path="pandas.html"><a href="pandas.html#merging-dataframes"><i class="fa fa-check"></i><b>2.4.4</b> Merging DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="pandas.html"><a href="pandas.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.5</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="pandas.html"><a href="pandas.html#basic-statistics-on-a-column"><i class="fa fa-check"></i><b>2.5.1</b> Basic Statistics on a Column</a></li>
+<li class="chapter" data-level="2.5.2" data-path="pandas.html"><a href="pandas.html#the-.describe-method"><i class="fa fa-check"></i><b>2.5.2</b> The <code>.describe()</code> Method</a></li>
+<li class="chapter" data-level="2.5.3" data-path="pandas.html"><a href="pandas.html#grouping-data-for-analysis"><i class="fa fa-check"></i><b>2.5.3</b> Grouping Data for Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#practice-exercises-1"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>3</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="visualization.html"><a href="visualization.html#basic-charts-with-matplotlib"><i class="fa fa-check"></i><b>3.1</b> Basic Charts with Matplotlib</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="visualization.html"><a href="visualization.html#line-plot"><i class="fa fa-check"></i><b>3.1.1</b> Line Plot</a></li>
+<li class="chapter" data-level="3.1.2" data-path="visualization.html"><a href="visualization.html#bar-plot"><i class="fa fa-check"></i><b>3.1.2</b> Bar Plot</a></li>
+<li class="chapter" data-level="3.1.3" data-path="visualization.html"><a href="visualization.html#pie-chart"><i class="fa fa-check"></i><b>3.1.3</b> Pie Chart</a></li>
+<li class="chapter" data-level="3.1.4" data-path="visualization.html"><a href="visualization.html#histogram"><i class="fa fa-check"></i><b>3.1.4</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="visualization.html"><a href="visualization.html#preparing-the-college-data-for-plotting"><i class="fa fa-check"></i><b>3.2</b> Preparing the College Data for Plotting</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="visualization.html"><a href="visualization.html#pie-chart-gender-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Pie Chart — Gender Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="visualization.html"><a href="visualization.html#bar-plot-students-per-college"><i class="fa fa-check"></i><b>3.2.2</b> Bar Plot — Students per College</a></li>
+<li class="chapter" data-level="3.2.3" data-path="visualization.html"><a href="visualization.html#histogram-distribution-of-degree-marks"><i class="fa fa-check"></i><b>3.2.3</b> Histogram — Distribution of Degree Marks</a></li>
+<li class="chapter" data-level="3.2.4" data-path="visualization.html"><a href="visualization.html#line-plot-average-marks-progression"><i class="fa fa-check"></i><b>3.2.4</b> Line Plot — Average Marks Progression</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="visualization.html"><a href="visualization.html#statistical-charts-with-seaborn"><i class="fa fa-check"></i><b>3.3</b> Statistical Charts with Seaborn</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="visualization.html"><a href="visualization.html#box-plot"><i class="fa fa-check"></i><b>3.3.1</b> Box Plot</a></li>
+<li class="chapter" data-level="3.3.2" data-path="visualization.html"><a href="visualization.html#strip-plot"><i class="fa fa-check"></i><b>3.3.2</b> Strip Plot</a></li>
+<li class="chapter" data-level="3.3.3" data-path="visualization.html"><a href="visualization.html#swarm-plot"><i class="fa fa-check"></i><b>3.3.3</b> Swarm Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="visualization.html"><a href="visualization.html#advanced-plots"><i class="fa fa-check"></i><b>3.4</b> Advanced Plots</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="visualization.html"><a href="visualization.html#scatter-plot"><i class="fa fa-check"></i><b>3.4.1</b> Scatter Plot</a></li>
+<li class="chapter" data-level="3.4.2" data-path="visualization.html"><a href="visualization.html#heatmap"><i class="fa fa-check"></i><b>3.4.2</b> Heatmap</a></li>
+<li class="chapter" data-level="3.4.3" data-path="visualization.html"><a href="visualization.html#density-plot-and-cumulative-frequency"><i class="fa fa-check"></i><b>3.4.3</b> Density Plot and Cumulative Frequency</a></li>
+<li class="chapter" data-level="3.4.4" data-path="visualization.html"><a href="visualization.html#error-bars"><i class="fa fa-check"></i><b>3.4.4</b> Error Bars</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html#practice-exercises-2"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Analysis Using Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pandas" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Data Manipulation with Pandas<a href="pandas.html#pandas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="objectives">
+<p><strong>Learning Objectives</strong></p>
+<p>After studying this chapter, a student will be able to:</p>
+<ul>
+<li>explain what the Pandas library is and why it is used;</li>
+<li>create and access a one-dimensional <strong>Series</strong>;</li>
+<li>create a two-dimensional <strong>DataFrame</strong> and select, add, and delete its columns;</li>
+<li>import data from CSV and Excel files and export a DataFrame to a file;</li>
+<li>handle missing data and merge two DataFrames; and</li>
+<li>compute descriptive statistics and group data for analysis.</li>
+</ul>
+</div>
+<div id="introduction-to-pandas" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Introduction to Pandas<a href="pandas.html#introduction-to-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Standard Python is excellent for general programming, but it is not by itself fast or structured enough to handle large, real-world datasets such as spreadsheets with thousands of rows. For this, data scientists use an open-source add-on library called <strong>Pandas</strong>.</p>
+<p>The name Pandas is derived from <em>panel data</em>, a term from econometrics for multidimensional structured datasets. Pandas provides high-performance tools for manipulating and analysing data; it may be thought of as a powerful version of a spreadsheet available directly inside Python.</p>
+<p>Because Pandas is an external library, it must be <strong>imported</strong> before use. By convention it is given the short name <code>pd</code>:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="pandas.html#cb58-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div>
+<p>Writing <code>as pd</code> means that Pandas can afterwards be referred to simply as <code>pd</code>.</p>
+<p>A note on capital letters: Python is case-sensitive, so Pandas uses a capital <strong>S</strong> in <code>Series</code> and a capital <strong>D</strong> and <strong>F</strong> in <code>DataFrame</code>. Typing <code>pd.series()</code> or <code>pd.dataframe()</code> will cause an error.</p>
+</div>
+<div id="the-pandas-series" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> The Pandas Series<a href="pandas.html#the-pandas-series" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pandas has two main data structures: the <strong>Series</strong>, which is one-dimensional, and the <strong>DataFrame</strong>, which is two-dimensional. A <strong>Series</strong> is a one-dimensional array that can hold any single data type, such as integers, strings, or decimals.</p>
+<p>A key feature that distinguishes a Series from an ordinary Python list is its <strong>index</strong> — a label attached to every value. If no index is supplied, Pandas automatically numbers the rows starting from 0. In this respect a Series behaves much like a specialised dictionary, pairing each value with a label.</p>
+<div id="creating-a-series-from-a-list" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Creating a Series from a List<a href="pandas.html#creating-a-series-from-a-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="pandas.html#cb59-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb59-2"><a href="pandas.html#cb59-2" tabindex="-1"></a>marks <span class="op">=</span> pd.Series([<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>, <span class="dv">92</span>])</span>
+<span id="cb59-3"><a href="pandas.html#cb59-3" tabindex="-1"></a><span class="bu">print</span>(marks)</span></code></pre></div>
+<pre><code>0    85
+1    90
+2    78
+3    92
+dtype: int64</code></pre>
+<p>The left-hand column (<code>0, 1, 2, 3</code>) is the automatically generated index; the right-hand column holds the values.</p>
+</div>
+<div id="creating-a-series-with-a-custom-index" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Creating a Series with a Custom Index<a href="pandas.html#creating-a-series-with-a-custom-index" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Custom text labels can be attached to the data so that each value is clearly identified:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="pandas.html#cb61-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb61-2"><a href="pandas.html#cb61-2" tabindex="-1"></a>age <span class="op">=</span> pd.Series([<span class="dv">18</span>, <span class="dv">20</span>, <span class="dv">21</span>], index<span class="op">=</span>[<span class="st">&#39;Parvathy&#39;</span>, <span class="st">&#39;Archana&#39;</span>, <span class="st">&#39;Arya&#39;</span>])</span>
+<span id="cb61-3"><a href="pandas.html#cb61-3" tabindex="-1"></a><span class="bu">print</span>(age)</span></code></pre></div>
+<pre><code>Parvathy    18
+Archana     20
+Arya        21
+dtype: int64</code></pre>
+<p>The second argument, <code>index=[...]</code>, replaces the default numbers <code>0, 1, 2</code> with the names.</p>
+</div>
+<div id="creating-a-series-from-a-dictionary" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Creating a Series from a Dictionary<a href="pandas.html#creating-a-series-from-a-dictionary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A Python dictionary can be passed directly to <code>pd.Series()</code>. Pandas turns the dictionary’s keys into the index and its values into the data:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="pandas.html#cb63-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb63-2"><a href="pandas.html#cb63-2" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">&#39;Messi&#39;</span>: <span class="dv">6</span>, <span class="st">&#39;Mbappe&#39;</span>: <span class="dv">5</span>, <span class="st">&#39;Ronaldo&#39;</span>: <span class="dv">2</span>}</span>
+<span id="cb63-3"><a href="pandas.html#cb63-3" tabindex="-1"></a>goal <span class="op">=</span> pd.Series(data)</span>
+<span id="cb63-4"><a href="pandas.html#cb63-4" tabindex="-1"></a><span class="bu">print</span>(goal)</span></code></pre></div>
+<pre><code>Messi      6
+Mbappe     5
+Ronaldo    2
+dtype: int64</code></pre>
+</div>
+<div id="accessing-data-in-a-series" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Accessing Data in a Series<a href="pandas.html#accessing-data-in-a-series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Once a Series exists, individual values are retrieved with square brackets <code>[]</code>, using either the custom label or the underlying numerical position.</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="pandas.html#cb65-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb65-2"><a href="pandas.html#cb65-2" tabindex="-1"></a>age <span class="op">=</span> pd.Series([<span class="dv">18</span>, <span class="dv">20</span>, <span class="dv">21</span>], index<span class="op">=</span>[<span class="st">&#39;Parvathy&#39;</span>, <span class="st">&#39;Archana&#39;</span>, <span class="st">&#39;Arya&#39;</span>])</span>
+<span id="cb65-3"><a href="pandas.html#cb65-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Parvathy&#39;s age is:&quot;</span>, age[<span class="st">&#39;Parvathy&#39;</span>])</span></code></pre></div>
+<pre><code>Parvathy&#39;s age is: 18</code></pre>
+<p>Even when text labels are used, Pandas never forgets the original numerical positions, so slicing by position (for example <code>age[0:2]</code>) is still possible.</p>
+</div>
+</div>
+<div id="the-pandas-dataframe" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> The Pandas DataFrame<a href="pandas.html#the-pandas-dataframe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>While a Series holds a single list of values, real data is usually arranged in a table. A <strong>DataFrame</strong> is a two-dimensional, tabular, labelled data structure, similar to a spreadsheet or a database table. It is an ordered collection of columns, and each column may hold a different type of data.</p>
+<div id="creating-a-dataframe" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Creating a DataFrame<a href="pandas.html#creating-a-dataframe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The most common way to build a DataFrame is from a dictionary, in which the keys become the column names and the value lists become the columns:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="pandas.html#cb67-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb67-2"><a href="pandas.html#cb67-2" tabindex="-1"></a>mark <span class="op">=</span> {<span class="st">&#39;Name&#39;</span>: [<span class="st">&#39;Ancy&#39;</span>, <span class="st">&#39;Sreepriya&#39;</span>, <span class="st">&#39;Lakshmi&#39;</span>, <span class="st">&#39;Anupama&#39;</span>, <span class="st">&#39;Nivediya&#39;</span>, <span class="st">&#39;Arya&#39;</span>],</span>
+<span id="cb67-3"><a href="pandas.html#cb67-3" tabindex="-1"></a>        <span class="st">&#39;Sem1&#39;</span>: [<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">95</span>, <span class="dv">98</span>, <span class="dv">50</span>, <span class="dv">40</span>],</span>
+<span id="cb67-4"><a href="pandas.html#cb67-4" tabindex="-1"></a>        <span class="st">&#39;Sem2&#39;</span>: [<span class="dv">90</span>, <span class="dv">98</span>, <span class="dv">92</span>, <span class="dv">72</span>, <span class="dv">44</span>, <span class="dv">50</span>],</span>
+<span id="cb67-5"><a href="pandas.html#cb67-5" tabindex="-1"></a>        <span class="st">&#39;Sem3&#39;</span>: [<span class="dv">91</span>, <span class="dv">95</span>, <span class="dv">91</span>, <span class="dv">83</span>, <span class="dv">98</span>, <span class="dv">100</span>],</span>
+<span id="cb67-6"><a href="pandas.html#cb67-6" tabindex="-1"></a>        <span class="st">&#39;Sem4&#39;</span>: [<span class="dv">92</span>, <span class="dv">90</span>, <span class="dv">93</span>, <span class="dv">100</span>, <span class="dv">99</span>, <span class="dv">98</span>]}</span>
+<span id="cb67-7"><a href="pandas.html#cb67-7" tabindex="-1"></a>sm <span class="op">=</span> pd.DataFrame(mark)</span>
+<span id="cb67-8"><a href="pandas.html#cb67-8" tabindex="-1"></a><span class="bu">print</span>(sm)</span></code></pre></div>
+<pre><code>        Name  Sem1  Sem2  Sem3  Sem4
+0       Ancy    85    90    91    92
+1  Sreepriya    92    98    95    90
+2    Lakshmi    95    92    91    93
+3    Anupama    98    72    83   100
+4   Nivediya    50    44    98    99
+5       Arya    40    50   100    98</code></pre>
+<p>Pandas automatically supplies the numerical row index (<code>0</code>–<code>5</code>) on the far left.</p>
+</div>
+<div id="selecting-data" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Selecting Data<a href="pandas.html#selecting-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A single column is selected by placing its name in square brackets. A single column taken from a DataFrame is itself a Pandas Series.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="pandas.html#cb69-1" tabindex="-1"></a><span class="bu">print</span>(sm[<span class="st">&#39;Name&#39;</span>])          <span class="co"># a single column</span></span>
+<span id="cb69-2"><a href="pandas.html#cb69-2" tabindex="-1"></a><span class="bu">print</span>(sm.iloc[<span class="dv">2</span>])          <span class="co"># a single row, by integer position</span></span>
+<span id="cb69-3"><a href="pandas.html#cb69-3" tabindex="-1"></a><span class="bu">print</span>(sm[:<span class="dv">2</span>])              <span class="co"># the first two rows (slicing)</span></span></code></pre></div>
+<p>The method <code>.iloc[]</code> (“integer location”) selects a row by its numerical position; since counting starts at 0, <code>sm.iloc[2]</code> gives the third row. Slicing with <code>sm[:2]</code> returns everything up to, but not including, row index 2.</p>
+</div>
+<div id="adding-and-deleting-columns" class="section level3 hasAnchor" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Adding and Deleting Columns<a href="pandas.html#adding-and-deleting-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A new column is created simply by assigning a list to a new column name. An existing column is removed permanently with the <code>del</code> keyword.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="pandas.html#cb70-1" tabindex="-1"></a><span class="co"># Adding a new column</span></span>
+<span id="cb70-2"><a href="pandas.html#cb70-2" tabindex="-1"></a>sm[<span class="st">&#39;Sem5&#39;</span>] <span class="op">=</span> [<span class="dv">96</span>, <span class="dv">97</span>, <span class="dv">95</span>, <span class="dv">98</span>, <span class="dv">99</span>, <span class="dv">94</span>]</span>
+<span id="cb70-3"><a href="pandas.html#cb70-3" tabindex="-1"></a><span class="bu">print</span>(sm)</span>
+<span id="cb70-4"><a href="pandas.html#cb70-4" tabindex="-1"></a></span>
+<span id="cb70-5"><a href="pandas.html#cb70-5" tabindex="-1"></a><span class="co"># Deleting a column</span></span>
+<span id="cb70-6"><a href="pandas.html#cb70-6" tabindex="-1"></a><span class="kw">del</span> sm[<span class="st">&#39;Sem1&#39;</span>]</span>
+<span id="cb70-7"><a href="pandas.html#cb70-7" tabindex="-1"></a><span class="bu">print</span>(sm)</span></code></pre></div>
+<p>Pandas automatically aligns the new column’s values with the existing rows.</p>
+</div>
+</div>
+<div id="data-operations" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Data Operations<a href="pandas.html#data-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="importing-and-exporting-data" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Importing and Exporting Data<a href="pandas.html#importing-and-exporting-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Real analysts rarely type data by hand; they load files produced by other systems, most commonly <strong>CSV</strong> (Comma-Separated Values) files. The <code>pd.read_csv()</code> function reads a CSV file into a DataFrame, and the <code>.to_csv()</code> method writes a DataFrame back to a file.</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="pandas.html#cb71-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb71-2"><a href="pandas.html#cb71-2" tabindex="-1"></a><span class="co"># Reading a CSV file into a DataFrame</span></span>
+<span id="cb71-3"><a href="pandas.html#cb71-3" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;students.csv&quot;</span>)</span>
+<span id="cb71-4"><a href="pandas.html#cb71-4" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb71-5"><a href="pandas.html#cb71-5" tabindex="-1"></a></span>
+<span id="cb71-6"><a href="pandas.html#cb71-6" tabindex="-1"></a><span class="co"># Exporting a DataFrame to a new CSV file, without the row index</span></span>
+<span id="cb71-7"><a href="pandas.html#cb71-7" tabindex="-1"></a>df.to_csv(<span class="st">&quot;backup_students.csv&quot;</span>, index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div>
+<p>The argument <code>index=False</code> prevents Pandas from writing the row numbers (<code>0, 1, 2, …</code>) as an extra column in the saved file.</p>
+</div>
+<div id="importing-data-from-excel" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Importing Data from Excel<a href="pandas.html#importing-data-from-excel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Because spreadsheets are so widely used, Pandas can also read Excel files with the <code>pd.read_excel()</code> function, which works much like <code>pd.read_csv()</code>. Behind the scenes Pandas uses the helper packages <code>openpyxl</code> (for newer <code>.xlsx</code> files) and <code>xlrd</code> (for older <code>.xls</code> files); these are normally already available in Google Colab.</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="pandas.html#cb72-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb72-2"><a href="pandas.html#cb72-2" tabindex="-1"></a><span class="co"># Reading the default (first) sheet</span></span>
+<span id="cb72-3"><a href="pandas.html#cb72-3" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">&quot;College Data.xlsx&quot;</span>)</span>
+<span id="cb72-4"><a href="pandas.html#cb72-4" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
+<span id="cb72-5"><a href="pandas.html#cb72-5" tabindex="-1"></a></span>
+<span id="cb72-6"><a href="pandas.html#cb72-6" tabindex="-1"></a><span class="co"># Reading a specific sheet by name</span></span>
+<span id="cb72-7"><a href="pandas.html#cb72-7" tabindex="-1"></a>df2 <span class="op">=</span> pd.read_excel(<span class="st">&quot;company_data.xlsx&quot;</span>, <span class="st">&quot;2000s&quot;</span>)</span>
+<span id="cb72-8"><a href="pandas.html#cb72-8" tabindex="-1"></a><span class="bu">print</span>(df2.head())</span></code></pre></div>
+<p>The <code>.head()</code> method displays the first few rows so that a successful import can be confirmed; <code>.tail()</code> similarly shows the last few rows.</p>
+<p>A practical note for Google Colab: because Colab runs in the cloud, a data file must first be <strong>uploaded</strong> to the session before it can be read. This is done with the folder icon on the left of the Colab window. Files uploaded this way are temporary and must be re-uploaded if the session is restarted.</p>
+</div>
+<div id="handling-missing-data" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Handling Missing Data<a href="pandas.html#handling-missing-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Real data is often incomplete: forms are left blank, and measurements fail. Pandas represents a missing value as <strong><code>NaN</code></strong> (Not a Number). The <code>numpy</code> library provides the official <code>np.nan</code> object used to mark data as missing.</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="pandas.html#cb73-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb73-2"><a href="pandas.html#cb73-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb73-3"><a href="pandas.html#cb73-3" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">&#39;Student&#39;</span>: [<span class="st">&#39;Sarah&#39;</span>, <span class="st">&#39;John&#39;</span>, <span class="st">&#39;Mona&#39;</span>, <span class="st">&#39;Ziad&#39;</span>],</span>
+<span id="cb73-4"><a href="pandas.html#cb73-4" tabindex="-1"></a>        <span class="st">&#39;Score&#39;</span>: [<span class="fl">85.0</span>, np.nan, <span class="fl">90.0</span>, np.nan]}</span>
+<span id="cb73-5"><a href="pandas.html#cb73-5" tabindex="-1"></a>grades <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb73-6"><a href="pandas.html#cb73-6" tabindex="-1"></a></span>
+<span id="cb73-7"><a href="pandas.html#cb73-7" tabindex="-1"></a><span class="co"># Option A: drop rows containing missing values</span></span>
+<span id="cb73-8"><a href="pandas.html#cb73-8" tabindex="-1"></a>clean_grades <span class="op">=</span> grades.dropna()</span>
+<span id="cb73-9"><a href="pandas.html#cb73-9" tabindex="-1"></a></span>
+<span id="cb73-10"><a href="pandas.html#cb73-10" tabindex="-1"></a><span class="co"># Option B: fill missing values with a fixed value</span></span>
+<span id="cb73-11"><a href="pandas.html#cb73-11" tabindex="-1"></a>filled_grades <span class="op">=</span> grades.fillna(<span class="dv">0</span>)</span></code></pre></div>
+<p>The <code>.dropna()</code> method deletes any row that contains even a single <code>NaN</code>, whereas <code>.fillna(0)</code> replaces every <code>NaN</code> with the value supplied — here, 0.</p>
+</div>
+<div id="merging-dataframes" class="section level3 hasAnchor" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> Merging DataFrames<a href="pandas.html#merging-dataframes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Sometimes data is split across separate tables — for example, one table of names and another of salaries. The <code>pd.merge()</code> function combines two DataFrames using a shared column.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="pandas.html#cb74-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb74-2"><a href="pandas.html#cb74-2" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;Emp_ID&#39;</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">103</span>],</span>
+<span id="cb74-3"><a href="pandas.html#cb74-3" tabindex="-1"></a>                    <span class="st">&#39;Name&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Charlie&#39;</span>]})</span>
+<span id="cb74-4"><a href="pandas.html#cb74-4" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;Emp_ID&#39;</span>: [<span class="dv">101</span>, <span class="dv">102</span>, <span class="dv">104</span>],</span>
+<span id="cb74-5"><a href="pandas.html#cb74-5" tabindex="-1"></a>                    <span class="st">&#39;Salary&#39;</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>]})</span>
+<span id="cb74-6"><a href="pandas.html#cb74-6" tabindex="-1"></a>merged_df <span class="op">=</span> pd.merge(df1, df2, on<span class="op">=</span><span class="st">&#39;Emp_ID&#39;</span>)</span>
+<span id="cb74-7"><a href="pandas.html#cb74-7" tabindex="-1"></a><span class="bu">print</span>(merged_df)</span></code></pre></div>
+<pre><code>   Emp_ID   Name  Salary
+0     101  Alice   50000
+1     102    Bob   60000</code></pre>
+<p>The argument <code>on='Emp_ID'</code> tells Pandas to line up rows where the <code>Emp_ID</code> matches. By default <code>pd.merge()</code> performs an <em>inner merge</em>, keeping only rows found in <strong>both</strong> tables; because Charlie (103) has no salary and ID 104 has no name, both are dropped.</p>
+<p>A related function, <code>pd.concat()</code>, stacks DataFrames on top of one another rather than joining them side by side.</p>
+</div>
+</div>
+<div id="descriptive-statistics" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Descriptive Statistics<a href="pandas.html#descriptive-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Exploratory Data Analysis (EDA)</strong> is usually the first step when a new dataset is received. It examines the central tendency (averages) and the dispersion (spread) of the data. Pandas provides simple built-in functions for this. By default these statistical methods ignore any missing (<code>NaN</code>) values.</p>
+<div id="basic-statistics-on-a-column" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Basic Statistics on a Column<a href="pandas.html#basic-statistics-on-a-column" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A single column is isolated with square brackets, and a statistic is then obtained by attaching the appropriate method:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="pandas.html#cb76-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Maximum score:&quot;</span>, df[<span class="st">&#39;Score&#39;</span>].<span class="bu">max</span>())</span>
+<span id="cb76-2"><a href="pandas.html#cb76-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Minimum age:&quot;</span>, df[<span class="st">&#39;Age&#39;</span>].<span class="bu">min</span>())</span>
+<span id="cb76-3"><a href="pandas.html#cb76-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Average score:&quot;</span>, df[<span class="st">&#39;Score&#39;</span>].mean())</span>
+<span id="cb76-4"><a href="pandas.html#cb76-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Standard deviation of scores:&quot;</span>, df[<span class="st">&#39;Score&#39;</span>].std())</span></code></pre></div>
+<p>Here <code>.max()</code> finds the largest value, <code>.min()</code> the smallest, <code>.mean()</code> the arithmetic average, and <code>.std()</code> the standard deviation, which measures how spread out the values are.</p>
+</div>
+<div id="the-.describe-method" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> The <code>.describe()</code> Method<a href="pandas.html#the-.describe-method" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Typing each statistic separately for every column is tedious. The <code>.describe()</code> method computes them all at once for every numeric column, automatically ignoring text columns:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="pandas.html#cb77-1" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span></code></pre></div>
+<p>This produces a table giving the count, mean, standard deviation, minimum, maximum, and the 25%, 50% (median), and 75% quartiles of each numeric column.</p>
+<div class="worked">
+<p><strong>Worked Example 2.1 — Describing the College Data</strong></p>
+<p>Reading the course dataset and describing a single column is a common first step. The following isolates the <code>PlusTwo</code> column and summarises it.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="pandas.html#cb78-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb78-2"><a href="pandas.html#cb78-2" tabindex="-1"></a>cd <span class="op">=</span> pd.read_excel(<span class="st">&quot;College Data.xlsx&quot;</span>)</span>
+<span id="cb78-3"><a href="pandas.html#cb78-3" tabindex="-1"></a>cd[<span class="st">&#39;SSLC&#39;</span>].describe()</span>
+<span id="cb78-4"><a href="pandas.html#cb78-4" tabindex="-1"></a>cd[<span class="st">&#39;PlusTwo&#39;</span>].describe()</span></code></pre></div>
+<p><code>.describe()</code> applied to the <code>PlusTwo</code> column returns its count, mean, standard deviation, minimum, quartiles, and maximum, giving an immediate summary of the students’ Plus Two performance.</p>
+</div>
+</div>
+<div id="grouping-data-for-analysis" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Grouping Data for Analysis<a href="pandas.html#grouping-data-for-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Often the average of an entire dataset is less useful than an average computed separately for each category. This is done with the <strong>split–apply–combine</strong> strategy: the data is <em>split</em> by a category, a calculation is <em>applied</em> to each group, and the results are <em>combined</em> into a table. The <code>.groupby()</code> method performs this.</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="pandas.html#cb79-1" tabindex="-1"></a>market_data <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb79-2"><a href="pandas.html#cb79-2" tabindex="-1"></a>    <span class="st">&#39;City&#39;</span>: [<span class="st">&#39;Dubai&#39;</span>, <span class="st">&#39;Abu Dhabi&#39;</span>, <span class="st">&#39;Dubai&#39;</span>, <span class="st">&#39;Sharjah&#39;</span>, <span class="st">&#39;Abu Dhabi&#39;</span>],</span>
+<span id="cb79-3"><a href="pandas.html#cb79-3" tabindex="-1"></a>    <span class="st">&#39;Sales&#39;</span>: [<span class="dv">200</span>, <span class="dv">150</span>, <span class="dv">300</span>, <span class="dv">120</span>, <span class="dv">180</span>]</span>
+<span id="cb79-4"><a href="pandas.html#cb79-4" tabindex="-1"></a>})</span>
+<span id="cb79-5"><a href="pandas.html#cb79-5" tabindex="-1"></a>grouped_sales <span class="op">=</span> market_data.groupby(<span class="st">&#39;City&#39;</span>)[<span class="st">&#39;Sales&#39;</span>].<span class="bu">sum</span>()</span>
+<span id="cb79-6"><a href="pandas.html#cb79-6" tabindex="-1"></a><span class="bu">print</span>(grouped_sales)</span></code></pre></div>
+<p>In the final line, <code>.groupby('City')</code> splits the table into groups by city, <code>['Sales']</code> selects the column to work on, and <code>.sum()</code> adds the values within each group. The result shows the total sales for each city separately.</p>
+</div>
+</div>
+<div id="practice-exercises-1" class="section level2 unnumbered hasAnchor">
+<h2>Practice Exercises<a href="pandas.html#practice-exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="practice">
+<p><strong>Exercise 2.1 — Your First Series.</strong> Create a Pandas Series containing the numbers 10, 20, 30, 40, 50 with the default numerical index, and print it.</p>
+<p><strong>Exercise 2.2 — Dictionary to Series.</strong> Build a dictionary of three countries and their capitals (for example, <code>'Japan': 'Tokyo'</code>), convert it to a Series, and print the capital of Japan using its index label.</p>
+<p><strong>Exercise 2.3 — Create a Table.</strong> Create a DataFrame called <code>inventory</code> from a dictionary with keys <code>'Product'</code> (Laptop, Mouse, Keyboard) and <code>'Price'</code> (1000, 20, 50), and print it.</p>
+<p><strong>Exercise 2.4 — Grouping Data.</strong> Create a DataFrame with columns <code>'Department'</code> (<code>IT, HR, IT, HR</code>) and <code>'Salary'</code> (some values), then use <code>.groupby()</code> to find the average salary for each department.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["statistical-analysis-using-python.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

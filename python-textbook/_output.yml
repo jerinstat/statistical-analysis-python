@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">Statistical Analysis Using Python</a></li>
+      collapse: section
+    download: ["pdf"]
+    sharing:
+      facebook: false
+      twitter: false
+bookdown::pdf_book:
+  keep_tex: false
+  latex_engine: xelatex
+  citation_package: none
+  toc_depth: 2
+  includes:
+    in_header: preamble.tex

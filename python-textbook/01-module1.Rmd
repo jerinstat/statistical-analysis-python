@@ -1,0 +1,706 @@
+# Introduction to Python Programming {#intro}
+
+::: {.objectives}
+**Learning Objectives**
+
+After studying this chapter, a student will be able to:
+
+- describe the interactive Python environment and the structure of a Jupyter/Colab notebook;
+- write and execute basic Python statements, comments, and correctly indented code;
+- declare variables and explain dynamic typing, along with the rules for naming variables;
+- use arithmetic operators and evaluate expressions;
+- read input from the user and convert it between data types;
+- work with strings and format output;
+- interpret common error messages and handle exceptions;
+- import and use modules; and
+- write control-flow statements, loops, and user-defined functions.
+:::
+
+## The Interactive Python Environment
+
+**Python** is a high-level, general-purpose programming language. It is widely used because it is free, open-source, and runs on multiple platforms such as Windows, Mac, and Linux.
+
+Python is an **interpreted language**, which means that an interpreter reads the source code and executes it directly, one instruction at a time. Because of this, Python can be used interactively: a student can type an instruction, press a key, and immediately see the result.
+
+### The Interactive Shell
+
+The simplest way to interact with Python is through the **interactive shell**. When the shell is opened, it displays the prompt `>>>`, which is the interpreter's way of asking, "What do you want me to do next?" A student can type an expression such as `3 + 4`, and Python will immediately evaluate it and display the result `7` on the next line before showing a new prompt.
+
+### Jupyter Notebooks and Google Colab
+
+While the basic shell is useful, data analysis is usually carried out in a **Jupyter Notebook**. A Jupyter Notebook is an interactive, browser-based environment that allows a user to combine executable Python code, formatted text, mathematical equations, and visualizations, all within a single document.
+
+A notebook is made up of **cells**. A programmer types code into a cell and executes it by pressing `Shift + Enter`. The output of that particular block of code appears directly beneath the cell. This encourages an interactive *"execute–explore"* style of working, in which a small piece of code is written, run, and its result examined before moving on.
+
+**Google Colab** is a free, cloud-hosted version of a Jupyter Notebook. Because it runs in the cloud, it requires no installation of Python or any package on the student's computer; only a web browser and a Google account are needed. Throughout this book, every code example is intended to be typed into a Colab cell and run with `Shift + Enter`. Colab behaves exactly like a Jupyter Notebook, so the terms may be used interchangeably.
+
+The very first program a student usually writes simply displays a line of text on the screen:
+
+```python
+print('Hello World')
+```
+
+```
+Hello World
+```
+
+The built-in `print()` function displays whatever is placed inside its parentheses.
+
+## Basic Syntax and Program Readability
+
+A Python program is a sequence of **statements**. A statement is a unit of code that the interpreter can execute, such as assigning a value to a variable or printing a result. When a statement is typed in a cell and executed, the interpreter reads it, checks its syntax, translates it, and produces a result.
+
+### Keywords
+
+Python has a small built-in vocabulary of **reserved words**, also called **keywords**. Words such as `if`, `def`, `for`, `print`, and `while` have specific meanings to Python and cannot be used as variable names.
+
+### Comments
+
+**Comments** are notes written for human readers to explain the code. They are completely ignored by the Python interpreter.
+
+- A **single-line comment** begins with the hash symbol (`#`).
+- A **multi-line comment**, often called a **docstring**, is enclosed within triple quotation marks (`"""..."""`).
+
+```python
+# This is a single-line comment
+print("Welcome to Statistical Analysis")   # this comment explains the line
+
+"""
+This is a multi-line comment.
+It can span several lines.
+"""
+```
+
+### Statement Termination
+
+In most cases, the end of a physical line marks the end of a statement, so lines do not need to be ended with a semicolon. If a statement is too long to fit on one line, the **line-continuation character**, a backslash (`\`), may be placed at the end of the line. Alternatively, any expression enclosed within parentheses `()`, brackets `[]`, or braces `{}` may naturally span several lines without a backslash.
+
+### Indentation
+
+**Indentation** is one of the most important features of Python. Unlike many languages that use braces `{}` to group blocks of code, Python rigidly uses line indentation — the blank space to the left of a line — to determine where a block of code begins and ends. Every statement within a single block must be indented by the same amount. Indentation is a strict requirement, not merely a matter of style; incorrect indentation produces an error.
+
+## Variables and Dynamic Typing
+
+A **variable** is a name that refers to a stored value in the computer's memory. It is helpful to think of a variable as a *label* or a *pointer* attached to an object, rather than a box that holds data.
+
+### Dynamic Typing
+
+Python uses **dynamic typing**, which means a programmer does not need to declare in advance what type of data a variable will hold. The interpreter determines the type automatically when the program runs. Because of this, the same variable can hold an integer at one moment and a string at another:
+
+```python
+x = 100      # x now refers to an integer
+x = "Hello"  # the same x now refers to a string
+```
+
+No error occurs; the variable simply points to the new object.
+
+### Rules for Naming Variables
+
+Python is strict about how variables are named:
+
+- A name must start with a letter (`a`–`z`, `A`–`Z`) or an underscore (`_`).
+- A name cannot start with a number. For example, `1plus` is invalid, but `plus1` is valid.
+- A name cannot contain special characters such as `@`, `$`, `%`, or spaces.
+- Names are **case-sensitive**, so `Age`, `age`, and `AGE` are three different variables.
+- A **reserved keyword** (such as `if`, `def`, `for`, `print`, or `while`) cannot be used as a variable name.
+
+## Arithmetic Operators and Expressions
+
+Python can act as a powerful calculator. An **expression** is a combination of values, variables, and operators that the interpreter evaluates to produce a new value. The main arithmetic operators are listed below.
+
+| Operator | Meaning                | Example  | Result |
+| -------- | ---------------------- | -------- | ------ |
+| `+`      | Addition               | `4 + 3`  | `7`    |
+| `-`      | Subtraction            | `4 - 3`  | `1`    |
+| `*`      | Multiplication         | `4 * 3`  | `12`   |
+| `/`      | Floating-point division| `13 / 5` | `2.6`  |
+| `//`     | Floor division         | `13 // 5`| `2`    |
+| `%`      | Modulus (remainder)    | `13 % 5` | `3`    |
+| `**`     | Exponentiation (power) | `2 ** 3` | `8`    |
+
+- **Floating-point division** (`/`) performs ordinary division and gives a decimal result.
+- **Floor division** (`//`) divides and drops the fractional remainder.
+- **Modulus** (`%`) returns only the remainder of a division.
+- **Exponentiation** (`**`) raises a number to a power.
+
+::: {.worked}
+**Worked Example 1.1 — The Python Calculator**
+
+A student has 47 apples and wants to divide them evenly among 5 friends. The following program finds how many whole apples each friend gets and how many are left over.
+
+```python
+apples = 47
+friends = 5
+apples_per_friend = apples // friends
+apples_left_over = apples % friends
+print("Each friend gets:", apples_per_friend)
+print("Apples left over:", apples_left_over)
+```
+
+```
+Each friend gets: 9
+Apples left over: 2
+```
+
+Floor division (`//`) gives the number of whole apples per friend, and modulus (`%`) gives the remainder.
+:::
+
+## Reading User Input and Type Conversion
+
+### The `input()` Function
+
+The built-in `input()` function pauses the program and prompts the user to type something from the keyboard:
+
+```python
+name = input("Enter your name: ")
+```
+
+An important point is that `input()` **always returns the typed data as a string** (text), even when the user types a number. If a user types `10`, Python stores it as the text `"10"`.
+
+### Type Conversion (Casting)
+
+To perform arithmetic on user input, the string must first be converted into a number. This is called **type conversion** or **casting**, and it uses built-in functions:
+
+- `int()` converts a value to a whole number;
+- `float()` converts a value to a number with a decimal point;
+- `str()` converts a number back into a string.
+
+::: {.worked}
+**Worked Example 1.2 — The Input Trap**
+
+This example shows why type conversion matters. The same input is used first without conversion and then with conversion.
+
+```python
+# Without conversion: the string is repeated
+user_val = input("Enter a number: ")
+print("Without conversion:", user_val * 5)
+
+# With conversion: real multiplication takes place
+numeric_val = float(user_val)
+print("With conversion:", numeric_val * 5)
+```
+
+If the user enters `4`, the output is:
+
+```
+Without conversion: 44444
+With conversion: 20.0
+```
+
+Because `input()` returns text, `user_val * 5` repeats the text five times. Only after converting to a number does `* 5` perform multiplication.
+:::
+
+## Working with Strings and Formatting
+
+A **string** is a sequence of characters. Python allows strings to be written using single quotes (`'...'`), double quotes (`"..."`), or triple quotes (`'''...'''` or `"""..."""`).
+
+Different quote styles are useful in different situations. If the text itself contains an apostrophe, the string can be wrapped in double quotes to avoid confusion, for example `"I'm learning Python"`. Triple quotes are used for strings that span several lines and for docstrings.
+
+### String Operations
+
+- **Concatenation** (`+`) joins two strings end to end: `"Hello" + "World"` gives `"HelloWorld"`.
+- **Repetition** (`*`) repeats a string a given number of times: `"Hi" * 3` gives `"HiHiHi"`.
+
+### Escape Sequences
+
+An **escape sequence** uses the backslash (`\`) to insert a special character inside a string:
+
+- `\n` inserts a new line;
+- `\t` inserts a horizontal tab.
+
+### Formatting Output
+
+The `.format()` method inserts variables neatly into a string. Placeholders `{0}`, `{1}`, and so on are replaced, in order, by the values given to `.format()`:
+
+```python
+name = "Anu"
+age = 20
+print("Hello {0}, you are {1} years old".format(name, age))
+```
+
+```
+Hello Anu, you are 20 years old
+```
+
+A second, more modern way to do the same thing is the **f-string** (formatted string literal). An f-string is written by placing the letter `f` immediately before the opening quote. Any variable placed inside curly braces `{}` within the string is then replaced by its value. This is often the most convenient way to combine text and variables, and it is the style used in most of the examples that follow.
+
+```python
+name = "Anu"
+age = 20
+print(f"Hello {name}, you are {age} years old")
+```
+
+```
+Hello Anu, you are 20 years old
+```
+
+An arithmetic expression may also be placed directly inside the braces of an f-string:
+
+```python
+weight = 72
+print(f"Pay an additional charge for {weight - 25} kg")
+```
+
+```
+Pay an additional charge for 47 kg
+```
+
+::: {.worked}
+**Worked Example 1.3 — Formatting a Bill**
+
+This program asks for an item, its price, and the quantity, then prints a neat receipt.
+
+```python
+item = input("Enter item name: ")
+price = float(input("Enter price per unit: "))
+qty = int(input("Enter quantity: "))
+total = price * qty
+print("You bought {0} units of {1} at ${2} each. Total: ${3}".format(qty, item, price, total))
+```
+
+If the user enters `Apple`, `2.5`, and `3`, the output is:
+
+```
+You bought 3 units of Apple at $2.5 each. Total: $7.5
+```
+
+Note the use of `float()` for the price and `int()` for the quantity, so that the multiplication is numerical.
+:::
+
+## Control Flow: Decision Making
+
+By default, a program executes its statements one after another, from top to bottom. **Control-flow statements** allow a program to make decisions and execute particular blocks of code only when a condition is met.
+
+An important rule applies to all of these statements: the condition line ends with a colon (`:`), and the block of code that belongs to it must be **indented**.
+
+### The `if` Statement
+
+The `if` statement evaluates a condition. If the condition is `True`, the indented block below it is executed; if it is `False`, the block is skipped.
+
+```python
+score = 85
+if score > 50:
+    print("You have passed the exam!")
+```
+
+```
+You have passed the exam!
+```
+
+Here Python checks whether 85 is greater than 50. Since this is true, the indented `print` statement runs.
+
+### The `if...else` Statement
+
+The `if...else` statement provides a two-way decision. If the condition is `True`, the `if` block runs; otherwise, the `else` block runs. The `else` keyword takes no condition of its own, but it still ends with a colon and is aligned with the `if`.
+
+```python
+age = 16
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are too young to vote.")
+```
+
+```
+You are too young to vote.
+```
+
+### The `if...elif...else` Statement
+
+When there are several possibilities, the `elif` keyword (short for "else if") is used. Python checks the conditions from top to bottom. The **first** condition that is `True` is executed, and all the rest are skipped. The final `else` acts as a default when none of the conditions are true.
+
+Note that a **double equals** (`==`) is used to test whether two things are equal, whereas a **single equals** (`=`) only assigns a value to a variable.
+
+```python
+color = "Yellow"
+if color == "Red":
+    print("Stop")
+elif color == "Yellow":
+    print("Get Ready")
+elif color == "Green":
+    print("Go")
+else:
+    print("Invalid signal color")
+```
+
+```
+Get Ready
+```
+
+Python skips `"Red"` because it does not match, finds a match at `"Yellow"`, prints `Get Ready`, and ignores the remaining branches.
+
+A useful feature of Python is that two comparisons can be **chained** together to test whether a value lies within a range. For example, `0 < W < 50` is read exactly as in mathematics: it is `True` only when `W` is greater than 0 *and* less than 50.
+
+::: {.worked}
+**Worked Example 1.4 — Luggage Weight Charges**
+
+An airline allows luggage up to 50 kg. Between 50 kg and 100 kg an additional charge applies, and above 100 kg a double penalty applies. This program reads the weight and decides the charge using a chained comparison.
+
+```python
+W = int(input("Input your luggage weight in kg: "))
+if 0 < W < 50:
+    print("Weight is within the allowed limit")
+elif 50 < W < 100:
+    print(f"There is an additional charge for {W - 50} kg")
+else:
+    print(f"There is a double penalty for {W - 100} kg and normal additional charge for 50 kg")
+```
+
+If the user enters `72`, the output is:
+
+```
+There is an additional charge for 22 kg
+```
+
+Python checks the conditions in order. The first (`0 < 72 < 50`) is false, the second (`50 < 72 < 100`) is true, so its block runs and the rest are skipped.
+:::
+
+## Control Flow: Loops
+
+A **loop** allows a block of statements to be executed many times until a terminating condition is met. This avoids writing the same code repeatedly.
+
+### The `while` Loop
+
+A `while` loop repeatedly executes its block of code as long as its condition remains `True`. It tests the condition *before* executing the body each time.
+
+It is essential that something inside the loop eventually makes the condition `False`; otherwise, the loop runs forever, creating an **infinite loop**.
+
+```python
+count = 1
+while count <= 3:
+    print(count)
+    count = count + 1
+print("Loop is finished!")
+```
+
+```
+1
+2
+3
+Loop is finished!
+```
+
+The variable `count` starts at 1 and increases by 1 each time. When it reaches 4, the condition `4 <= 3` becomes false and the loop stops.
+
+### The `for` Loop and the `range()` Function
+
+A `for` loop iterates over a sequence, taking each item in turn. It is commonly used together with the built-in `range()` function, which generates a sequence of numbers.
+
+The rule for `range(start, stop)` is that it begins at `start` and stops **one number before** `stop`. If only a single value is given, as in `range(4)`, the sequence starts at 0.
+
+```python
+# Generates the numbers 2, 3, and 4
+for i in range(2, 5):
+    print(i)
+
+# Iterating through the characters of a string
+for character in "Blue":
+    print(character)
+```
+
+```
+2
+3
+4
+B
+l
+u
+e
+```
+
+::: {.worked}
+**Worked Example 1.7 — A Multiplication Table**
+
+A `for` loop with `range()` is a natural way to print a multiplication table. This program prints the five-times table from 1 to 10.
+
+```python
+for i in range(1, 11):
+    print(f"5 * {i} = {5 * i}")
+```
+
+```
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+```
+
+Here `range(1, 11)` produces the numbers 1 to 10. On each pass the current number is stored in `i`, multiplied by 5, and displayed using an f-string.
+:::
+
+### Loop Control: `break`, `continue`, and `pass`
+
+Three statements give finer control over loops:
+
+- **`break`** terminates the loop entirely and transfers execution to the statement immediately after the loop.
+- **`continue`** skips the rest of the current iteration and returns to the top of the loop to test the condition again.
+- **`pass`** is a "no-operation" placeholder that does nothing. It is used where a statement is required syntactically but no action is yet needed.
+
+```python
+for i in range(1, 6):
+    if i == 3:
+        break
+    print(i)
+```
+
+```
+1
+2
+```
+
+The loop prints 1 and 2; when `i` becomes 3, the `break` statement stops the loop immediately, so 3, 4, and 5 are never printed.
+
+## Interpreting Error Messages
+
+Every programmer makes mistakes, and Python provides clear mechanisms to catch them. Errors fall into two main categories: **syntax errors** and **exceptions** (runtime errors).
+
+### Syntax Errors
+
+A **syntax error**, also called a parsing error, occurs when the grammatical rules of Python are broken. The code will not run at all, and Python points an arrow to where it detected the problem. Common causes are a missing colon at the end of an `if`, `for`, or `while` line, a missing closing parenthesis, or incorrect indentation.
+
+```python
+while True
+    print("Hello World")
+```
+
+```
+SyntaxError: invalid syntax
+```
+
+The colon after `while True` is missing.
+
+### Exceptions (Runtime Errors)
+
+An **exception** occurs when the syntax is correct but an error arises while the program is running. Python produces a **traceback**, a report showing the line that caused the problem. Some common exceptions are:
+
+- **`TypeError`** — an operation is applied to an inappropriate type, such as adding a number to a string;
+- **`ZeroDivisionError`** — an attempt is made to divide by zero;
+- **`NameError`** — a variable is used before it has been given a value.
+
+```python
+result = 10 * (1 / 0)
+```
+
+```
+ZeroDivisionError: division by zero
+```
+
+### Handling Exceptions with `try...except`
+
+Rather than allowing a program to crash, an anticipated exception can be handled using a `try...except` block. Python attempts to run the code in the `try` block; if the specified error occurs, control passes to the `except` block instead of stopping the program.
+
+::: {.worked}
+**Worked Example 1.5 — Handling Bad User Input**
+
+```python
+try:
+    number = int(input("Please enter a number: "))
+    print("You entered", number)
+except ValueError:
+    print("Oops! That was not a valid number. Try again.")
+```
+
+If the user types `ten` instead of a digit, `int()` cannot convert it, so a `ValueError` occurs and the program prints the friendly message instead of crashing.
+:::
+
+## Importing Modules
+
+**Modules** are files of pre-written, reusable Python code, such as mathematical formulas or specialised tools. Python includes a large standard library of modules. To use one, it must be loaded with an **`import`** statement.
+
+### The `import` Statement
+
+The statement `import module_name` loads the entire module. To use a tool from it, the module name is written, followed by a dot (`.`), followed by the tool's name.
+
+```python
+import math
+root = math.sqrt(144)   # square-root function
+pi_value = math.pi      # the constant pi
+print(root, pi_value)
+```
+
+```
+12.0 3.141592653589793
+```
+
+### The `from ... import` Statement
+
+If only a few tools from a module are needed, they may be imported directly with `from module import tool`. The module name then need not be written each time.
+
+```python
+from math import pi, sqrt
+print(pi)
+print(sqrt(2))
+```
+
+```
+3.141592653589793
+1.4142135623730951
+```
+
+Writing `from math import *` copies every function from the module into the program, although importing only what is needed is generally clearer.
+
+## Function Fundamentals
+
+A **function** is a named block of code that performs a specific task. Functions allow code to be written once and reused ("called") as often as needed.
+
+### Built-in Functions
+
+Some functions are **built-in** and always available without importing anything. Examples include `print()`, `input()`, `len()`, `abs()`, `max()`, and `min()`.
+
+```python
+print(len("Statistical"))   # number of characters
+print(abs(-45))             # absolute value
+print(max(4, 8, 1, 9))      # largest value
+print(min(4, 8, 1, 9))      # smallest value
+```
+
+```
+11
+45
+9
+1
+```
+
+### Defining User-Defined Functions
+
+A programmer can also create **user-defined functions** using the `def` keyword, followed by a name, parentheses, and a mandatory colon. The body of the function must be indented. A function does nothing until it is explicitly called by its name.
+
+```python
+def print_welcome():
+    print("Welcome to Statistical Analysis!")
+    print("Let's learn Python.")
+
+print_welcome()
+```
+
+```
+Welcome to Statistical Analysis!
+Let's learn Python.
+```
+
+A function such as this one, which performs an action but computes no value to return, is sometimes called a **void function**.
+
+### Parameters and Arguments
+
+Functions usually need data to work with.
+
+- **Formal parameters** are the placeholder names listed inside the parentheses in the function definition.
+- **Actual arguments** are the real values passed to the function when it is called.
+
+```python
+def calculate_area(length, width):   # length and width are parameters
+    area = length * width
+    print("The area is", area)
+
+calculate_area(10, 5)                # 10 and 5 are arguments
+```
+
+```
+The area is 50
+```
+
+### Return Values
+
+If a function should compute a value and send it back to the caller, the **`return`** statement is used. As soon as `return` runs, the function stops and hands back the value. If a function has no `return` statement, it automatically returns a special empty value called **`None`**.
+
+```python
+def square_number(x):
+    return x * x
+
+result = square_number(6)   # 36 is returned and stored in result
+print(result)
+```
+
+```
+36
+```
+
+Python also allows a function to return **multiple values** at once, separated by commas:
+
+```python
+def get_user_info():
+    name = "Bob"
+    age = 21
+    return name, age
+
+student_name, student_age = get_user_info()
+print(student_name, student_age)
+```
+
+```
+Bob 21
+```
+
+::: {.worked}
+**Worked Example 1.6 — A Body Mass Index Function**
+
+This example brings together user-defined functions, parameters, `return`, user input, and an f-string. The function computes the Body Mass Index (BMI) from a weight in kilograms and a height in centimetres, using the formula
+$$\text{BMI} = \frac{\text{weight}}{(\text{height}/100)^2}.$$
+
+```python
+def bmi(weight, height):
+    bmiv = weight / ((height / 100) ** 2)
+    return bmiv
+
+h = float(input("Please enter your height in cm: "))
+w = float(input("Please enter your weight in kg: "))
+print(f"Your BMI is {bmi(w, h)}")
+```
+
+The function takes `weight` and `height` as parameters, computes the value, and returns it. The returned value is then displayed. Note how the height is converted from centimetres to metres inside the formula by dividing by 100.
+:::
+
+### Default Parameters and Keyword Arguments
+
+Function arguments can be made flexible in two ways.
+
+- A **default parameter** is given a value in the function header. If the caller does not supply that argument, the default is used.
+- A **keyword (named) argument** is passed by writing `name=value` in the call, so the left-to-right order of the arguments does not matter.
+
+```python
+def print_employee(name, department="Statistics"):   # default value
+    print(name, "works in", department)
+
+print_employee("Sarah", "Biology")   # overrides the default
+print_employee("John")               # uses the default
+```
+
+```
+Sarah works in Biology
+John works in Statistics
+```
+
+```python
+def calculate_interest(principal, rate, time):
+    return (principal * rate * time) / 100
+
+# Because the arguments are named, their order does not matter
+interest = calculate_interest(time=2, principal=5000, rate=5)
+print(interest)
+```
+
+```
+500.0
+```
+
+## Practice Exercises {-}
+
+::: {.practice}
+The following exercises can be typed and run in Google Colab.
+
+**Exercise 1.1 — Odd or Even.** Write a program that asks the user to enter a whole number and prints whether it is odd or even. *(Hint: use the modulus operator `%`; if `val % 2 == 0`, the number is even.)*
+
+**Exercise 1.2 — Age Categorisation.** Ask the user to enter an age and print whether the person is a Child (below 13), a Teenager (13–17), an Adult (18–59), or a Senior (60 or above).
+
+**Exercise 1.3 — Multiplication Table.** Ask the user for a number, then use a `for` loop and `range()` to print the first five multiples of that number.
+
+**Exercise 1.4 — Building a Calculator.** Define a function `multiply_three` that takes three parameters and returns their product. Call it with the arguments 2, 4, and 5, and print the result.
+
+**Exercise 1.5 — The Default Value.** Define a function `book_flight(destination, seat_class="Economy")`. Call it once with only a destination, and a second time using keyword arguments to set the destination to `"Paris"` and the seat class to `"First Class"`.
+:::

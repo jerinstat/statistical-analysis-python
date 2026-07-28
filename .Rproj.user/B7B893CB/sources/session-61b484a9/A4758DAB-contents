@@ -1,0 +1,316 @@
+# Data Manipulation with Pandas {#pandas}
+
+::: {.objectives}
+**Learning Objectives**
+
+After studying this chapter, a student will be able to:
+
+- explain what the Pandas library is and why it is used;
+- create and access a one-dimensional **Series**;
+- create a two-dimensional **DataFrame** and select, add, and delete its columns;
+- import data from CSV and Excel files and export a DataFrame to a file;
+- handle missing data and merge two DataFrames; and
+- compute descriptive statistics and group data for analysis.
+:::
+
+## Introduction to Pandas
+
+Standard Python is excellent for general programming, but it is not by itself fast or structured enough to handle large, real-world datasets such as spreadsheets with thousands of rows. For this, data scientists use an open-source add-on library called **Pandas**.
+
+The name Pandas is derived from *panel data*, a term from econometrics for multidimensional structured datasets. Pandas provides high-performance tools for manipulating and analysing data; it may be thought of as a powerful version of a spreadsheet available directly inside Python.
+
+Because Pandas is an external library, it must be **imported** before use. By convention it is given the short name `pd`:
+
+```python
+import pandas as pd
+```
+
+Writing `as pd` means that Pandas can afterwards be referred to simply as `pd`.
+
+A note on capital letters: Python is case-sensitive, so Pandas uses a capital **S** in `Series` and a capital **D** and **F** in `DataFrame`. Typing `pd.series()` or `pd.dataframe()` will cause an error.
+
+## The Pandas Series
+
+Pandas has two main data structures: the **Series**, which is one-dimensional, and the **DataFrame**, which is two-dimensional. A **Series** is a one-dimensional array that can hold any single data type, such as integers, strings, or decimals.
+
+A key feature that distinguishes a Series from an ordinary Python list is its **index** — a label attached to every value. If no index is supplied, Pandas automatically numbers the rows starting from 0. In this respect a Series behaves much like a specialised dictionary, pairing each value with a label.
+
+### Creating a Series from a List
+
+```python
+import pandas as pd
+marks = pd.Series([85, 90, 78, 92])
+print(marks)
+```
+
+```
+0    85
+1    90
+2    78
+3    92
+dtype: int64
+```
+
+The left-hand column (`0, 1, 2, 3`) is the automatically generated index; the right-hand column holds the values.
+
+### Creating a Series with a Custom Index
+
+Custom text labels can be attached to the data so that each value is clearly identified:
+
+```python
+import pandas as pd
+age = pd.Series([18, 20, 21], index=['Parvathy', 'Archana', 'Arya'])
+print(age)
+```
+
+```
+Parvathy    18
+Archana     20
+Arya        21
+dtype: int64
+```
+
+The second argument, `index=[...]`, replaces the default numbers `0, 1, 2` with the names.
+
+### Creating a Series from a Dictionary
+
+A Python dictionary can be passed directly to `pd.Series()`. Pandas turns the dictionary's keys into the index and its values into the data:
+
+```python
+import pandas as pd
+data = {'Messi': 6, 'Mbappe': 5, 'Ronaldo': 2}
+goal = pd.Series(data)
+print(goal)
+```
+
+```
+Messi      6
+Mbappe     5
+Ronaldo    2
+dtype: int64
+```
+
+### Accessing Data in a Series
+
+Once a Series exists, individual values are retrieved with square brackets `[]`, using either the custom label or the underlying numerical position.
+
+```python
+import pandas as pd
+age = pd.Series([18, 20, 21], index=['Parvathy', 'Archana', 'Arya'])
+print("Parvathy's age is:", age['Parvathy'])
+```
+
+```
+Parvathy's age is: 18
+```
+
+Even when text labels are used, Pandas never forgets the original numerical positions, so slicing by position (for example `age[0:2]`) is still possible.
+
+## The Pandas DataFrame
+
+While a Series holds a single list of values, real data is usually arranged in a table. A **DataFrame** is a two-dimensional, tabular, labelled data structure, similar to a spreadsheet or a database table. It is an ordered collection of columns, and each column may hold a different type of data.
+
+### Creating a DataFrame
+
+The most common way to build a DataFrame is from a dictionary, in which the keys become the column names and the value lists become the columns:
+
+```python
+import pandas as pd
+mark = {'Name': ['Ancy', 'Sreepriya', 'Lakshmi', 'Anupama', 'Nivediya', 'Arya'],
+        'Sem1': [85, 92, 95, 98, 50, 40],
+        'Sem2': [90, 98, 92, 72, 44, 50],
+        'Sem3': [91, 95, 91, 83, 98, 100],
+        'Sem4': [92, 90, 93, 100, 99, 98]}
+sm = pd.DataFrame(mark)
+print(sm)
+```
+
+```
+        Name  Sem1  Sem2  Sem3  Sem4
+0       Ancy    85    90    91    92
+1  Sreepriya    92    98    95    90
+2    Lakshmi    95    92    91    93
+3    Anupama    98    72    83   100
+4   Nivediya    50    44    98    99
+5       Arya    40    50   100    98
+```
+
+Pandas automatically supplies the numerical row index (`0`–`5`) on the far left.
+
+### Selecting Data
+
+A single column is selected by placing its name in square brackets. A single column taken from a DataFrame is itself a Pandas Series.
+
+```python
+print(sm['Name'])          # a single column
+print(sm.iloc[2])          # a single row, by integer position
+print(sm[:2])              # the first two rows (slicing)
+```
+
+The method `.iloc[]` ("integer location") selects a row by its numerical position; since counting starts at 0, `sm.iloc[2]` gives the third row. Slicing with `sm[:2]` returns everything up to, but not including, row index 2.
+
+### Adding and Deleting Columns
+
+A new column is created simply by assigning a list to a new column name. An existing column is removed permanently with the `del` keyword.
+
+```python
+# Adding a new column
+sm['Sem5'] = [96, 97, 95, 98, 99, 94]
+print(sm)
+
+# Deleting a column
+del sm['Sem1']
+print(sm)
+```
+
+Pandas automatically aligns the new column's values with the existing rows.
+
+## Data Operations
+
+### Importing and Exporting Data
+
+Real analysts rarely type data by hand; they load files produced by other systems, most commonly **CSV** (Comma-Separated Values) files. The `pd.read_csv()` function reads a CSV file into a DataFrame, and the `.to_csv()` method writes a DataFrame back to a file.
+
+```python
+import pandas as pd
+# Reading a CSV file into a DataFrame
+df = pd.read_csv("students.csv")
+print(df)
+
+# Exporting a DataFrame to a new CSV file, without the row index
+df.to_csv("backup_students.csv", index=False)
+```
+
+The argument `index=False` prevents Pandas from writing the row numbers (`0, 1, 2, …`) as an extra column in the saved file.
+
+### Importing Data from Excel
+
+Because spreadsheets are so widely used, Pandas can also read Excel files with the `pd.read_excel()` function, which works much like `pd.read_csv()`. Behind the scenes Pandas uses the helper packages `openpyxl` (for newer `.xlsx` files) and `xlrd` (for older `.xls` files); these are normally already available in Google Colab.
+
+```python
+import pandas as pd
+# Reading the default (first) sheet
+df = pd.read_excel("College Data.xlsx")
+print(df.head())
+
+# Reading a specific sheet by name
+df2 = pd.read_excel("company_data.xlsx", "2000s")
+print(df2.head())
+```
+
+The `.head()` method displays the first few rows so that a successful import can be confirmed; `.tail()` similarly shows the last few rows.
+
+A practical note for Google Colab: because Colab runs in the cloud, a data file must first be **uploaded** to the session before it can be read. This is done with the folder icon on the left of the Colab window. Files uploaded this way are temporary and must be re-uploaded if the session is restarted.
+
+### Handling Missing Data
+
+Real data is often incomplete: forms are left blank, and measurements fail. Pandas represents a missing value as **`NaN`** (Not a Number). The `numpy` library provides the official `np.nan` object used to mark data as missing.
+
+```python
+import pandas as pd
+import numpy as np
+data = {'Student': ['Sarah', 'John', 'Mona', 'Ziad'],
+        'Score': [85.0, np.nan, 90.0, np.nan]}
+grades = pd.DataFrame(data)
+
+# Option A: drop rows containing missing values
+clean_grades = grades.dropna()
+
+# Option B: fill missing values with a fixed value
+filled_grades = grades.fillna(0)
+```
+
+The `.dropna()` method deletes any row that contains even a single `NaN`, whereas `.fillna(0)` replaces every `NaN` with the value supplied — here, 0.
+
+### Merging DataFrames
+
+Sometimes data is split across separate tables — for example, one table of names and another of salaries. The `pd.merge()` function combines two DataFrames using a shared column.
+
+```python
+import pandas as pd
+df1 = pd.DataFrame({'Emp_ID': [101, 102, 103],
+                    'Name': ['Alice', 'Bob', 'Charlie']})
+df2 = pd.DataFrame({'Emp_ID': [101, 102, 104],
+                    'Salary': [50000, 60000, 70000]})
+merged_df = pd.merge(df1, df2, on='Emp_ID')
+print(merged_df)
+```
+
+```
+   Emp_ID   Name  Salary
+0     101  Alice   50000
+1     102    Bob   60000
+```
+
+The argument `on='Emp_ID'` tells Pandas to line up rows where the `Emp_ID` matches. By default `pd.merge()` performs an *inner merge*, keeping only rows found in **both** tables; because Charlie (103) has no salary and ID 104 has no name, both are dropped.
+
+A related function, `pd.concat()`, stacks DataFrames on top of one another rather than joining them side by side.
+
+## Descriptive Statistics
+
+**Exploratory Data Analysis (EDA)** is usually the first step when a new dataset is received. It examines the central tendency (averages) and the dispersion (spread) of the data. Pandas provides simple built-in functions for this. By default these statistical methods ignore any missing (`NaN`) values.
+
+### Basic Statistics on a Column
+
+A single column is isolated with square brackets, and a statistic is then obtained by attaching the appropriate method:
+
+```python
+print("Maximum score:", df['Score'].max())
+print("Minimum age:", df['Age'].min())
+print("Average score:", df['Score'].mean())
+print("Standard deviation of scores:", df['Score'].std())
+```
+
+Here `.max()` finds the largest value, `.min()` the smallest, `.mean()` the arithmetic average, and `.std()` the standard deviation, which measures how spread out the values are.
+
+### The `.describe()` Method
+
+Typing each statistic separately for every column is tedious. The `.describe()` method computes them all at once for every numeric column, automatically ignoring text columns:
+
+```python
+print(df.describe())
+```
+
+This produces a table giving the count, mean, standard deviation, minimum, maximum, and the 25%, 50% (median), and 75% quartiles of each numeric column.
+
+::: {.worked}
+**Worked Example 2.1 — Describing the College Data**
+
+Reading the course dataset and describing a single column is a common first step. The following isolates the `PlusTwo` column and summarises it.
+
+```python
+import pandas as pd
+cd = pd.read_excel("College Data.xlsx")
+cd['SSLC'].describe()
+cd['PlusTwo'].describe()
+```
+
+`.describe()` applied to the `PlusTwo` column returns its count, mean, standard deviation, minimum, quartiles, and maximum, giving an immediate summary of the students' Plus Two performance.
+:::
+
+### Grouping Data for Analysis
+
+Often the average of an entire dataset is less useful than an average computed separately for each category. This is done with the **split–apply–combine** strategy: the data is *split* by a category, a calculation is *applied* to each group, and the results are *combined* into a table. The `.groupby()` method performs this.
+
+```python
+market_data = pd.DataFrame({
+    'City': ['Dubai', 'Abu Dhabi', 'Dubai', 'Sharjah', 'Abu Dhabi'],
+    'Sales': [200, 150, 300, 120, 180]
+})
+grouped_sales = market_data.groupby('City')['Sales'].sum()
+print(grouped_sales)
+```
+
+In the final line, `.groupby('City')` splits the table into groups by city, `['Sales']` selects the column to work on, and `.sum()` adds the values within each group. The result shows the total sales for each city separately.
+
+## Practice Exercises {-}
+
+::: {.practice}
+**Exercise 2.1 — Your First Series.** Create a Pandas Series containing the numbers 10, 20, 30, 40, 50 with the default numerical index, and print it.
+
+**Exercise 2.2 — Dictionary to Series.** Build a dictionary of three countries and their capitals (for example, `'Japan': 'Tokyo'`), convert it to a Series, and print the capital of Japan using its index label.
+
+**Exercise 2.3 — Create a Table.** Create a DataFrame called `inventory` from a dictionary with keys `'Product'` (Laptop, Mouse, Keyboard) and `'Price'` (1000, 20, 50), and print it.
+
+**Exercise 2.4 — Grouping Data.** Create a DataFrame with columns `'Department'` (`IT, HR, IT, HR`) and `'Salary'` (some values), then use `.groupby()` to find the average salary for each department.
+:::

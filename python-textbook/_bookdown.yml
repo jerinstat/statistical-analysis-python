@@ -1,0 +1,12 @@
+book_filename: "statistical-analysis-using-python"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files:
+  - "index.Rmd"
+  - "01-module1.Rmd"
+  - "02-module2.Rmd"
+  - "03-module3.Rmd"
+  - "98-glossary.Rmd"
+  - "99-references.Rmd"

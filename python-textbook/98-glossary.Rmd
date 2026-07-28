@@ -1,0 +1,49 @@
+# Glossary {-}
+
+**Argument (actual argument)** — the real value passed to a function when it is called.
+
+**Bin** — one of the equal ranges into which a histogram groups numerical data.
+
+**Casting (type conversion)** — converting a value from one data type to another, for example `int()`, `float()`, or `str()`.
+
+**Comment** — text in a program that is ignored by Python; a single-line comment begins with `#`.
+
+**CSV** — Comma-Separated Values, a plain-text file format for tabular data.
+
+**DataFrame** — a two-dimensional, labelled, tabular data structure in Pandas.
+
+**Docstring** — a multi-line string, enclosed in triple quotes, used for documentation.
+
+**Dynamic typing** — the feature by which Python determines a variable's type automatically at runtime.
+
+**Escape sequence** — a backslash combination inside a string, such as `\n` (new line) or `\t` (tab).
+
+**Exception** — a runtime error that occurs while a syntactically correct program is running.
+
+**Expression** — a combination of values, variables, and operators that evaluates to a result.
+
+**f-string** — a formatted string literal, written with an `f` before the quote, in which variables inside `{}` are replaced by their values.
+
+**Function** — a named block of reusable code that performs a specific task.
+
+**Index** — the label attached to each value in a Pandas Series or each row of a DataFrame.
+
+**Indentation** — the leading space that Python uses to define blocks of code.
+
+**Keyword (reserved word)** — a word with a fixed meaning in Python, such as `if`, `for`, or `def`, that cannot be used as a variable name.
+
+**Loop** — a structure (`for` or `while`) that repeats a block of code.
+
+**Module** — a file of reusable Python code loaded with the `import` statement.
+
+**NaN** — "Not a Number", the value Pandas uses to mark missing data.
+
+**Parameter (formal parameter)** — a placeholder variable listed in a function definition.
+
+**Series** — a one-dimensional, labelled array in Pandas.
+
+**Split–apply–combine** — the strategy behind `.groupby()`: splitting data by category, applying a calculation, and combining the results.
+
+**Syntax error** — an error caused by breaking Python's grammatical rules, which prevents the program from running.
+
+**Variable** — a name that refers to a stored value in memory.

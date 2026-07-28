@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Data Visualization | Statistical Analysis Using Python</title>
+  <meta name="description" content="Chapter 3 Data Visualization | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Data Visualization | Statistical Analysis Using Python" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Chapter 3 Data Visualization | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Data Visualization | Statistical Analysis Using Python" />
+  
+  <meta name="twitter:description" content="Chapter 3 Data Visualization | Statistical Analysis Using Python textbook for Calicut University FYUGP" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="pandas.html"/>
+<link rel="next" href="glossary.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Statistical Analysis Using Python</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-textbook-for-fyugp-programme-vth-sem-bsc-statistics-vimala-college-autonomous-thrissur"><i class="fa fa-check"></i><em>A Textbook for FYUGP Programme   Vth Sem BSc Statistics,   Vimala College (Autonomous), Thrissur</em></a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-information"><i class="fa fa-check"></i>Course Information</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#course-details"><i class="fa fa-check"></i>Course Details</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#credit-structure"><i class="fa fa-check"></i>Credit Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#detailed-syllabus"><i class="fa fa-check"></i>Detailed Syllabus</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#the-dataset-used-in-this-book"><i class="fa fa-check"></i>The Dataset Used in This Book</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to Python Programming</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#the-interactive-python-environment"><i class="fa fa-check"></i><b>1.1</b> The Interactive Python Environment</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="intro.html"><a href="intro.html#the-interactive-shell"><i class="fa fa-check"></i><b>1.1.1</b> The Interactive Shell</a></li>
+<li class="chapter" data-level="1.1.2" data-path="intro.html"><a href="intro.html#jupyter-notebooks-and-google-colab"><i class="fa fa-check"></i><b>1.1.2</b> Jupyter Notebooks and Google Colab</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-syntax-and-program-readability"><i class="fa fa-check"></i><b>1.2</b> Basic Syntax and Program Readability</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="intro.html"><a href="intro.html#keywords"><i class="fa fa-check"></i><b>1.2.1</b> Keywords</a></li>
+<li class="chapter" data-level="1.2.2" data-path="intro.html"><a href="intro.html#comments"><i class="fa fa-check"></i><b>1.2.2</b> Comments</a></li>
+<li class="chapter" data-level="1.2.3" data-path="intro.html"><a href="intro.html#statement-termination"><i class="fa fa-check"></i><b>1.2.3</b> Statement Termination</a></li>
+<li class="chapter" data-level="1.2.4" data-path="intro.html"><a href="intro.html#indentation"><i class="fa fa-check"></i><b>1.2.4</b> Indentation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#variables-and-dynamic-typing"><i class="fa fa-check"></i><b>1.3</b> Variables and Dynamic Typing</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#dynamic-typing"><i class="fa fa-check"></i><b>1.3.1</b> Dynamic Typing</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#rules-for-naming-variables"><i class="fa fa-check"></i><b>1.3.2</b> Rules for Naming Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#arithmetic-operators-and-expressions"><i class="fa fa-check"></i><b>1.4</b> Arithmetic Operators and Expressions</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#reading-user-input-and-type-conversion"><i class="fa fa-check"></i><b>1.5</b> Reading User Input and Type Conversion</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="intro.html"><a href="intro.html#the-input-function"><i class="fa fa-check"></i><b>1.5.1</b> The <code>input()</code> Function</a></li>
+<li class="chapter" data-level="1.5.2" data-path="intro.html"><a href="intro.html#type-conversion-casting"><i class="fa fa-check"></i><b>1.5.2</b> Type Conversion (Casting)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#working-with-strings-and-formatting"><i class="fa fa-check"></i><b>1.6</b> Working with Strings and Formatting</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#string-operations"><i class="fa fa-check"></i><b>1.6.1</b> String Operations</a></li>
+<li class="chapter" data-level="1.6.2" data-path="intro.html"><a href="intro.html#escape-sequences"><i class="fa fa-check"></i><b>1.6.2</b> Escape Sequences</a></li>
+<li class="chapter" data-level="1.6.3" data-path="intro.html"><a href="intro.html#formatting-output"><i class="fa fa-check"></i><b>1.6.3</b> Formatting Output</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#control-flow-decision-making"><i class="fa fa-check"></i><b>1.7</b> Control Flow: Decision Making</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#the-if-statement"><i class="fa fa-check"></i><b>1.7.1</b> The <code>if</code> Statement</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#the-if...else-statement"><i class="fa fa-check"></i><b>1.7.2</b> The <code>if...else</code> Statement</a></li>
+<li class="chapter" data-level="1.7.3" data-path="intro.html"><a href="intro.html#the-if...elif...else-statement"><i class="fa fa-check"></i><b>1.7.3</b> The <code>if...elif...else</code> Statement</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#control-flow-loops"><i class="fa fa-check"></i><b>1.8</b> Control Flow: Loops</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="intro.html"><a href="intro.html#the-while-loop"><i class="fa fa-check"></i><b>1.8.1</b> The <code>while</code> Loop</a></li>
+<li class="chapter" data-level="1.8.2" data-path="intro.html"><a href="intro.html#the-for-loop-and-the-range-function"><i class="fa fa-check"></i><b>1.8.2</b> The <code>for</code> Loop and the <code>range()</code> Function</a></li>
+<li class="chapter" data-level="1.8.3" data-path="intro.html"><a href="intro.html#loop-control-break-continue-and-pass"><i class="fa fa-check"></i><b>1.8.3</b> Loop Control: <code>break</code>, <code>continue</code>, and <code>pass</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#interpreting-error-messages"><i class="fa fa-check"></i><b>1.9</b> Interpreting Error Messages</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="intro.html"><a href="intro.html#syntax-errors"><i class="fa fa-check"></i><b>1.9.1</b> Syntax Errors</a></li>
+<li class="chapter" data-level="1.9.2" data-path="intro.html"><a href="intro.html#exceptions-runtime-errors"><i class="fa fa-check"></i><b>1.9.2</b> Exceptions (Runtime Errors)</a></li>
+<li class="chapter" data-level="1.9.3" data-path="intro.html"><a href="intro.html#handling-exceptions-with-try...except"><i class="fa fa-check"></i><b>1.9.3</b> Handling Exceptions with <code>try...except</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#importing-modules"><i class="fa fa-check"></i><b>1.10</b> Importing Modules</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#the-import-statement"><i class="fa fa-check"></i><b>1.10.1</b> The <code>import</code> Statement</a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#the-from-...-import-statement"><i class="fa fa-check"></i><b>1.10.2</b> The <code>from ... import</code> Statement</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="intro.html"><a href="intro.html#function-fundamentals"><i class="fa fa-check"></i><b>1.11</b> Function Fundamentals</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="intro.html"><a href="intro.html#built-in-functions"><i class="fa fa-check"></i><b>1.11.1</b> Built-in Functions</a></li>
+<li class="chapter" data-level="1.11.2" data-path="intro.html"><a href="intro.html#defining-user-defined-functions"><i class="fa fa-check"></i><b>1.11.2</b> Defining User-Defined Functions</a></li>
+<li class="chapter" data-level="1.11.3" data-path="intro.html"><a href="intro.html#parameters-and-arguments"><i class="fa fa-check"></i><b>1.11.3</b> Parameters and Arguments</a></li>
+<li class="chapter" data-level="1.11.4" data-path="intro.html"><a href="intro.html#return-values"><i class="fa fa-check"></i><b>1.11.4</b> Return Values</a></li>
+<li class="chapter" data-level="1.11.5" data-path="intro.html"><a href="intro.html#default-parameters-and-keyword-arguments"><i class="fa fa-check"></i><b>1.11.5</b> Default Parameters and Keyword Arguments</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#practice-exercises"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="pandas.html"><a href="pandas.html"><i class="fa fa-check"></i><b>2</b> Data Manipulation with Pandas</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="pandas.html"><a href="pandas.html#introduction-to-pandas"><i class="fa fa-check"></i><b>2.1</b> Introduction to Pandas</a></li>
+<li class="chapter" data-level="2.2" data-path="pandas.html"><a href="pandas.html#the-pandas-series"><i class="fa fa-check"></i><b>2.2</b> The Pandas Series</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="pandas.html"><a href="pandas.html#creating-a-series-from-a-list"><i class="fa fa-check"></i><b>2.2.1</b> Creating a Series from a List</a></li>
+<li class="chapter" data-level="2.2.2" data-path="pandas.html"><a href="pandas.html#creating-a-series-with-a-custom-index"><i class="fa fa-check"></i><b>2.2.2</b> Creating a Series with a Custom Index</a></li>
+<li class="chapter" data-level="2.2.3" data-path="pandas.html"><a href="pandas.html#creating-a-series-from-a-dictionary"><i class="fa fa-check"></i><b>2.2.3</b> Creating a Series from a Dictionary</a></li>
+<li class="chapter" data-level="2.2.4" data-path="pandas.html"><a href="pandas.html#accessing-data-in-a-series"><i class="fa fa-check"></i><b>2.2.4</b> Accessing Data in a Series</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="pandas.html"><a href="pandas.html#the-pandas-dataframe"><i class="fa fa-check"></i><b>2.3</b> The Pandas DataFrame</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="pandas.html"><a href="pandas.html#creating-a-dataframe"><i class="fa fa-check"></i><b>2.3.1</b> Creating a DataFrame</a></li>
+<li class="chapter" data-level="2.3.2" data-path="pandas.html"><a href="pandas.html#selecting-data"><i class="fa fa-check"></i><b>2.3.2</b> Selecting Data</a></li>
+<li class="chapter" data-level="2.3.3" data-path="pandas.html"><a href="pandas.html#adding-and-deleting-columns"><i class="fa fa-check"></i><b>2.3.3</b> Adding and Deleting Columns</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="pandas.html"><a href="pandas.html#data-operations"><i class="fa fa-check"></i><b>2.4</b> Data Operations</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="pandas.html"><a href="pandas.html#importing-and-exporting-data"><i class="fa fa-check"></i><b>2.4.1</b> Importing and Exporting Data</a></li>
+<li class="chapter" data-level="2.4.2" data-path="pandas.html"><a href="pandas.html#importing-data-from-excel"><i class="fa fa-check"></i><b>2.4.2</b> Importing Data from Excel</a></li>
+<li class="chapter" data-level="2.4.3" data-path="pandas.html"><a href="pandas.html#handling-missing-data"><i class="fa fa-check"></i><b>2.4.3</b> Handling Missing Data</a></li>
+<li class="chapter" data-level="2.4.4" data-path="pandas.html"><a href="pandas.html#merging-dataframes"><i class="fa fa-check"></i><b>2.4.4</b> Merging DataFrames</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="pandas.html"><a href="pandas.html#descriptive-statistics"><i class="fa fa-check"></i><b>2.5</b> Descriptive Statistics</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="pandas.html"><a href="pandas.html#basic-statistics-on-a-column"><i class="fa fa-check"></i><b>2.5.1</b> Basic Statistics on a Column</a></li>
+<li class="chapter" data-level="2.5.2" data-path="pandas.html"><a href="pandas.html#the-.describe-method"><i class="fa fa-check"></i><b>2.5.2</b> The <code>.describe()</code> Method</a></li>
+<li class="chapter" data-level="2.5.3" data-path="pandas.html"><a href="pandas.html#grouping-data-for-analysis"><i class="fa fa-check"></i><b>2.5.3</b> Grouping Data for Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pandas.html"><a href="pandas.html#practice-exercises-1"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i><b>3</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="visualization.html"><a href="visualization.html#basic-charts-with-matplotlib"><i class="fa fa-check"></i><b>3.1</b> Basic Charts with Matplotlib</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="visualization.html"><a href="visualization.html#line-plot"><i class="fa fa-check"></i><b>3.1.1</b> Line Plot</a></li>
+<li class="chapter" data-level="3.1.2" data-path="visualization.html"><a href="visualization.html#bar-plot"><i class="fa fa-check"></i><b>3.1.2</b> Bar Plot</a></li>
+<li class="chapter" data-level="3.1.3" data-path="visualization.html"><a href="visualization.html#pie-chart"><i class="fa fa-check"></i><b>3.1.3</b> Pie Chart</a></li>
+<li class="chapter" data-level="3.1.4" data-path="visualization.html"><a href="visualization.html#histogram"><i class="fa fa-check"></i><b>3.1.4</b> Histogram</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="visualization.html"><a href="visualization.html#preparing-the-college-data-for-plotting"><i class="fa fa-check"></i><b>3.2</b> Preparing the College Data for Plotting</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="visualization.html"><a href="visualization.html#pie-chart-gender-distribution"><i class="fa fa-check"></i><b>3.2.1</b> Pie Chart — Gender Distribution</a></li>
+<li class="chapter" data-level="3.2.2" data-path="visualization.html"><a href="visualization.html#bar-plot-students-per-college"><i class="fa fa-check"></i><b>3.2.2</b> Bar Plot — Students per College</a></li>
+<li class="chapter" data-level="3.2.3" data-path="visualization.html"><a href="visualization.html#histogram-distribution-of-degree-marks"><i class="fa fa-check"></i><b>3.2.3</b> Histogram — Distribution of Degree Marks</a></li>
+<li class="chapter" data-level="3.2.4" data-path="visualization.html"><a href="visualization.html#line-plot-average-marks-progression"><i class="fa fa-check"></i><b>3.2.4</b> Line Plot — Average Marks Progression</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="visualization.html"><a href="visualization.html#statistical-charts-with-seaborn"><i class="fa fa-check"></i><b>3.3</b> Statistical Charts with Seaborn</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="visualization.html"><a href="visualization.html#box-plot"><i class="fa fa-check"></i><b>3.3.1</b> Box Plot</a></li>
+<li class="chapter" data-level="3.3.2" data-path="visualization.html"><a href="visualization.html#strip-plot"><i class="fa fa-check"></i><b>3.3.2</b> Strip Plot</a></li>
+<li class="chapter" data-level="3.3.3" data-path="visualization.html"><a href="visualization.html#swarm-plot"><i class="fa fa-check"></i><b>3.3.3</b> Swarm Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="visualization.html"><a href="visualization.html#advanced-plots"><i class="fa fa-check"></i><b>3.4</b> Advanced Plots</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="visualization.html"><a href="visualization.html#scatter-plot"><i class="fa fa-check"></i><b>3.4.1</b> Scatter Plot</a></li>
+<li class="chapter" data-level="3.4.2" data-path="visualization.html"><a href="visualization.html#heatmap"><i class="fa fa-check"></i><b>3.4.2</b> Heatmap</a></li>
+<li class="chapter" data-level="3.4.3" data-path="visualization.html"><a href="visualization.html#density-plot-and-cumulative-frequency"><i class="fa fa-check"></i><b>3.4.3</b> Density Plot and Cumulative Frequency</a></li>
+<li class="chapter" data-level="3.4.4" data-path="visualization.html"><a href="visualization.html#error-bars"><i class="fa fa-check"></i><b>3.4.4</b> Error Bars</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html#practice-exercises-2"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistical Analysis Using Python</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualization" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Data Visualization<a href="visualization.html#visualization" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="objectives">
+<p><strong>Learning Objectives</strong></p>
+<p>After studying this chapter, a student will be able to:</p>
+<ul>
+<li>describe the main Python visualization libraries;</li>
+<li>create line plots, bar plots, pie charts, and histograms with Matplotlib;</li>
+<li>prepare a real dataset for plotting using the Pandas <code>.map()</code> method;</li>
+<li>create box plots, strip plots, and swarm plots with Seaborn; and</li>
+<li>create scatter plots, heatmaps, density plots, cumulative-frequency plots, and error bars.</li>
+</ul>
+</div>
+<p><strong>Data visualization</strong> is the process of interpreting data in a pictorial or graphical form. A single well-chosen chart can communicate the message of thousands of numbers far more effectively than a table.</p>
+<p>Python has several visualization libraries. <strong>Matplotlib</strong> is the foundational library for basic charts; its <code>pyplot</code> module makes plotting straightforward and is conventionally imported as <code>plt</code>. <strong>Seaborn</strong> is built on top of Matplotlib and produces attractive statistical graphics with less code; it is imported as <code>sns</code>. Other libraries mentioned in the syllabus include <strong>Plotly</strong> (for interactive web charts), <strong>ggplot</strong> (which builds charts layer by layer using the “grammar of graphics”), <strong>Geoplotlib</strong> (for plotting geographical map data), and the plotting tools built directly into <strong>Pandas</strong>.</p>
+<p>The examples in this chapter use the course dataset, <code>College_Data.csv</code>, described in the Preface.</p>
+<div id="basic-charts-with-matplotlib" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Basic Charts with Matplotlib<a href="visualization.html#basic-charts-with-matplotlib" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Every Matplotlib chart is displayed by calling <code>plt.show()</code> at the end. Titles and axis labels are added with <code>plt.title()</code>, <code>plt.xlabel()</code>, and <code>plt.ylabel()</code>.</p>
+<div id="line-plot" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Line Plot<a href="visualization.html#line-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>line plot</strong> shows how a quantity changes across a continuous sequence, such as values over time. The two sequences passed to <code>plt.plot()</code> — the x-coordinates and the y-coordinates — must be of the same length.</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="visualization.html#cb80-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb80-2"><a href="visualization.html#cb80-2" tabindex="-1"></a>years <span class="op">=</span> [<span class="dv">2018</span>, <span class="dv">2019</span>, <span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>]</span>
+<span id="cb80-3"><a href="visualization.html#cb80-3" tabindex="-1"></a>sales <span class="op">=</span> [<span class="dv">120</span>, <span class="dv">135</span>, <span class="dv">150</span>, <span class="dv">145</span>, <span class="dv">170</span>]</span>
+<span id="cb80-4"><a href="visualization.html#cb80-4" tabindex="-1"></a>plt.plot(years, sales)</span>
+<span id="cb80-5"><a href="visualization.html#cb80-5" tabindex="-1"></a>plt.title(<span class="st">&quot;Company Sales Over Time&quot;</span>)</span>
+<span id="cb80-6"><a href="visualization.html#cb80-6" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Year&quot;</span>)</span>
+<span id="cb80-7"><a href="visualization.html#cb80-7" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Sales in Thousands&quot;</span>)</span>
+<span id="cb80-8"><a href="visualization.html#cb80-8" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/line_generic.png" alt="A line plot of sales against year." />
+<div class="figcaption">A line plot of sales against year.</div>
+</div>
+</div>
+<div id="bar-plot" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Bar Plot<a href="visualization.html#bar-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>bar plot</strong> compares the quantities of distinct categories. The function <code>plt.bar()</code> draws vertical rectangles, and the <code>color</code> argument changes their colour.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="visualization.html#cb81-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb81-2"><a href="visualization.html#cb81-2" tabindex="-1"></a>products <span class="op">=</span> [<span class="st">&#39;Apples&#39;</span>, <span class="st">&#39;Oranges&#39;</span>, <span class="st">&#39;Bananas&#39;</span>]</span>
+<span id="cb81-3"><a href="visualization.html#cb81-3" tabindex="-1"></a>quantities <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">30</span>, <span class="dv">45</span>]</span>
+<span id="cb81-4"><a href="visualization.html#cb81-4" tabindex="-1"></a>plt.bar(products, quantities, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>)</span>
+<span id="cb81-5"><a href="visualization.html#cb81-5" tabindex="-1"></a>plt.title(<span class="st">&quot;Fruit Inventory&quot;</span>)</span>
+<span id="cb81-6"><a href="visualization.html#cb81-6" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/bar_generic.png" alt="A bar plot comparing fruit quantities." />
+<div class="figcaption">A bar plot comparing fruit quantities.</div>
+</div>
+</div>
+<div id="pie-chart" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Pie Chart<a href="visualization.html#pie-chart" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>pie chart</strong> shows how a whole is divided into proportional parts. In <code>plt.pie()</code>, the numerical data are given first and the category names are supplied through the <code>labels</code> argument. The <code>autopct='%1.1f%%'</code> argument tells Python to calculate each slice’s percentage and display it to one decimal place.</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb82-1"><a href="visualization.html#cb82-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb82-2"><a href="visualization.html#cb82-2" tabindex="-1"></a>expenses <span class="op">=</span> [<span class="st">&#39;Rent&#39;</span>, <span class="st">&#39;Food&#39;</span>, <span class="st">&#39;Transport&#39;</span>]</span>
+<span id="cb82-3"><a href="visualization.html#cb82-3" tabindex="-1"></a>costs <span class="op">=</span> [<span class="dv">1200</span>, <span class="dv">800</span>, <span class="dv">400</span>]</span>
+<span id="cb82-4"><a href="visualization.html#cb82-4" tabindex="-1"></a>plt.pie(costs, labels<span class="op">=</span>expenses, autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%1.1f%%</span><span class="st">&#39;</span>)</span>
+<span id="cb82-5"><a href="visualization.html#cb82-5" tabindex="-1"></a>plt.title(<span class="st">&quot;Monthly Budget&quot;</span>)</span>
+<span id="cb82-6"><a href="visualization.html#cb82-6" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/pie_generic.png" alt="A pie chart of a monthly budget." />
+<div class="figcaption">A pie chart of a monthly budget.</div>
+</div>
+</div>
+<div id="histogram" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Histogram<a href="visualization.html#histogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>histogram</strong> looks like a bar chart but serves a different purpose: it groups a list of numbers into ranges called <strong>bins</strong> and counts how many values fall into each, revealing the distribution of the data. It takes a single list of numbers rather than an x and a y list.</p>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="visualization.html#cb83-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb83-2"><a href="visualization.html#cb83-2" tabindex="-1"></a>scores <span class="op">=</span> [<span class="dv">55</span>, <span class="dv">62</span>, <span class="dv">67</span>, <span class="dv">71</span>, <span class="dv">73</span>, <span class="dv">74</span>, <span class="dv">78</span>, <span class="dv">80</span>, <span class="dv">82</span>, <span class="dv">85</span>, <span class="dv">88</span>, <span class="dv">90</span>, <span class="dv">92</span>, <span class="dv">95</span>]</span>
+<span id="cb83-3"><a href="visualization.html#cb83-3" tabindex="-1"></a>plt.hist(scores, bins<span class="op">=</span><span class="dv">4</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>)</span>
+<span id="cb83-4"><a href="visualization.html#cb83-4" tabindex="-1"></a>plt.title(<span class="st">&quot;Distribution of Exam Scores&quot;</span>)</span>
+<span id="cb83-5"><a href="visualization.html#cb83-5" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Score Ranges&quot;</span>)</span>
+<span id="cb83-6"><a href="visualization.html#cb83-6" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Number of Students&quot;</span>)</span>
+<span id="cb83-7"><a href="visualization.html#cb83-7" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/hist_generic.png" alt="A histogram of exam scores." />
+<div class="figcaption">A histogram of exam scores.</div>
+</div>
+<p>The <code>bins=4</code> argument divides the data into four equal ranges, and <code>edgecolor='black'</code> draws a border around each bar.</p>
+</div>
+</div>
+<div id="preparing-the-college-data-for-plotting" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Preparing the College Data for Plotting<a href="visualization.html#preparing-the-college-data-for-plotting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The categorical variables in the College Data (such as <code>Gender</code>, <code>Locality</code>, and <code>College</code>) are stored as numbers. If plotted directly, the charts would show <code>0</code> and <code>1</code> on the labels, which is confusing. The Pandas <code>.map()</code> method replaces these codes with readable text before plotting. It works like a dictionary lookup, scanning a column and replacing each code with its label.</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="visualization.html#cb84-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb84-2"><a href="visualization.html#cb84-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb84-3"><a href="visualization.html#cb84-3" tabindex="-1"></a>cd <span class="op">=</span> pd.read_excel(<span class="st">&quot;College Data.xlsx&quot;</span>)</span>
+<span id="cb84-4"><a href="visualization.html#cb84-4" tabindex="-1"></a>cd[<span class="st">&#39;Gender&#39;</span>] <span class="op">=</span> cd[<span class="st">&#39;Gender&#39;</span>].<span class="bu">map</span>({<span class="dv">0</span>: <span class="st">&#39;Male&#39;</span>, <span class="dv">1</span>: <span class="st">&#39;Female&#39;</span>})</span>
+<span id="cb84-5"><a href="visualization.html#cb84-5" tabindex="-1"></a>cd[<span class="st">&#39;Locality&#39;</span>] <span class="op">=</span> cd[<span class="st">&#39;Locality&#39;</span>].<span class="bu">map</span>({<span class="dv">0</span>: <span class="st">&#39;Urban&#39;</span>, <span class="dv">1</span>: <span class="st">&#39;Rural&#39;</span>})</span>
+<span id="cb84-6"><a href="visualization.html#cb84-6" tabindex="-1"></a>cd[<span class="st">&#39;College&#39;</span>] <span class="op">=</span> cd[<span class="st">&#39;College&#39;</span>].<span class="bu">map</span>({<span class="dv">1</span>: <span class="st">&#39;College A&#39;</span>, <span class="dv">2</span>: <span class="st">&#39;College B&#39;</span>, <span class="dv">3</span>: <span class="st">&#39;College C&#39;</span>})</span></code></pre></div>
+<p>The examples that follow assume the data has been read and cleaned in this way.</p>
+<div id="pie-chart-gender-distribution" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Pie Chart — Gender Distribution<a href="visualization.html#pie-chart-gender-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To chart a category, its values are first counted with <code>.value_counts()</code>.</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="visualization.html#cb85-1" tabindex="-1"></a>gender_counts <span class="op">=</span> cd[<span class="st">&#39;Gender&#39;</span>].value_counts()</span>
+<span id="cb85-2"><a href="visualization.html#cb85-2" tabindex="-1"></a>plt.pie(gender_counts.values, labels<span class="op">=</span>gender_counts.index, autopct<span class="op">=</span><span class="st">&#39;</span><span class="sc">%1.1f%%</span><span class="st">&#39;</span>, startangle<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb85-3"><a href="visualization.html#cb85-3" tabindex="-1"></a>plt.title(<span class="st">&quot;Gender Distribution of PG Students&quot;</span>)</span>
+<span id="cb85-4"><a href="visualization.html#cb85-4" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/pie_gender.png" alt="Pie chart of gender distribution in the College Data." />
+<div class="figcaption">Pie chart of gender distribution in the College Data.</div>
+</div>
+<p>Here <code>startangle=90</code> rotates the pie so that it appears upright.</p>
+</div>
+<div id="bar-plot-students-per-college" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Bar Plot — Students per College<a href="visualization.html#bar-plot-students-per-college" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="visualization.html#cb86-1" tabindex="-1"></a>college_counts <span class="op">=</span> cd[<span class="st">&#39;College&#39;</span>].value_counts()</span>
+<span id="cb86-2"><a href="visualization.html#cb86-2" tabindex="-1"></a>plt.bar(college_counts.index, college_counts.values, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>)</span>
+<span id="cb86-3"><a href="visualization.html#cb86-3" tabindex="-1"></a>plt.title(<span class="st">&quot;Number of Students in Each College&quot;</span>)</span>
+<span id="cb86-4"><a href="visualization.html#cb86-4" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;College Name&quot;</span>)</span>
+<span id="cb86-5"><a href="visualization.html#cb86-5" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Number of Students&quot;</span>)</span>
+<span id="cb86-6"><a href="visualization.html#cb86-6" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/bar_college.png" alt="Bar plot of students per college." />
+<div class="figcaption">Bar plot of students per college.</div>
+</div>
+</div>
+<div id="histogram-distribution-of-degree-marks" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Histogram — Distribution of Degree Marks<a href="visualization.html#histogram-distribution-of-degree-marks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For a histogram the raw column of marks is passed directly, without counting first.</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="visualization.html#cb87-1" tabindex="-1"></a>plt.hist(cd[<span class="st">&#39;Degree&#39;</span>], bins<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">&#39;skyblue&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>)</span>
+<span id="cb87-2"><a href="visualization.html#cb87-2" tabindex="-1"></a>plt.title(<span class="st">&quot;Distribution of Degree Marks&quot;</span>)</span>
+<span id="cb87-3"><a href="visualization.html#cb87-3" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Percentage of Marks&quot;</span>)</span>
+<span id="cb87-4"><a href="visualization.html#cb87-4" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Number of Students&quot;</span>)</span>
+<span id="cb87-5"><a href="visualization.html#cb87-5" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/hist_degree.png" alt="Histogram of degree marks." />
+<div class="figcaption">Histogram of degree marks.</div>
+</div>
+</div>
+<div id="line-plot-average-marks-progression" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Line Plot — Average Marks Progression<a href="visualization.html#line-plot-average-marks-progression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Although this dataset has no year column, a line plot can show how the average mark changes across the three educational stages SSLC, Plus Two, and Degree.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="visualization.html#cb88-1" tabindex="-1"></a>avg_sslc <span class="op">=</span> cd[<span class="st">&#39;SSLC&#39;</span>].mean()</span>
+<span id="cb88-2"><a href="visualization.html#cb88-2" tabindex="-1"></a>avg_plustwo <span class="op">=</span> cd[<span class="st">&#39;PlusTwo&#39;</span>].mean()</span>
+<span id="cb88-3"><a href="visualization.html#cb88-3" tabindex="-1"></a>avg_degree <span class="op">=</span> cd[<span class="st">&#39;Degree&#39;</span>].mean()</span>
+<span id="cb88-4"><a href="visualization.html#cb88-4" tabindex="-1"></a>education_stages <span class="op">=</span> [<span class="st">&#39;SSLC&#39;</span>, <span class="st">&#39;PlusTwo&#39;</span>, <span class="st">&#39;Degree&#39;</span>]</span>
+<span id="cb88-5"><a href="visualization.html#cb88-5" tabindex="-1"></a>average_marks <span class="op">=</span> [avg_sslc, avg_plustwo, avg_degree]</span>
+<span id="cb88-6"><a href="visualization.html#cb88-6" tabindex="-1"></a>plt.plot(education_stages, average_marks, marker<span class="op">=</span><span class="st">&#39;o&#39;</span>, color<span class="op">=</span><span class="st">&#39;red&#39;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>)</span>
+<span id="cb88-7"><a href="visualization.html#cb88-7" tabindex="-1"></a>plt.title(<span class="st">&quot;Trend of Average Marks by Education Stage&quot;</span>)</span>
+<span id="cb88-8"><a href="visualization.html#cb88-8" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Education Stage&quot;</span>)</span>
+<span id="cb88-9"><a href="visualization.html#cb88-9" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Average Marks (%)&quot;</span>)</span>
+<span id="cb88-10"><a href="visualization.html#cb88-10" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb88-11"><a href="visualization.html#cb88-11" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/line_avg.png" alt="Line plot of average marks by stage." />
+<div class="figcaption">Line plot of average marks by stage.</div>
+</div>
+<p>Here <code>marker='o'</code> places a dot at each point, <code>linestyle='--'</code> makes the line dashed, and <code>plt.grid(True)</code> adds a background grid for easier reading.</p>
+</div>
+</div>
+<div id="statistical-charts-with-seaborn" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Statistical Charts with Seaborn<a href="visualization.html#statistical-charts-with-seaborn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Seaborn is imported alongside Matplotlib and Pandas. The data is loaded and cleaned in the same way as before.</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="visualization.html#cb89-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb89-2"><a href="visualization.html#cb89-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb89-3"><a href="visualization.html#cb89-3" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div>
+<div id="box-plot" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Box Plot<a href="visualization.html#box-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>box plot</strong> (box-and-whisker plot) displays the distribution of data through a five-number summary: minimum, first quartile, median, third quartile, and maximum. It is the best chart for spotting <strong>outliers</strong>. In Seaborn the categorical variable is given to <code>x</code>, the numerical variable to <code>y</code>, and the DataFrame to <code>data</code>.</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="visualization.html#cb90-1" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">&#39;College&#39;</span>, y<span class="op">=</span><span class="st">&#39;Degree&#39;</span>, data<span class="op">=</span>cd)</span>
+<span id="cb90-2"><a href="visualization.html#cb90-2" tabindex="-1"></a>plt.title(<span class="st">&quot;Box Plot of Degree Marks by College&quot;</span>)</span>
+<span id="cb90-3"><a href="visualization.html#cb90-3" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;College Name&quot;</span>)</span>
+<span id="cb90-4"><a href="visualization.html#cb90-4" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Degree Marks (%)&quot;</span>)</span>
+<span id="cb90-5"><a href="visualization.html#cb90-5" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/box_degree.png" alt="Box plot of degree marks by college." />
+<div class="figcaption">Box plot of degree marks by college.</div>
+</div>
+<p>The box represents the middle 50% of students, the line inside it is the median, the whiskers show the rest of the distribution, and any isolated dots beyond the whiskers are outliers.</p>
+</div>
+<div id="strip-plot" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Strip Plot<a href="visualization.html#strip-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>strip plot</strong> is a scatter plot in which one axis represents categories. The <code>jitter=True</code> argument spreads overlapping points slightly sideways so that individual points remain visible even when several students share the same mark.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb91-1"><a href="visualization.html#cb91-1" tabindex="-1"></a>sns.stripplot(x<span class="op">=</span><span class="st">&#39;Gender&#39;</span>, y<span class="op">=</span><span class="st">&#39;PlusTwo&#39;</span>, data<span class="op">=</span>cd, jitter<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb91-2"><a href="visualization.html#cb91-2" tabindex="-1"></a>plt.title(<span class="st">&quot;Strip Plot of PlusTwo Marks by Gender&quot;</span>)</span>
+<span id="cb91-3"><a href="visualization.html#cb91-3" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Student Gender&quot;</span>)</span>
+<span id="cb91-4"><a href="visualization.html#cb91-4" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;PlusTwo Marks (%)&quot;</span>)</span>
+<span id="cb91-5"><a href="visualization.html#cb91-5" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/strip_plustwo.png" alt="Strip plot of PlusTwo marks by gender." />
+<div class="figcaption">Strip plot of PlusTwo marks by gender.</div>
+</div>
+</div>
+<div id="swarm-plot" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Swarm Plot<a href="visualization.html#swarm-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Even with jitter, a strip plot can look crowded. A <strong>swarm plot</strong> positions every point so that none overlap, producing a shape resembling a swarm of bees; its width shows where the data is most dense.</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="visualization.html#cb92-1" tabindex="-1"></a>sns.swarmplot(x<span class="op">=</span><span class="st">&#39;Locality&#39;</span>, y<span class="op">=</span><span class="st">&#39;SSLC&#39;</span>, data<span class="op">=</span>cd)</span>
+<span id="cb92-2"><a href="visualization.html#cb92-2" tabindex="-1"></a>plt.title(<span class="st">&quot;Swarm Plot of SSLC Marks by Locality&quot;</span>)</span>
+<span id="cb92-3"><a href="visualization.html#cb92-3" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Student Locality&quot;</span>)</span>
+<span id="cb92-4"><a href="visualization.html#cb92-4" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;SSLC Marks (%)&quot;</span>)</span>
+<span id="cb92-5"><a href="visualization.html#cb92-5" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/swarm_sslc.png" alt="Swarm plot of SSLC marks by locality." />
+<div class="figcaption">Swarm plot of SSLC marks by locality.</div>
+</div>
+</div>
+</div>
+<div id="advanced-plots" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Advanced Plots<a href="visualization.html#advanced-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="scatter-plot" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Scatter Plot<a href="visualization.html#scatter-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>scatter plot</strong> shows the relationship between two numerical variables. Here it is used to see whether students who scored well in Plus Two also scored well in their Degree.</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="visualization.html#cb93-1" tabindex="-1"></a>plt.scatter(cd[<span class="st">&#39;PlusTwo&#39;</span>], cd[<span class="st">&#39;Degree&#39;</span>])</span>
+<span id="cb93-2"><a href="visualization.html#cb93-2" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;PlusTwo Marks (%)&quot;</span>)</span>
+<span id="cb93-3"><a href="visualization.html#cb93-3" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Degree Marks (%)&quot;</span>)</span>
+<span id="cb93-4"><a href="visualization.html#cb93-4" tabindex="-1"></a>plt.title(<span class="st">&quot;Scatter Plot of PlusTwo vs Degree Marks&quot;</span>)</span>
+<span id="cb93-5"><a href="visualization.html#cb93-5" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/scatter_pt_deg.png" alt="Scatter plot of PlusTwo against Degree marks." />
+<div class="figcaption">Scatter plot of PlusTwo against Degree marks.</div>
+</div>
+<p>The same relationship can be drawn interactively with <strong>Plotly</strong>, or layer by layer with <strong>ggplot</strong>:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="visualization.html#cb94-1" tabindex="-1"></a><span class="co"># Interactive scatter plot with Plotly (displays inside Colab)</span></span>
+<span id="cb94-2"><a href="visualization.html#cb94-2" tabindex="-1"></a><span class="im">from</span> plotly.offline <span class="im">import</span> init_notebook_mode, iplot</span>
+<span id="cb94-3"><a href="visualization.html#cb94-3" tabindex="-1"></a><span class="im">import</span> plotly.graph_objs <span class="im">as</span> go</span>
+<span id="cb94-4"><a href="visualization.html#cb94-4" tabindex="-1"></a>init_notebook_mode(connected<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb94-5"><a href="visualization.html#cb94-5" tabindex="-1"></a>trace <span class="op">=</span> go.Scatter(x<span class="op">=</span>cd[<span class="st">&#39;PlusTwo&#39;</span>], y<span class="op">=</span>cd[<span class="st">&#39;Degree&#39;</span>], mode<span class="op">=</span><span class="st">&#39;markers&#39;</span>)</span>
+<span id="cb94-6"><a href="visualization.html#cb94-6" tabindex="-1"></a>iplot([trace])</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="visualization.html#cb95-1" tabindex="-1"></a><span class="co"># Scatter plot with ggplot (requires: pip install ggplot)</span></span>
+<span id="cb95-2"><a href="visualization.html#cb95-2" tabindex="-1"></a><span class="im">from</span> ggplot <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb95-3"><a href="visualization.html#cb95-3" tabindex="-1"></a>p <span class="op">=</span> ggplot(aes(x<span class="op">=</span><span class="st">&#39;PlusTwo&#39;</span>, y<span class="op">=</span><span class="st">&#39;Degree&#39;</span>, color<span class="op">=</span><span class="st">&#39;Gender&#39;</span>), data<span class="op">=</span>cd)</span>
+<span id="cb95-4"><a href="visualization.html#cb95-4" tabindex="-1"></a>p <span class="op">+</span> geom_point() <span class="op">+</span> ggtitle(<span class="st">&quot;PlusTwo vs Degree Marks&quot;</span>)</span></code></pre></div>
+<p>In the Plotly code, <code>mode='markers'</code> draws dots rather than a line, and <code>iplot()</code> produces an interactive chart on which values appear when the mouse hovers over a point. In the ggplot code, <code>aes()</code> maps the axes and colour, and <code>geom_point()</code> adds the layer of dots.</p>
+</div>
+<div id="heatmap" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Heatmap<a href="visualization.html#heatmap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>heatmap</strong> uses colour to show the intensity of the numbers in a two-dimensional matrix. It is an excellent way to display the correlation between variables. The Pandas <code>.corr()</code> method computes the correlations first.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="visualization.html#cb96-1" tabindex="-1"></a>correlations <span class="op">=</span> cd[[<span class="st">&#39;SSLC&#39;</span>, <span class="st">&#39;PlusTwo&#39;</span>, <span class="st">&#39;Degree&#39;</span>]].corr()</span>
+<span id="cb96-2"><a href="visualization.html#cb96-2" tabindex="-1"></a>sns.heatmap(correlations, annot<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">&#39;coolwarm&#39;</span>)</span>
+<span id="cb96-3"><a href="visualization.html#cb96-3" tabindex="-1"></a>plt.title(<span class="st">&quot;Correlation Heatmap of Student Marks&quot;</span>)</span>
+<span id="cb96-4"><a href="visualization.html#cb96-4" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/heatmap_corr.png" alt="Correlation heatmap of the three mark columns." />
+<div class="figcaption">Correlation heatmap of the three mark columns.</div>
+</div>
+<p>The argument <code>annot=True</code> writes the correlation values inside the coloured cells, and <code>cmap='coolwarm'</code> shades high values red and low values blue.</p>
+</div>
+<div id="density-plot-and-cumulative-frequency" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Density Plot and Cumulative Frequency<a href="visualization.html#density-plot-and-cumulative-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A <strong>density plot</strong> is a smoothed version of a histogram showing the shape of the data, and can be drawn directly from a Pandas column. A <strong>cumulative-frequency</strong> plot shows a running total, obtained by adding <code>cumulative=True</code> to a histogram.</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="visualization.html#cb97-1" tabindex="-1"></a><span class="co"># Density plot using Pandas directly</span></span>
+<span id="cb97-2"><a href="visualization.html#cb97-2" tabindex="-1"></a>cd[<span class="st">&#39;Degree&#39;</span>].plot.density(color<span class="op">=</span><span class="st">&#39;purple&#39;</span>, linewidth<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb97-3"><a href="visualization.html#cb97-3" tabindex="-1"></a>plt.title(<span class="st">&quot;Density Plot of Degree Marks&quot;</span>)</span>
+<span id="cb97-4"><a href="visualization.html#cb97-4" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Marks (%)&quot;</span>)</span>
+<span id="cb97-5"><a href="visualization.html#cb97-5" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/density_degree.png" alt="Density plot of degree marks." />
+<div class="figcaption">Density plot of degree marks.</div>
+</div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="visualization.html#cb98-1" tabindex="-1"></a><span class="co"># Cumulative frequency using Matplotlib</span></span>
+<span id="cb98-2"><a href="visualization.html#cb98-2" tabindex="-1"></a>plt.hist(cd[<span class="st">&#39;Degree&#39;</span>], bins<span class="op">=</span><span class="dv">20</span>, cumulative<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">&#39;orange&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>)</span>
+<span id="cb98-3"><a href="visualization.html#cb98-3" tabindex="-1"></a>plt.title(<span class="st">&quot;Cumulative Frequency of Degree Marks&quot;</span>)</span>
+<span id="cb98-4"><a href="visualization.html#cb98-4" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Marks (%)&quot;</span>)</span>
+<span id="cb98-5"><a href="visualization.html#cb98-5" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Running Total of Students&quot;</span>)</span>
+<span id="cb98-6"><a href="visualization.html#cb98-6" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/cumfreq_degree.png" alt="Cumulative frequency plot of degree marks." />
+<div class="figcaption">Cumulative frequency plot of degree marks.</div>
+</div>
+</div>
+<div id="error-bars" class="section level3 hasAnchor" number="3.4.4">
+<h3><span class="header-section-number">3.4.4</span> Error Bars<a href="visualization.html#error-bars" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>An <strong>error bar</strong> is a line drawn through a data point to represent uncertainty or variation. Here the average Degree mark for each college is plotted, with error bars showing the standard deviation.</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="visualization.html#cb99-1" tabindex="-1"></a>avg_marks <span class="op">=</span> cd.groupby(<span class="st">&#39;College&#39;</span>)[<span class="st">&#39;Degree&#39;</span>].mean()</span>
+<span id="cb99-2"><a href="visualization.html#cb99-2" tabindex="-1"></a>std_marks <span class="op">=</span> cd.groupby(<span class="st">&#39;College&#39;</span>)[<span class="st">&#39;Degree&#39;</span>].std()</span>
+<span id="cb99-3"><a href="visualization.html#cb99-3" tabindex="-1"></a>plt.bar(avg_marks.index, avg_marks.values, yerr<span class="op">=</span>std_marks.values,</span>
+<span id="cb99-4"><a href="visualization.html#cb99-4" tabindex="-1"></a>        capsize<span class="op">=</span><span class="dv">5</span>, color<span class="op">=</span><span class="st">&#39;lightblue&#39;</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>)</span>
+<span id="cb99-5"><a href="visualization.html#cb99-5" tabindex="-1"></a>plt.title(<span class="st">&quot;Average Degree Marks per College with Error Bars&quot;</span>)</span>
+<span id="cb99-6"><a href="visualization.html#cb99-6" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Average Marks (%)&quot;</span>)</span>
+<span id="cb99-7"><a href="visualization.html#cb99-7" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="float">
+<img src="images/errorbar_degree.png" alt="Bar chart of average degree marks per college with error bars." />
+<div class="figcaption">Bar chart of average degree marks per college with error bars.</div>
+</div>
+<p>The <code>.groupby()</code> method finds the mean and standard deviation for each college. The argument <code>yerr=std_marks.values</code> draws the vertical error lines, and <code>capsize=5</code> adds small horizontal caps at their ends.</p>
+</div>
+</div>
+<div id="practice-exercises-2" class="section level2 unnumbered hasAnchor">
+<h2>Practice Exercises<a href="visualization.html#practice-exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="practice">
+<p><strong>Exercise 3.1 — A Line Plot.</strong> Heart rate was recorded each hour for four hours as <code>[72, 75, 78, 74]</code> at hours <code>[1, 2, 3, 4]</code>. Draw a line plot of this data with a title.</p>
+<p><strong>Exercise 3.2 — A Bar Plot.</strong> Three departments <code>['IT', 'HR', 'Sales']</code> have <code>[10, 6, 14]</code> employees. Draw a green bar plot comparing them.</p>
+<p><strong>Exercise 3.3 — A Histogram.</strong> Using the College Data, draw a histogram of the <code>SSLC</code> column with 20 bins and a black edge colour.</p>
+<p><strong>Exercise 3.4 — A Box Plot.</strong> Using the College Data, draw a Seaborn box plot of <code>Degree</code> marks grouped by <code>Gender</code>.</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pandas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="glossary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["statistical-analysis-using-python.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

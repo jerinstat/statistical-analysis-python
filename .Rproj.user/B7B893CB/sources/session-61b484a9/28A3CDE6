@@ -1,0 +1,24 @@
+{
+    "id": "28A3CDE6",
+    "path": "/cloud/project/python-textbook/index.Rmd",
+    "project_path": "python-textbook/index.Rmd",
+    "type": "r_markdown",
+    "hash": "292897530",
+    "contents": "",
+    "dirty": false,
+    "created": 1785268430010.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1785268420,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1785268420,
+    "read_only": false,
+    "read_only_alternatives": []
+}
