@@ -3,7 +3,7 @@
     "path": "/cloud/project/python-textbook/01-module1.Rmd",
     "project_path": "python-textbook/01-module1.Rmd",
     "type": "r_markdown",
-    "hash": "1946098345",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1785268442561.0,
@@ -11,14 +11,16 @@
     "relative_order": 2,
     "properties": {
         "source_window_id": "",
-        "Source": "Source"
+        "Source": "Source",
+        "cursorPosition": "0,0",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1785268420,
+    "lastKnownWriteTime": 1785928066,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1785268420,
+    "last_content_update": 1785928066,
     "read_only": false,
     "read_only_alternatives": []
 }

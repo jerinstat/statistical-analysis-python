@@ -17,13 +17,14 @@ description: "Statistical Analysis Using Python textbook for Calicut University 
 
 This textbook has been written to meet the requirements of the **Four Year Undergraduate Programme (FYUGP)** of Calicut University for the Skill Enhancement Course on **Statistical Analysis Using Python**.
 
-The book is organised into three chapters aligned with the first three modules of the syllabus:
+The book is organised into four chapters aligned with the first four modules of the syllabus:
 
 | Chapter | Title                              |
 | ------- | ---------------------------------- |
 | 1       | Introduction to Python Programming |
 | 2       | Data Manipulation with Pandas      |
 | 3       | Data Visualization                 |
+| 4       | Statistical Data Analysis          |
 
 Each chapter opens with learning objectives. Key terms are **bolded** when first introduced. Every topic is explained in plain language with fully worked code examples, so that a student can prepare for the written examination directly from this book. Selected practice exercises are provided at the end of each chapter for students who wish to try the code themselves.
 
@@ -76,6 +77,12 @@ The author acknowledges the reference material of the course, in particular the 
 9. Data Visualization Libraries: Matplotlib, Seaborn, Plotly, ggplot, Geoplotlib, Pandas.
 10. Plot-I: Line plot, bar plot, pie chart, box plot, histogram, strip plot, swarm plot.
 11. Plot-II: Scatter plot, heatmap, density plot, cumulative frequencies, error bars.
+
+**Module IV — Statistical Data Analysis Using statsmodels (18 Hrs)**
+
+12. Random number generation and correlation.
+13. Hypothesis testing: one-sample, two-sample, and paired t-tests; one-way and two-way ANOVA; non-parametric tests.
+14. Modelling: simple and multiple linear regression, and logistic regression.
 
 ### The Dataset Used in This Book {-}
 

@@ -28,7 +28,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="visualization.html"/>
+<link rel="prev" href="stats.html"/>
 <link rel="next" href="references.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -277,6 +277,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html#practice-exercises-2"><i class="fa fa-check"></i>Practice Exercises</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="stats.html"><a href="stats.html"><i class="fa fa-check"></i><b>4</b> Statistical Data Analysis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="stats.html"><a href="stats.html#generating-simulated-data"><i class="fa fa-check"></i><b>4.1</b> Generating Simulated Data</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="stats.html"><a href="stats.html#the-uniform-distribution"><i class="fa fa-check"></i><b>4.1.1</b> The Uniform Distribution</a></li>
+<li class="chapter" data-level="4.1.2" data-path="stats.html"><a href="stats.html#the-normal-distribution"><i class="fa fa-check"></i><b>4.1.2</b> The Normal Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="stats.html"><a href="stats.html#hypothesis-testing-the-courtroom-analogy"><i class="fa fa-check"></i><b>4.2</b> Hypothesis Testing: The Courtroom Analogy</a></li>
+<li class="chapter" data-level="4.3" data-path="stats.html"><a href="stats.html#checking-for-normality-the-gatekeeper"><i class="fa fa-check"></i><b>4.3</b> Checking for Normality: The Gatekeeper</a></li>
+<li class="chapter" data-level="4.4" data-path="stats.html"><a href="stats.html#one-sample-tests"><i class="fa fa-check"></i><b>4.4</b> One-Sample Tests</a></li>
+<li class="chapter" data-level="4.5" data-path="stats.html"><a href="stats.html#two-sample-tests-comparing-two-separate-groups"><i class="fa fa-check"></i><b>4.5</b> Two-Sample Tests: Comparing Two Separate Groups</a></li>
+<li class="chapter" data-level="4.6" data-path="stats.html"><a href="stats.html#paired-tests-comparing-the-same-people-twice"><i class="fa fa-check"></i><b>4.6</b> Paired Tests: Comparing the Same People Twice</a></li>
+<li class="chapter" data-level="4.7" data-path="stats.html"><a href="stats.html#comparing-three-or-more-groups-anova"><i class="fa fa-check"></i><b>4.7</b> Comparing Three or More Groups: ANOVA</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="stats.html"><a href="stats.html#one-way-anova"><i class="fa fa-check"></i><b>4.7.1</b> One-Way ANOVA</a></li>
+<li class="chapter" data-level="4.7.2" data-path="stats.html"><a href="stats.html#two-way-anova"><i class="fa fa-check"></i><b>4.7.2</b> Two-Way ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="stats.html"><a href="stats.html#correlation"><i class="fa fa-check"></i><b>4.8</b> Correlation</a></li>
+<li class="chapter" data-level="4.9" data-path="stats.html"><a href="stats.html#simple-linear-regression"><i class="fa fa-check"></i><b>4.9</b> Simple Linear Regression</a></li>
+<li class="chapter" data-level="4.10" data-path="stats.html"><a href="stats.html#multiple-linear-regression"><i class="fa fa-check"></i><b>4.10</b> Multiple Linear Regression</a></li>
+<li class="chapter" data-level="4.11" data-path="stats.html"><a href="stats.html#logistic-regression"><i class="fa fa-check"></i><b>4.11</b> Logistic Regression</a></li>
+<li class="chapter" data-level="" data-path="stats.html"><a href="stats.html#practice-exercises-3"><i class="fa fa-check"></i>Practice Exercises</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="glossary.html"><a href="glossary.html"><i class="fa fa-check"></i>Glossary</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -322,6 +345,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Split–apply–combine</strong> — the strategy behind <code>.groupby()</code>: splitting data by category, applying a calculation, and combining the results.</p>
 <p><strong>Syntax error</strong> — an error caused by breaking Python’s grammatical rules, which prevents the program from running.</p>
 <p><strong>Variable</strong> — a name that refers to a stored value in memory.</p>
+<p><strong>Alternative hypothesis (H1)</strong> — the claim that a real difference or effect exists.</p>
+<p><strong>ANOVA (Analysis of Variance)</strong> — a test comparing the means of three or more groups at once; one-way uses a single factor, two-way uses two factors.</p>
+<p><strong>Correlation coefficient (r)</strong> — a number between -1 and +1 measuring how strongly two numerical variables move together.</p>
+<p><strong>Hypothesis testing</strong> — using data as evidence to decide between a null and an alternative hypothesis.</p>
+<p><strong>Kruskal-Wallis test</strong> — the non-parametric alternative to one-way ANOVA.</p>
+<p><strong>Linear regression</strong> — a model predicting a numerical outcome from one predictor (simple) or several predictors (multiple).</p>
+<p><strong>Logistic regression</strong> — a model predicting a yes/no outcome as a probability between 0 and 1.</p>
+<p><strong>Mann-Whitney U test</strong> — the non-parametric alternative to the independent two-sample t-test.</p>
+<p><strong>Non-parametric test</strong> — a test used when data is not normally distributed; based on ranks rather than means.</p>
+<p><strong>Normal distribution</strong> — a symmetrical, bell-shaped spread of data in which most values cluster near the average.</p>
+<p><strong>Null hypothesis (H0)</strong> — the default assumption that no real difference or effect exists.</p>
+<p><strong>Parametric test</strong> — a test used when data is normally distributed, such as the t-test or ANOVA.</p>
+<p><strong>p-value</strong> — the probability of seeing the observed data by chance if the null hypothesis were true; compared against 0.05.</p>
+<p><strong>Paired test</strong> — a comparison of the same individuals measured twice (for example, before and after).</p>
+<p><strong>Regression</strong> — finding an equation that predicts one variable from one or more others.</p>
+<p><strong>Shapiro-Wilk test</strong> — a test that checks whether data is normally distributed.</p>
+<p><strong>Simulation</strong> — generating artificial data with numpy to imagine a scenario.</p>
+<p><strong>t-test</strong> — a parametric test comparing means: one-sample (against a fixed value), independent (two separate groups), or paired (same group twice).</p>
+<p><strong>Uniform distribution</strong> — a spread of data in which every value in a range is equally likely.</p>
+<p><strong>Wilcoxon signed-rank test</strong> — the non-parametric alternative to the one-sample and paired t-tests.</p>
 
 </div>
             </section>
@@ -329,7 +372,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="visualization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="stats.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

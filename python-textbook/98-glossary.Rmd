@@ -47,3 +47,43 @@
 **Syntax error** — an error caused by breaking Python's grammatical rules, which prevents the program from running.
 
 **Variable** — a name that refers to a stored value in memory.
+
+**Alternative hypothesis (H1)** — the claim that a real difference or effect exists.
+
+**ANOVA (Analysis of Variance)** — a test comparing the means of three or more groups at once; one-way uses a single factor, two-way uses two factors.
+
+**Correlation coefficient (r)** — a number between -1 and +1 measuring how strongly two numerical variables move together.
+
+**Hypothesis testing** — using data as evidence to decide between a null and an alternative hypothesis.
+
+**Kruskal-Wallis test** — the non-parametric alternative to one-way ANOVA.
+
+**Linear regression** — a model predicting a numerical outcome from one predictor (simple) or several predictors (multiple).
+
+**Logistic regression** — a model predicting a yes/no outcome as a probability between 0 and 1.
+
+**Mann-Whitney U test** — the non-parametric alternative to the independent two-sample t-test.
+
+**Non-parametric test** — a test used when data is not normally distributed; based on ranks rather than means.
+
+**Normal distribution** — a symmetrical, bell-shaped spread of data in which most values cluster near the average.
+
+**Null hypothesis (H0)** — the default assumption that no real difference or effect exists.
+
+**Parametric test** — a test used when data is normally distributed, such as the t-test or ANOVA.
+
+**p-value** — the probability of seeing the observed data by chance if the null hypothesis were true; compared against 0.05.
+
+**Paired test** — a comparison of the same individuals measured twice (for example, before and after).
+
+**Regression** — finding an equation that predicts one variable from one or more others.
+
+**Shapiro-Wilk test** — a test that checks whether data is normally distributed.
+
+**Simulation** — generating artificial data with numpy to imagine a scenario.
+
+**t-test** — a parametric test comparing means: one-sample (against a fixed value), independent (two separate groups), or paired (same group twice).
+
+**Uniform distribution** — a spread of data in which every value in a range is equally likely.
+
+**Wilcoxon signed-rank test** — the non-parametric alternative to the one-sample and paired t-tests.
